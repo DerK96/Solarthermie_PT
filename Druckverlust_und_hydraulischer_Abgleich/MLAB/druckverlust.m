@@ -11,7 +11,7 @@ d1.h2855 = importfile('../DATA/Volumenstrom2855l-h_07.09.2020 09_14_37.csv');
 %% init constants
 NennVp = [600;1310;2147;2855];  %[L/h]
 NennVpSI = NennVp./3600000;     %[m^3/s]
-%% calc dP-Loss
+%% calc Verlust aus Messung
 fn = fieldnames(d1);
 for i=1:numel(fn)
     meanDP(:,i) = mean(table2array(d1.(fn{i})(:,15)));
@@ -23,23 +23,14 @@ dPBhs = dPBhs';
 
 dPKr = meanDP - dPBhs;
 
-%% plot Data
-figure
-hold on
-plot(NennVp,dPKr,'-x');
-grid on
-% xlim([0 660])
-xlabel('Durchfluss [$\frac{L}{h}$]')
-ylabel('Druckverlust [$pa$]')
-% legend('Vortex','US stat','MID','US mobil','RKZ','location','best')
-run plotsettings.m
-printPath = '../DATA/dPPlot';
-print(printPath,'-depsc');
-
-%% Rohrreibung
+%% Rohrreibung (Rechnung)
 meanDP = meanDP';
+di = 16.8*10^-3;
 d1 = 19.3*10^-3;
 d2 = 33*10^-3;
+did2 = (di/d2)^2;
+zetaRohrQ = 0.5; % aus Abbildung 6.1
+nQuerRohr = 12;
 A1 = ((d1/2)^2)*pi;
 A2 = ((d2/2)^2)*pi;
 t = 25;
@@ -52,5 +43,26 @@ Re = (v_inf.*d1*rho)/eta;
 lambda = (meanDP./q)*(d1/l);
 dA = A1/A2;
 zetaAng = 0.08;
-zeta = 2*zetaAng;
+zeta = 2*zetaAng*(zetaRohrQ*nQuerRohr);
 
+dPReib = ((rho/2)*(v_inf).^2).*lambda*(l/d2)+((rho/2)*(v_inf).^2).*zeta;
+
+%% plot Vergleich Mesung Rechnung
+figure
+hold on
+plot(NennVp,dPKr,'-x');
+plot(NennVp,dPReib,'-.o')
+grid on
+% xlim([0 660])
+xlabel('Durchfluss [$\frac{L}{h}$]')
+ylabel('Druckverlust [$pa$]') 
+legend('Messung','Rechnung','location','best')
+run plotsettings.m
+printPath = '../DATA/dPPlot';
+print(printPath,'-depsc');
+
+%% zeta-gewichtet
+
+zetaTeil = 2*((dPKr')./(rho*(v_inf.^2)));
+zetaGew = (sum(NennVpSI.*zetaTeil))/(sum(NennVpSI));
+disp(zetaGew)
