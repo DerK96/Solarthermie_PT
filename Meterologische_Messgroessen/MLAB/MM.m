@@ -128,6 +128,7 @@ xlabel('Spannung [V]')
 run plotsettings.m
 print('../DATA/Kalibriergerade_Feuchte.eps','-depsc');
 
+
 %% Versuchsteil E
 
 Rain = d.Humidity.Niederschlag;
@@ -168,3 +169,22 @@ xlabel('Scan [s]')
 run plotsettings.m
 print('../DATA/Windrichtung.eps','-depsc');
 
+%Windrichtung Verteilung
+figure 
+grid on
+histogram(Winddir,8,'Normalization','probability')
+%legend('location','best')
+xlabel('Windrichtung $\left[\frac{m}{s}\right]$')
+ylabel('Relative Häufigkeit')
+run plotsettings.m
+print('../DATA/WinddirCN.eps','-depsc');
+
+% Windgeschwindigkeit Verteilung
+figure 
+grid on
+histogram(Windspd,8,'BinWidth',1,'Normalization','probability')
+%legend('location','best')
+xlabel('Windrichtung $\left[\frac{m}{s}\right]$')
+ylabel('Relative Häufigkeit')
+run plotsettings.m
+print('../DATA/WindspdCN.eps','-depsc');
