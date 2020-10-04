@@ -44,33 +44,33 @@ ylabel('Druckverlust [$k_v/k_{vs}$]')
 run plotsettings.m
 printPath = '../DATA/Ventilkennlinie';
 print(printPath,'-depsc');
-%%
+%% Ausprobieren
 figure
 hold on
-plot(Ausprobieren.Scan,Ausprobieren.V_Strang_1,'color','r')
+p1 = plot(Ausprobieren.Scan,Ausprobieren.V_Strang_1,'color','r');
 plot(Ausprobieren.Scan,Ausprobieren.V_Strang_2,'color','r')
 plot(Ausprobieren.Scan,Ausprobieren.V_Strang_3,'color','r')
-plot(VSRed.Scan,VSRed.V_Strang_1,'color','k')
-plot(VSRed.Scan,VSRed.V_Strang_2,'color','k')
-plot(VSRed.Scan,VSRed.V_Strang_3,'color','k')
-legend('A1','A2','A3','R1','R2','R3','location','best')
+p2 = plot(VSRed.Scan,VSRed.V_Strang_1,'-.','color','k');
+plot(VSRed.Scan,VSRed.V_Strang_2,'-.','color','k')
+plot(VSRed.Scan,VSRed.V_Strang_3,'-.','color','k')
+legend([p1 p2],'Ausprobieren','Kompensationsmethode','location','best')
 grid on
-xlabel('Durchfluss [$H/H_{100}$]')
-ylabel('Druckverlust [$k_v/k_{vs}$]') 
+xlabel('vergangene Zeit [$s$]')
+ylabel('Durchfluss $\left[\frac{L}{h}\right]$') 
 run plotsettings.m
-printPath = '../DATA/Ventilkennlinie';
+printPath = '../DATA/Ausprobieren';
 print(printPath,'-depsc');
 
 %% Tichel
 figure
 hold on
-plot(Tichel.Scan,Tichel.V_Strang_1)
-plot(Tichel.Scan,Tichel.V_Strang_2)
-plot(Tichel.Scan,Tichel.V_Strang_3)
-legend('S1','S2','S3','location','best')
+plot(Tichel.Scan,Tichel.V_Strang_1,':')
+plot(Tichel.Scan,Tichel.V_Strang_2,'-.')
+plot(Tichel.Scan,Tichel.V_Strang_3,'-')
+legend('Strang 1','Strang 2','Strang 3','location','best')
 grid on
-xlabel('Durchfluss [$H/H_{100}$]')
-ylabel('Druckverlust [$k_v/k_{vs}$]') 
+xlabel('vergangene Zeit [$s$]')
+ylabel('Durchfluss $\left[\frac{L}{h}\right]$') 
 run plotsettings.m
-printPath = '../DATA/Ventilkennlinie';
+printPath = '../DATA/Tichel';
 print(printPath,'-depsc');

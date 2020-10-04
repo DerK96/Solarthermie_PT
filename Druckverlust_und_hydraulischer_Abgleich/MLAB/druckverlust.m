@@ -53,7 +53,6 @@ hold on
 plot(NennVp,dPKr,'-x');
 plot(NennVp,dPReib,'-.o')
 grid on
-% xlim([0 660])
 xlabel('Durchfluss [$\frac{L}{h}$]')
 ylabel('Druckverlust [$pa$]') 
 legend('Messung','Rechnung','location','best')
