@@ -43,11 +43,13 @@ disp(m2);
 %% calc fits
 
 m2t = m2'; %transformiere Matrix
-
+syms x1;
 for m = 1:size(m2t,2)
-    f{m} = fit(m2t(:,1),m2t(:,m),'poly1');
+    [f{m},g{m}] = fit(m2t(:,1),m2t(:,m),'poly1');
+    pfun{m} = f{m}.p1*x1+f{m}.p2;
     if m == size(m2t,2)-1
-        f{m} = fit(m2t(:,1),m2t(:,m),'exp1');
+        [f{m},g{m}] = fit(m2t(:,1),m2t(:,m),'exp1');
+        pfun{m} = f{m}.a*exp(f{m}.b*x1);
     end
 end
 
@@ -61,11 +63,18 @@ for h = 1:5
     hold on
     grid on
     title(names{h})
-    plot(f{h+1},m2(1,:),m2(h+1,:));
+    plot(m2(1,:),m2(h+1,:),'x','color','k');
+    fplot(pfun{h+1},'color','r');
     xlabel('Temperatur [$^{\circ}C$]')
     ylabel('Widerstand [$\Omega$]')
     xlim([-10 85])
 end
+subplot(2,3,6)
+hold on
+plot(0,0,'x','color','k')
+plot(0,0,'-','color','r')
+axis off
+legend('data','fit','location','east')
 run plotsettings.m
 print('Widerstandsgeraden','-depsc');
 
@@ -85,9 +94,21 @@ print('Vergleich2L4L','-depsc');
 figure
 hold on
 grid on
-plot(f{7},m2(1,:),m2(7,:));
+plot(m2(1,:),m2(7,:),'x','color','k');
+fplot(pfun{7},'color','r');
 xlabel('Temperatur [$^{\circ}C$]')
 ylabel('Spannung [$V$]')
+legend('data','linear fit','location','best')
 run plotsettings.m
 print('Spannung','-depsc');
 hold off
+
+%% print coeffs
+
+for i = 2:numel(f)
+    tempVal = confint(f{i});
+    tempVal = tempVal(2,:)-tempVal(1,:);
+    rVals(i,:) = coeffvalues(f{i});
+    confInts(i,:) = tempVal./2;
+end
+
