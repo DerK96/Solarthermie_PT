@@ -3,13 +3,14 @@
 \subsection{Solarstrahlung} 
 
 \subsubsection{Aufnahme der Messdaten}
-Zur Bestimmung der Solarstrahlung wurden folgende Halbleitersensoren und Thermosäulen in die Messdatenerfassung eingebunden:
+Zur Bestimmung der Solarstrahlung wurden folgende Halbleitersensoren und Pyranometern in die Messdatenerfassung eingebunden:
 
 \begin{center}
 	
-\begin{tabular}{ll}	
+\begin{tabular}{l|l}	
 	\label{tab:Sensoren}
-	Sensorname & Sensorart\\
+	\textbf{Sensorname} & \textbf{Sensorart}\\
+	\hline
 	CM 11 & Thermosäule\\
 	CM 11 (mit Schattenring) & Thermosäule\\
 	CM3 & Thermosäule\\
@@ -18,7 +19,7 @@ Zur Bestimmung der Solarstrahlung wurden folgende Halbleitersensoren und Thermos
 \end{tabular}
 \end{center}
 
-Der Schattenring der Thermosäule zur Messung der diffusstrahlung wurde nach Tabelle 5 des Praktikumsskriptes ausgerichtet. Die Ausrichtung der Messtafel Richtung Sonne konnte nur geschätzt werden, da der Himmel zum Zeitpunkt der Messung bedeckt war. Für die weitere Auswertung wird daher ein bereitgestellter Datensatz (vgl. Abbildung \ref{fig:radiation}) verwendet.
+Der Schattenring des Pyranometers zur Messung der Diffusstrahlung wurde nach Tabelle 5 des Praktikumsskriptes ausgerichtet. Die Ausrichtung der Messtafel mit den übrigen Sensoren Richtung Sonne konnte nur geschätzt werden, da der Himmel zum Zeitpunkt der Messung bedeckt war. Für die weitere Auswertung wird daher ein bereitgestellter Datensatz (vgl. Abbildung \ref{fig:radiation}) verwendet.
 
 \begin{figure}[H]
 	\centering
@@ -26,7 +27,7 @@ Der Schattenring der Thermosäule zur Messung der diffusstrahlung wurde nach Tab
 	\caption[Messreihe zur Bestimmung der Solarstrahlung]{Messreihe zur Bestimmung der Solarstrahlung}
 	\label{fig:radiation}
 \end{figure}
-Zum Vergleich der Messwerte wurden Der Mittelwert und die Standardabweichung der einzelnen Sensoren über den stationären Messbereich zwischen Sekunde 170 und Sekunde 220 gebildet. Tabelle \ref{tab:radiation} zeigt die bestimmten Werte.
+Zum Vergleich der Messwerte wurden der Mittelwert und die Standardabweichung der einzelnen Sensoren über den stationären Messbereich zwischen Sekunde 170 und Sekunde 220 gebildet. Tabelle \ref{tab:radiation} zeigt die bestimmten Werte.
 \begin{center}
 \begin{tabular}{l|c|c}
 	\label{tab:radiation}
@@ -41,11 +42,13 @@ Zum Vergleich der Messwerte wurden Der Mittelwert und die Standardabweichung der
 \end{tabular} 
 \end{center}
 
-Die Angegeben Strahlungswerte beziehen sich auf die Globalstrahlung. Die mit einem Schattenring ausgestattete CM11 Thermosäule misst hingegen nur die Diffusstrahlung. Die Direktstrahlung kann mittels folgender Gleichung aus den beiden CM11 Thermosäulen berechnet werden:
+Die Angegeben Strahlungswerte beziehen sich auf die Globalstrahlung. Das mit einem Schattenring ausgestattete CM11 Pyranometer misst hingegen nur die Diffusstrahlung. Die Direktstrahlung kann mittels folgender Gleichung aus den beiden CM11 Pyranometern berechnet werden:
 \begin{equation}
 	\label{eq:Edir}
 	E_{dir}=E_{global}-E_{diffus}=\SI{964.5125}{\watt\per\square\meter}-\SI{68.692}{\watt\per\square\meter} = \SI{895.8205}{\watt\per\square\meter}
 \end{equation}
+
+Aus dem Datensatz geht hervor, dass die Halbleitersensoren verglichen mit den Pyranometern eine geringere Strahlung messen. Der induzierte Photoeffekt ist bei Halbleitersensoren abhängig von der Wellenlänge. Aufgrund dieser Verluste wird ein niedrigere Ausgangsspannung am Messwiderstand gemessen. Für eine genauere Messung müsste der Sensor anhand einer definierten Strahlungsleistung (Bsp. Sonnensimulator) kalibriert werden. Weiterhin sind die verwendeten Halbleitersensoren nach keinem Standard klassifiziert, sodass keine nähere Aussage über die messgenauigkeit getroffen werden kann. Thermosäulen liefern präzisere Messwerte, da sie ein Thermisches Messverfahren nutzen und Verluste durch den Glasdom gemindert werden. Die verwendeten CM11 Pyranometer sind nach dem Secondary Standard klassifiziert und sollten daher im Rahmen des Versuchs als Referenz betrachtet werden.
 
 
 \subsubsection{Bestimmung des Ansprechverhaltens}
@@ -87,6 +90,7 @@ Zur Bestimmung der relativen Feuchte wurde eine Kalibriergerade anhand zweier Me
 	\label{fig:cal}
 \end{figure}
 
+Aus Abbildung \ref{fig:cal} geht hervor, dass die Spannungen nicht konstant gemessen wurden. Für eine genauere Kalibration ist eine längere Verweilzeit über den Salzlösungen nötig. Prinzipiell eignen sich die gewählten Messpunkte gut, da die Luftfeuchte über den verwendeten Lösungen nahezu temperaturunabhängig ist. Die Messkurve des Sensors wird im Versuch als linear betrachtet, über den wahren Verlauf kann keine Aussage getroffen werden. Zur Optimierung müssen daher weitere Messpunkte aufgenommen werden.
 \begin{center}
 	\begin{tabular}{l|c|c|c}
 		\label{tab:cal}
@@ -118,5 +122,47 @@ Die relative Feuchte der Umgebungsluft errechnet sich nach Abbildung \ref{fig:ca
 	\varphi(\text{V})=10,65*\SI{5,9791}{\volt}-2,167=\SI{61,51}{\percent}
 \end{equation}
 		
+\subsection{Niederschlag}
+Zur Simulation des Niederschlags wurde in drei Durchläufen je \SI{1}{\liter} Wasser in den Auffangtrichter gegossen und die Impulse der Messwippe gezählt. Abbildung \ref{fig:rain} zeigt die aufgenommenen Messdaten. 
 
- 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{../DATA/Messreihe_Niederschlag.eps}
+	\caption[Datenerfassung zur Niederschlagsbestimmung]{Datenerfassung zur Niederschlagsbestimmung.}
+	\label{fig:cal2}
+\end{figure}
+
+Die Impulszahl entspricht jeweils der Differenz des Ordinatenabschnittes zwischen den Messungen. Zusätzlich wurde die Messdauer betrachtet und der Volumenstrom bilanziell aus dem Kehrwert der Messdauer berechnet. Das Volumen der Wippen wurde aus dem Kehrwert der Impulszahl berechnet (vgl. Tabelle \ref{tab:rain}).
+
+ \begin{center}
+ 	\begin{tabular}{c|c|c|c|c}
+ 		\label{tab:rain}
+ 		\textbf{Messung} & \textbf{Impulszahl} & \textbf{Messdauer} [s] & \textbf{Volumenstrom} [$\frac{ml}{s}$] & \textbf{Liter pro impuls}\\
+ 		\hline
+ 		1 & 166 & 168 & 5,95 & 6,02\\
+ 		2 & 200 & 105 & 9,52 & 5,00\\
+ 		3 & 153 & 171 & 5,85 & 6,54\\
+ 		Mittel & 173 & 148 & 7,11 & 5,85
+ 	\end{tabular}
+ \end{center}
+
+Das Messergebnis ist in erster Linie vom zufließenden Volumenstrom abhängig. Bei geringerem Zufluss wird Wippe  langsam an ihren Kipppunkt gebracht, während sie bei höheren Zuflussraten durch den Impuls des Fluids schon vor der vollständigen Befüllung kippt. Dieser Trend ist in Tabelle \ref{tab:rain} zu sehen. Das Volumen pro Impuls ist bei Messung 2 am geringsten, der bilanzielle Volumenstrom am größten. Die Messmethode ist daher tendenziell für die Messung bei leichten Regenschauern geeignet. Bei Starkregen versagt sie.
+
+Für die Bestimmung der Niederschlagshöhe wird zunächst nach Gleichung \ref{eq:rain} die Tricherfläche bestimmt:
+
+\begin{equation}
+	\label{eq:rain}
+	A= \pi * r^2= \pi * (\frac{\SI{0,165}{\meter}}{2})^2 = \SI{0,0214}{\square\meter}
+\end{equation}
+
+Die normierte Niederschlagshöhe ergibt sich entsprechend Gleichung \ref{eq:rain2} aus dem Quotienten der Niederschlagsmenge und der Trichterfläche:
+
+\begin{equation}
+	\label{eq:rain2}
+	h = \frac{V}{A} = \frac{\SI{0,001}{\cubic\meter}}{\SI{0,0214}{\square\meter}} = \SI{0,0467}{\meter} = \SI{46,7}{\milli\meter}
+\end{equation}
+
+\subsection{Windmessung}
+Eine sinnvolle Messung der Luftströmung war aufgrund der ungünstigen Position der Messstation nicht möglich. Daher wird auch bei diesem Versuchsteil auf einen bereitgestellten Dtensatz zurückgegriffen.
+
+\subsubsection{Windrichtung}
