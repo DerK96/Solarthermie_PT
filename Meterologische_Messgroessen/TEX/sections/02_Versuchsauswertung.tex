@@ -29,16 +29,16 @@ Der Schattenring des Pyranometers zur Messung der Diffusstrahlung wurde nach Tab
 \end{figure}
 Zum Vergleich der Messwerte wurden der Mittelwert und die Standardabweichung der einzelnen Sensoren über den stationären Messbereich zwischen Sekunde 170 und Sekunde 220 gebildet. Tabelle \ref{tab:radiation} zeigt die bestimmten Werte.
 \begin{center}
-\begin{tabular}{l|c|c}
+\begin{tabular}{l|c}
 	\label{tab:radiation}
 	
-	\textbf{Sensor} & \textbf{Strahlung [$\frac{W}{m^2}$]} & \textbf{Standardabweichung}\\
+	\textbf{Sensor} & \textbf{Strahlung [$\frac{W}{m^2}$]}\\
 	\hline
-	TA GBS & 833,6252 & 2,1081\\
-	SSR81 & 916,4836 & 0,6581\\
-	CM3 & 957,7781 & 1,7451\\
-	CM11 & 964,5125 & 0,4149\\
-	CM11 (diffus) & 68,6927 & 0,1916
+	TA GBS & 833,6252 $\pm$2,1081\\
+	SSR81 & 916,4836 $\pm$0,6581\\
+	CM3 & 957,7781 $\pm$1,7451\\
+	CM11 & 964,5125 $\pm$0,4149\\
+	CM11 (diffus) & 68,6927 $\pm$0,1916
 \end{tabular} 
 \end{center}
 
@@ -71,13 +71,13 @@ Zunächst wurden die Umgebungstemperatur und die Ausgangsspannung des Feuchtesen
 \end{figure}
 
 \begin{center}
-	\begin{tabular}{l|c|c}
+	\begin{tabular}{l|c}
 		\label{tab:amb}
 		
-		\textbf{Messgröße} & \textbf{Mittelwerte} & \textbf{Standardabweichung}\\
+		\textbf{Messgröße} & \textbf{Mittelwerte}\\
 		\hline
-		Umgebungstemperatur & \SI{24,1005}{\celsius} & 0,0434\\
-		Umgebungsluftfeuchte & 5,9791\,V & 0,0284
+		Umgebungstemperatur & \SI{24,1005}{\celsius} $\pm$0,0434\\
+		Umgebungsluftfeuchte & 5,9791\,V $\pm$0,0284
 	\end{tabular}
 \end{center}
 
@@ -92,13 +92,13 @@ Zur Bestimmung der relativen Feuchte wurde eine Kalibriergerade anhand zweier Me
 
 Aus Abbildung \ref{fig:cal} geht hervor, dass die Spannungen nicht konstant gemessen wurden. Für eine genauere Kalibration ist eine längere Verweilzeit über den Salzlösungen nötig. Prinzipiell eignen sich die gewählten Messpunkte gut, da die Luftfeuchte über den verwendeten Lösungen nahezu temperaturunabhängig ist. Die Messkurve des Sensors wird im Versuch als linear betrachtet, über den wahren Verlauf kann keine Aussage getroffen werden. Zur Optimierung müssen daher weitere Messpunkte aufgenommen werden.
 \begin{center}
-	\begin{tabular}{l|c|c|c}
+	\begin{tabular}{l|c|c}
 		\label{tab:cal}
 		
-		\textbf{Kalibrierlösung} & \textbf{Mittelwerte} [V]& \textbf{Standardabweichung} & rel. Feuchte [\%]\\
+		\textbf{Kalibrierlösung} & \textbf{Mittelwerte} [V] & rel. Feuchte [\%]\\
 		\hline
-		LiCl & 1,3298 & 0,0052 & 12\\
-		NaCl & 7,2433 & 0,0056 & 75
+		LiCl & 1,3298 $\pm$0,0052 & 12\\
+		NaCl & 7,2433 $\pm$0,0056 & 75
 	\end{tabular}
 \end{center}
 
@@ -121,6 +121,26 @@ Die relative Feuchte der Umgebungsluft errechnet sich nach Abbildung \ref{fig:ca
 	\label{eq:cal}
 	\varphi(\text{V})=10,65*\SI{5,9791}{\volt}-2,167=\SI{61,51}{\percent}
 \end{equation}
+
+Zur Umrechnung der absoluten Feuchte wird der temperaturabhängige Sättigungspartialdampfdruck des Wassers näherungsweise nach Gleichung \ref{eq:pds} bestimmt. 
+
+\begin{equation}
+	\label{eq:pds}
+	
+	p_{D,S}(\SI{24}{\celsius}) = 611*exp(-1,91275*10^{-4}+7,258*10^{-2}*\SI{24}{\celsius}-2,939*10^{-4}*(\SI{24}{\celsius})^2+9,841*10^{-7}*(\SI{24}{\celsius})^3-1,92*10^{-9}*(\SI{24}{\celsius})^4)=\SI{2982,47}{\pascal}
+	
+\end{equation}
+
+\begin{equation}
+\label{eq:pd}
+p_D=p_{D,S}*\varphi= \SI{2982,47}{\pascal}*\SI{61,51}{\percent}=\SI{1834,52}{\pascal}	
+\end{equation}
+
+\begin{equation}
+	\label{eq:x}
+	x=0,622*\frac{p_D}{p-p_D}=\frac{\SI{1834,52}{\pascal}}{\SI{100000}{\pascal}-\SI{1834,52}{\pascal}}=\SI{0,0116}{\kilogram\per\kilogram}
+\end{equation}
+
 		
 \subsection{Niederschlag}
 Zur Simulation des Niederschlags wurde in drei Durchläufen je \SI{1}{\liter} Wasser in den Auffangtrichter gegossen und die Impulse der Messwippe gezählt. Abbildung \ref{fig:rain} zeigt die aufgenommenen Messdaten. 
@@ -166,3 +186,33 @@ Die normierte Niederschlagshöhe ergibt sich entsprechend Gleichung \ref{eq:rain
 Eine sinnvolle Messung der Luftströmung war aufgrund der ungünstigen Position der Messstation nicht möglich. Daher wird auch bei diesem Versuchsteil auf einen bereitgestellten Dtensatz zurückgegriffen.
 
 \subsubsection{Windrichtung}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{../DATA/Windrichtung.eps}
+	\caption[Windrichtung]{Windrichtung.}
+	\label{fig:winddir}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{../DATA/WinddirCN.eps}
+	\caption[Windrichtung Verteilung]{Windrichtung Verteilung.}
+	\label{fig:winddirCN}
+\end{figure}
+
+\subsubsection{Windgeschwindigkeit}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{../DATA/Windgeschwindigkeit.eps}
+	\caption[Windgeschwindigkeit]{Windgeschwindigkeit.}
+	\label{fig:windspd}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{../DATA/WindspdCN.eps}
+	\caption[Windgeschwindigkeit Verteilung]{Windgeschwindigkeit Verteilung.}
+	\label{fig:windspdCN}
+\end{figure}
