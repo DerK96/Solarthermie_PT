@@ -1,0 +1,160 @@
+%Standard Header
+\documentclass[10pt,a4paper,toc=listof,toc=bibliography]{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[pdftex]{graphicx}
+
+%\usepackage{epstopdf}                            %import .eps (from MATLAB)
+\usepackage{geometry}
+\usepackage{multirow}
+\usepackage{pdfpages}                            %import pdf
+\usepackage{textcomp}                            %degree celsius etc
+\usepackage{gensymb}
+\usepackage[hidelinks]{hyperref}                 %hidelinks removes red boxes from pdf
+\usepackage[style=german, german=quotes]{csquotes}
+\usepackage[backend=biber, style=numeric, citestyle=numeric, sorting=none]{biblatex}
+\usepackage{float}
+
+\usepackage[all,defaultlines=2]{nowidow}		%prevent Witwen and Schusterjungen
+\usepackage{microtype}
+
+\usepackage{color}
+\usepackage{listings}                            %einbinden von Sourcecode
+
+\usepackage{chemfig}
+\usepackage{upgreek}
+\usepackage{chemmacros}
+\usepackage{chemformula}
+
+\addbibresource{../DATA/bibresource.bib}        %Standardpfad für .bib Datei des Projektes
+
+\usepackage{lmodern}
+
+%\KOMAoption{DIV}{12}
+
+%%%% alte Definition:
+%% \DeclareMathSymbol{,}{\mathpunct}{letters}{"3B}
+%%%% neue Definition:
+%%\DeclareMathSymbol{,}{\mathord}{letters}{"3B}       %removes space in mathmode
+\DeclareMathSymbol{*}{\mathbin}{symbols}{"01}
+
+\newcommand{\mlab}{MATLAB}
+%\renewcommand{\figurename}{Abb.}    %for article/report and non KOMA-Classes
+\renewcaptionname{ngerman}{\figurename}{Abb.}
+
+\setlength{\parindent}{0pt}          %keine Einschübe bei neuem Absatz
+
+\addtokomafont{disposition}{\rmfamily} % serifes in headings
+
+%SI-Units and correct spacing according to ISO-31
+\usepackage[range-phrase = \ldots~]{siunitx}
+\sisetup{locale=DE}
+\sisetup{inter-unit-product=\ensuremath{{}*{}}}
+\sisetup{per-mode=symbol}
+%Listings environment for sourcecode
+%\renewcommand{\lstlistlistingname}{Sourcecode}     %name in listof"sourcecode"
+%\renewcommand{\lstlistingname}{Code}            %captionPreName
+
+\lstset{breaklines}
+\lstset{numbers=left}
+\lstset{frame=single}
+%\lstset{language=Matlab}
+\lstset{showstringspaces=false}
+\lstset{ %
+	backgroundcolor=\color{white},   % choose the background color
+	basicstyle=\footnotesize,        % size of fonts used for the code
+	breaklines=true,                 % automatic line breaking only at whitespace
+	captionpos=b,                    % sets the caption-position to bottom
+	commentstyle=\color{olive},      % comment style
+	escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+	keywordstyle=\color{blue},       % keyword style
+	stringstyle=\color{magenta},     % string literal style
+	extendedchars=true,
+	literate={ä}{{\''a}}1 {ö}{{\''o}}1 {ü}{{\''u}}1 {ß}{{\ss}}1,
+	inputencoding=utf8,
+}
+
+% Site-Header with KOMA
+%\usepackage[headsepline]{scrlayer-scrpage}    %headsepline makes line under header
+%\ihead{}        %Inner-Head
+%\ohead{}                    %Outer-Head
+%\pagestyle{scrheadings}                        %activate Headings
+%\setkomafont{pageheadfoot}{\normalsize}        %normal fontsize for headline
+
+\renewcommand{\mkbegdispquote}[2]{\glqq}
+\renewcommand{\mkenddispquote}[2]{\grqq#2}
+\renewcommand{\mkcitation}[1]{ \textsuperscript{[}#1\textsuperscript{]}}  
+
+\hyphenation{}
+\hyphenation{}
+
+\begin{document}
+	\begin{titlepage}
+		
+		\begin{figure}[H]
+			\begin{minipage}{0.5\textwidth}
+				\centering
+				\includegraphics[width=0.8\textwidth]{../DATA/Logo_Uni-Kassel.pdf}
+				%\caption{Kugel mit Stativ}
+				%\label{fig3}
+			\end{minipage}\hfill
+			\begin{minipage}{0.5\textwidth}
+				\centering
+				\includegraphics[width=0.8\textwidth]{../DATA/Logo_solar.png}
+				%\caption{Druckmessbohrung Kugel}
+				%\label{fig4}
+			\end{minipage}
+		\end{figure}
+		
+		\vspace{3cm}
+		
+		\centering
+		{\scshape\LARGE Praktikum Thermische Messtechnik \par}   %Title
+		\vspace{1cm}
+		{\scshape\Large Teil 2: Durchflussmessung \par}
+		\vspace{1.5cm}
+		%	{\huge\bfseries  \par}  %Hauptüberschrift
+		\vspace{2cm}
+		{\Large Lena Völlinger \& Marvin Grosch\par}
+		\vfill
+		
+		% Bottom of the page
+		\begin{large}
+			\begin{tabular}{l l}
+				
+				Praktikumstag: & 07.09.2020 \\
+				Erstabgabe: & 05.10.2020\\
+				Betreuer: & Markus Rusack \& Christoph Schmelzer\\
+				Studiengang: & Master $\text{re}^2$\\
+				Semester: & SoSe 2020\\
+				Matrikelnr.: & 35597894, 35598242\\ 
+			\end{tabular}
+		\end{large}
+		
+	\end{titlepage}
+	
+	\pagenumbering{Roman}
+	
+	\newpage
+	\tableofcontents
+	\listoffigures
+	\newpage
+	
+	\pagenumbering{arabic}
+	
+	\input{sections/01_Einleitung}
+	%\newpage
+	\input{sections/02_Versuchsauswertung}
+	%\input{sections/03_Neuartige_Brennstoffzellenkonzepte}
+	%\newpage
+	%\input{sections/04_Zusammenfassung_und_Ausblick}
+	
+	\newpage
+	%\printbibliography
+	
+	
+\end{document}
