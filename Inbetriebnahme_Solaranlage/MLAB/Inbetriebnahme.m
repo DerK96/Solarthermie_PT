@@ -64,7 +64,7 @@ grid on
 hold on
 yyaxis left
 plot(SolarAnlage.Scan,QdotKoll,'-x')
-ylabel('Momentanleistung Kollektor')
+ylabel('Momentanleistung Kollektor [W]')
 yyaxis right
 plot(SolarAnlage.Scan,etaWahr,'--o')
 xlabel('Scan')
