@@ -51,7 +51,7 @@ Abbildung \ref{fig:temp} zeigt den gemessenen Temperaturverlauf der beiden Senso
 	\label{fig:temp}
 \end{figure}
 
-Zur Bestimmung des Durchflusses wird  die Laufzeit (Zeitlicher Abstand der Flanken beider Verläufe) bestimmt. Dieser ist ABbildung \ref{fig:temp} zu entnehmen.
+Zur Bestimmung des Durchflusses wird  die Laufzeit (Zeitlicher Abstand der Flanken beider Verläufe) bestimmt. Dieser ist Abbildung \ref{fig:temp} zu entnehmen und abzuschätzen.
 
 \begin{center}
 	\begin{tabular}{l|c}
@@ -59,11 +59,10 @@ Zur Bestimmung des Durchflusses wird  die Laufzeit (Zeitlicher Abstand der Flank
 		
 		\textbf{Flanke} & \textbf{Laufzeit} [s]\\
 		\hline
-		steigend & x \\
-		fallend & y \\
+		steigend & 70 
 	\end{tabular}
 \end{center}
-%%%%%% exakte Flankenabstände einsetzen
+
 Für die Auswertung wird die steigende Flanke genutzt, da diese schärfer aufgelöst ist.
 
 Die gemessene Strecke zwischen den beiden Sensoren beträgt \SI{9,48}{\meter}, der Querschnitt der Leitung ist mit \SI{0,02}{\meter} angegeben. Das Volumen der Messstrecke berechnet sich nach Gleichung \ref{eq:vol} zu:
@@ -77,9 +76,9 @@ Der Durchfluss entspricht dem Quotienten aus Rohrvolumen und Laufzeit und ist in
 
 \begin{equation}
 	\label{eq:flow}
-	\dot V = \frac{V_{Rohr}}{t_{LZ}}*\SI{3600}{\second\per\hour} = \frac{\SI{2,978}{\liter}}{\SI{75}{\second}}*\SI{3600}{\second\per\hour} = \SI{142,9}{\liter\per\hour}
+	\dot V = \frac{V_{Rohr}}{t_{LZ}}*\SI{3600}{\second\per\hour} = \frac{\SI{2,978}{\liter}}{\SI{70}{\second}}*\SI{3600}{\second\per\hour} = \SI{153,2}{\liter\per\hour}
 \end{equation}
 
-%%%%%%in Gleichung 2 exakten Abstand FLanke einsetzen und Berechnen
-%%%%%%%Messwert MID vergleichen.
+Der MID hat während der Flankenmessung einen Durchfluss von 234,4 $\pm$4,8\,$\frac{l}{h}$ angezeigt, was 53\,\% über dem experimentell bestimmten Wert liegt. Da es sich bei der Flankenmessung um ein thermisches Messverfahren handelt, ist dieses mit einer gewissen Latenz verbunden. Die Differenz zwischen den gemessenen Flanken sollte ohne diese Einschränkung kürzer ausfallen, wodurch ein höherer Volumenstrom resultiert.
+
 

@@ -43,14 +43,53 @@ Wird das Ventil langsam zugeschraubt, verringert sich bis zu einer Ventilstellun
 
 \subsubsection{Hydraulischer Abgleich durch Ausprobieren und mit Kompensationsmethode }
 
-In dem Versuchsteil hydraulischer Abgleich durch Ausprobieren wurde versucht eine Schaltung von drei parallelen Strängen durch ausprobieren auf die selben Volumenströme zu bringen. Es wurde über das Pumpen- und Bypass-Ventil zunächst ein Volumenstrom von \SI{2000}{\liter\per\hour} bei vollständig geöffneten Strangventilen 1-4 eingestellt. Anschließend wurde der Volumenstrom des obersten Strangventils 1 als Soll-Wert angenommen und die anderen Ventile darauf eingestellt. Es wurden folgende Ventilstellungen und Volumenströme ermittelt. 
+In dem Versuchsteil hydraulischer Abgleich durch Ausprobieren wurde versucht, eine Schaltung von drei parallelen Strängen durch ausprobieren auf die selben Volumenströme zu bringen. Es wurde über das Pumpen- und Bypass-Ventil zunächst ein Volumenstrom von \SI{2000}{\liter\per\hour} bei vollständig geöffneten Strangventilen 1-4 eingestellt. Anschließend wurde der Volumenstrom des obersten Strangventils 1 als Soll-Wert angenommen und die anderen Ventile darauf eingestellt. Es wurden folgende Volumenströme und Ventilstellungen ermittelt:
 
-VERGLEICH der Methoden. 
+\begin{center}
+	\begin{tabular}{c|c|c}
+		\label{tab:ausprobieren}
+		
+		\textbf{Ventil} & \textbf{Volumenstrom}[$\frac{l}{h}$] & \textbf{Ventilstellung nach Abgleich}\\
+		\hline
+		1 & 375 & 3,75\\
+		2 & 610 & 3,25\\
+		3 & 762 & 2,75
+	\end{tabular}
+\end{center}
 
+Bei der Kompensationsmethode wurden alle Strangventile sowie das Partnerventil auf den Wert 1,0 voreingestellt. 
 
-D
+\begin{center}
+	\begin{tabular}{c|c|c|c|c|c|c|c}
+		\label{tab:komp}
+		
+		\textbf{Durchlauf} & \multicolumn{2}{c}{\textbf{Ventil 1}} & \multicolumn{2}{c}{\textbf{Ventil 2}} & \multicolumn{2}{c}{\textbf{Ventil 3}} & \textbf{Partner}\\
+		\hline
+		& \.V [$\frac{l}{h}$] & Pos & \.V [$\frac{l}{h}$] & Pos & \.V [$\frac{l}{h}$] & Pos & Pos\\
+		\hline
+		init & 330 & 1 & 450 & 1 & 700 & 1 & 1\\
+		1 & 300 & 1 & 280 & 0,55 & 605 & 1 & 0,72\\
+		2 & 330 & 1 & 330 & 0,68 & NaN & 1 & 0,8\\
+		3 & 330 & 1 & 330 & 0,68 & 330 & 0,42 & 0,6
+	
+	\end{tabular}
+\end{center}
 
+Im letzten Schritt wurde der Eingangdruck reduziert um zu sehen, ob der hydraulische Abgleich auch bei schwankenden Eingangsvolumenströmen funktioniert. Dieser ist durch das Verstellen der Ventile ohnehin bereits auf \SI{900}{\liter\per\hour} gesunken.
 
+\begin{center}
+	\begin{tabular}{c|c|c|c}
+		\label{tab:komp2}
+		
+		\textbf{\.V\textsubscript{Pumpe}}[$\frac{l}{h}$] & \textbf{\.V\textsubscript{1}}[$\frac{l}{h}$] & \textbf{\.V\textsubscript{2}}[$\frac{l}{h}$] & \textbf{\.V\textsubscript{3}}[$\frac{l}{h}$]\\
+		\hline
+		800 & 270 & 205 & 260\\
+		700 & 234 & 230 & 223\\
+		600 & 205 & 200 & 190\\
+	\end{tabular}
+\end{center}
+
+Bei der Reduktion des Eingangsvolumenstroms versagt der hydraulische Abgleich nach der hier angewandten Methodik. In der Praxis wird daher der Druckverlust anstelle des Volumenstroms am Ventil als Referenzgröße genutzt. Bei der Methode durch Ausprobieren wurden die optimalen Einstellungen durch immer kleiner werdende Änderungen der Ventilstellungen ermittelt. Diese Methode ist generell nicht praxistauglich, da sie zu viele iterative Schritte benötigt und schlichtweg zu viel Zeit beansprucht.
 
 \subsubsection{Tichelmannschaltung}
 
