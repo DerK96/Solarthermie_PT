@@ -4,13 +4,13 @@ clc;
 clear;
 close all;
 %% Import Data
-d.h060 = importfile('../DATA/060l-h_07.09.2020 16_15_40.csv');
-d.h120 = importfile('../DATA/120l-h_07.09.2020 16_27_41.csv');
-d.h240 = importfile('../DATA/240l-h_07.09.2020 16_35_40.csv');
-d.h360 = importfile('../DATA/360l-h_07.09.2020 16_42_15.csv');
-d.h480 = importfile('../DATA/480l-h_07.09.2020 16_47_24.csv');
-d.h660 = importfile('../DATA/660l-h_07.09.2020 16_53_33.csv');
-tData = importfile('../DATA/Versuch2_Temperatur_07.09.2020 16_59_22.csv');
+d.h060 = importfile('../DATA/bak/060l-h_07.09.2020 16_15_40.csv');
+d.h120 = importfile('../DATA/bak/120l-h_07.09.2020 16_27_41.csv');
+d.h240 = importfile('../DATA/bak/240l-h_07.09.2020 16_35_40.csv');
+d.h360 = importfile('../DATA/bak/360l-h_07.09.2020 16_42_15.csv');
+d.h480 = importfile('../DATA/bak/480l-h_07.09.2020 16_47_24.csv');
+d.h660 = importfile('../DATA/bak/660l-h_07.09.2020 16_53_33.csv');
+tData = importfile('../DATA/bak/Versuch2_Temperatur_07.09.2020 16_59_22.csv');
 %% Process Data
 Sensor = [3 5 7 9 11 13 15];
 sNames = fieldnames(d);
