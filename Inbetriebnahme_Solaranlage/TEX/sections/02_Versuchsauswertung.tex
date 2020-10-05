@@ -27,15 +27,43 @@ Das Flüssigkeitsvolumen des Solarkreises setzt sich aus den Volumen des Kollekt
 
 $V_u$ unter den angegebenen Bedingung folgenden Wert an:
 
-
-\begin{equation}
+\begin{equation*}
 	\label{MAG-Ber.}
 	\begin{aligned}
-	V_u= {} &((\SI{1,35}{\liter}+\SI{15}{\metre}*\SI{0,1771}{\liter\per\metre}+\SI{15}{\metre}*\SI{0,2641}{\liter\per\metre}+\SI{2}{\metre}*\SI{0,3941}{\liter\per\metre}+ 0,3*\SI{6,6180}{\liter})\\ &*\SI{74}{*10^-5\per\kelvin}*\SI{100}{\kelvin} + \SI{1,35}{\liter} + \SI{5}{\liter}) *\frac{(\SI{5,4}{\bar} + 1)}{(\SI{5,4}{\bar}-\SI{1,58}{\bar})}= \SI{6,35}{\liter} * 1,68 = \SI{10,64}{\liter}
+	V_u=  \SI{10,64}{\liter}
 	\end{aligned}
-\end{equation}
+\end{equation*}
 
 \subsubsection{Anlagenleistung}
+
+In der folgenden Abbildung sind die Einstrahlungwerte über den gesamten Messzeitraum von ca. \SI{30}{\minute} für die Standard-Versuchsanlage abgebildet. 
+Die Einstrahlungswerte liegen grundsätzlich unter der Randbedingung von mind. \SI{800}{\watt\per\meter\squared} bei denen die Leistungsparameter bestimmt wurden. Aufgrund der extrem großen Varianz der Messwerte, die zu keinem Zeitpunkt der Messzeit ansatzweise konstant geworden sind, ist die Berechnung eines Einstrahlungsmittelwertes nicht möglich. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[height=0.3\textheight]{../DATA/DataEinstrahlung.eps}
+	\caption[Gemessene Einstrahlung während der Betiebsdauer der Standard Versuchsanlage]{Gemessene Einstrahlung während der Betiebsdauer der Standard Versuchsanlage.}
+	\label{fig:Einstrahlung}
+\end{figure}
+
+Es wurde im folgenden die momentane Kollektorleistung und der momentane Anlagenwirkungsgrad abgebildet. 
+Die momentane Kollektorleistung wurde nach Gleichung 2.4 des Praktikumsskripts berechnet. Der Anlagenwirkungsgrad wurden nach Gleichung 2.2 des Praktikumsskripts ermittelt. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[height=0.3\textheight]{../DATA/LeistungTime.eps}
+	\caption[Auftragung der Momentanleistung des Kollektors und des Momentanen Anlagenwirkungsgerades]{Auftragung der Momentanleistung des Kollektors und des Momentanen Anlagenwirkungsgerades.}
+	\label{fig:Momentanleistung}
+\end{figure}
+
+Die theoretische Kennlinie des Kollektors wurde anhand der im Praktikumskript angegebenen Daten für den Kollektor für Einstrahlungen von \SI{1000}{\watt\per\meter\squared}, \SI{800}{\watt\per\meter\squared} und \SI{600}{\watt\per\meter\squared} (schon unterhalb für die ermittelten Leistungsparameter benötigte Einstrahlung) berechnet und in Abb
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[height=0.3\textheight]{../DATA/KennlinieTheo.eps}
+	\caption[Theoretische Kennlinie des verwendeten Kollektors für Einstrahlwerte von von \SI{1000}{\watt\per\meter\squared}, \SI{800}{\watt\per\meter\squared} und \SI{600}{\watt\per\meter\squared}]{Theoretische Kennlinie des verwendeten Kollektors für Einstrahlwerte von von \SI{1000}{\watt\per\meter\squared}, \SI{800}{\watt\per\meter\squared} und \SI{600}{\watt\per\meter\squared}}
+	\label{fig:KennKoll}
+\end{figure}
 
 \subsubsection{Fragestellungen}
 
@@ -86,7 +114,7 @@ Um eine entleerte Drainback-Anlage zu befüllen muss eine bestimmte Pumpenleistu
 
 Für den Versuch wurden drei Proben des Wärmeträgerfluid Wasser-Propylenglykol mit Hilfe eines Refraktometers untersucht. Das Refraktometer wurde mit destilliertem Wasser gereinigt und kalibriert. Anschließend wurden jeweils wenige Tropfen der Proben 1-3 auf die Probenträgerfläche gegeben und gegen das Licht gehalten. Über die Messskala konnten dann die Konzentration und der Gefrierpunkt der Mischung abgelesen werden. Es wurden folgende Beobachtungen gemacht:
 
-	\begin{table}[H]
+\begin{table}[H]
 	\caption{Mittels Refraktormeter ermittelte Glykolkonzentration und Gefrierpunkte der Wärmeübertragerfluidproben.}
 	\centering
 	\begin{tabular}{lcc}

@@ -4,7 +4,7 @@
 
 \subsubsection{Fixpunktkalibrations an der Wassertripelpunktzelle}
 
-Zunächst wurde der Pt-100 (Vierleiterschaltung) Referenzsensor anhand der Wassertripelzelle (Tripelpunkt bei \SI{0,01}{\celsius} und \SI{6,1}{\milli\bar}) mittels Fixpunktkalibration kalibriert. In der folgenden Abbildung \ref{fig:Fixpunkt} wird der Temperaturverlauf in Abhängigkeit der Zeit (die Scanrate beträgt \SI{1}{\sec}) für den Pt-100 Sensor abgebildet. 
+Zunächst wurde der Pt-100 (Vierleiterschaltung) Referenzsensor anhand der Wassertripelzelle (Tripelpunkt bei \SI{0,01}{\celsius} und \SI{6,1}{\milli\bar}) mittels Fixpunktkalibration kalibriert. In der folgenden Abbildung \ref{fig:Fixpunkt} wird der Temperaturverlauf in Abhängigkeit der Zeit (die Scanrate beträgt \SI{1}{\second}) für den Pt-100 Sensor abgebildet. 
 
 \begin{figure}[H]
 	\centering
@@ -32,7 +32,7 @@ Im folgenden wurden mit dem ermittelten Offset des Referenzsensors dessen Messwe
 
 \subsubsection{Vergleichskalibration der Sensoren}
 
-Die Vergleichskalibration der unterschiedlichen Sensoren erfolgte in einem Temperaturbereich von \SI{0}{\celsius} bis \SI{80}{\celsius}, für die Messungen wurden über den Pt100 4L die Temperaturen \SI{0}{\celsius}, \SI{20}{\celsius}, \SI{40}{\celsius} und \SI{80}{\celsius} ausgewählt und über den Metallblockkalibrator eingestellt. In der folgenden Abbildung \ref{fig:Widerstand} sind die Widerstände der einzelnen Temperatursensoren gegen die ausgewählten Temperaturmesspunkt aufgetragen. 
+Die Vergleichskalibration der unterschiedlichen Sensoren erfolgte in einem Temperaturbereich von \SI{0}{\celsius} bis \SI{80}{\celsius}, für die Messungen wurden über den Pt100 4L die Temperaturen \SI{0}{\celsius}, \SI{20}{\celsius}, \SI{40}{\celsius} und \SI{80}{\celsius} ausgewählt und über den Metallblockkalibrator eingestellt. In der folgenden Abbildung \ref{fig:Widerstand} sind die Widerstände der einzelnen Temperatursensoren gegen die ausgewählten Temperaturen aufgetragen. 
 
 \begin{figure}[H]
 	\centering
@@ -41,11 +41,12 @@ Die Vergleichskalibration der unterschiedlichen Sensoren erfolgte in einem Tempe
 	\label{fig:Widerstand}
 \end{figure}
 
+In der folgenden Tabelle werden die Regressionsfunktion der verschiedenen Fits aufgelistet. 
 \begin{table}[H]
 	\centering
 	\caption{Fitfunktionen der Temperatursensoren.}
 	\label{tab:FitFun}
-	\begin{tabular}{ccS[separate-uncertainty,table-figures-uncertainty = 1]S[separate-uncertainty,table-figures-uncertainty = 1]S}
+	\begin{tabular}{ccS[separate-uncertainty,table-parse-only,table-figures-uncertainty = 1]S[separate-uncertainty,table-parse-only,table-figures-uncertainty = 1]S}
 		
 		Sensortyp & Regressionsfunktion & {Koeff $a$} & {Koeff $b$} & {$R^2$} \\
 		
@@ -58,14 +59,14 @@ Die Vergleichskalibration der unterschiedlichen Sensoren erfolgte in einem Tempe
 	\end{tabular} 
 \end{table}
 
-Die Temperatursensoren Pt100 4L, Pt100 2L, Pt1000 und KTC zeigen lineare Widerstandsverläufe positiver Steigung bei Erhöhung der Temperatur. Das Kaltleiter-Thermometer (NTC-negative temperature coeffizient) zeigt aufgrund seines negativen Temperaturkoeffizienten ein exponentiell abfallendes Verhalten. 
+Die Temperatursensoren Pt100 4L, Pt100 2L, Pt1000 und KTC zeigen lineare Widerstandsverläufe positiver Steigung bei Erhöhung der Temperatur. Das Heißleiter-Thermometer (NTC-negative temperature coeffizient) zeigt aufgrund seines negativen Temperaturkoeffizienten ein exponentiell abfallendes Verhalten. 
 
 \subsubsection{Vergleich von Pt100 4L und Pt100 2L}
 
 Bei der Messung wurden unter anderem ein Pt100 in Vierleiterschaltung und ein Pt100 in Zweileiterschaltung verwendet. Die beiden Thermometer unterscheiden sich in ihrer Anschlussart. Bei Widerstandsthermometern wird die Messgenauigkeit durch den Leitungswiderstand der Kabel stark beeinflusst wird (dieser wird mit zunehmender Kabellänge größer). Bei einem Pt 100 der Klasse B können pro Meter Leitungslänge ungefähr \SI{0,4}{\kelvin} Messfehler berechnet werden. Eine höhere Genauigkeitsklasse des Thermometer könnte an dieser Stelle keine Verbesserung der Messung hervorrufen, da der größere Messfehler durch das Anschlusskabel entsteht. 
 Dieser Fehler wird bei Drei- oder Vierleiterschaltungen durch eine andere Verdrahtung im Anschluss kompensiert. Bei der Vierleiterschaltung werden zwei zusätzliche Leiter an Messwiderstand und Messgerät angeschlossen. Dadurch werden zwei weitere Messkreise geschlossen, mit denen der Leitungswiderstand des Anschlusskabels doppelt ermittelt wird. Der Eigenwiderstand der Leitung kann dadurch berechnet und kompensiert werden.
 
-Die folgende Abbildung \ref{2L4L} zeigt die Messung der beiden Pt100 Temperatursensoren in Zwei- und Vierleiterschaltung mit gleicher Kabellänge im Vergleich. Die Kennlinie des Pt100 in Zweileiterschaltung (unkompensiert) liegt infolge des zuvor beschriebenen Phänomens höher, als die des Pt100 in Vierleiterschaltung. 
+Die folgende Abbildung \ref{fig:2L4L} zeigt die Messung der beiden Pt100 Temperatursensoren in Zwei- und Vierleiterschaltung mit gleicher Kabellänge im Vergleich. Die Kennlinie des Pt100 in Zweileiterschaltung (unkompensiert) liegt infolge des zuvor beschriebenen Phänomens höher, als die des Pt100 in Vierleiterschaltung. 
 
 \begin{figure}[H]
 	\centering
@@ -97,7 +98,7 @@ l_{Kabel}= \frac{\Delta R*A_{Quer}}{\rho}=\frac{\SI{0,7071}{\ohm}*\SI{0,1}{\mill
 
 \begin{center}
 	\begin{small}
-		$l_Kabel$: Länge des Anschlusskabels des Temperatursensors des Pt100,
+		$l_{Kabel}$: Länge des Anschlusskabels des Temperatursensors des Pt100,
 		$\Delta R$: gemittelte Differenz der Widerstandswerte des Pt100 4L und Pt100 2L,
 		$A_{Quer}$: Querschnittfläche des Kabels,
 		$\rho$: spezifischer Widerstand einer Ader des Kabels.
@@ -110,19 +111,24 @@ Die berechnete Kabellänge für den Anschluss beträgt \SI{2,5}{\meter}.
 
 Bei dem Versuch wurde unter Anderem ein Thermoelement vermessen. In der folgenden Abbildung \ref{fig:Spannung} ist der Spannungsverlauf des Thermoelements in Abhängigkeit der Temperatur im Bereich von \SI{0}{\celsius} bis \SI{80}{\celsius} aufgetragen. Es wurde für den Zusammenhang folgende Regressionsfunktion ermittelt:
 	
-Spannung
-Linear model Poly1:
-ans(x) = p1*x + p2
-Coefficients (with 95% confidence bounds):
-p1 =   3.997e-05  (3.847e-05, 4.146e-05)
-p2 =   -0.001066  (-0.001134, -0.000998)
-[12:56]
-sse: 8.9109e-10
-rsquare: 0.9998
-dfe: 2
-adjrsquare: 0.9998
-rmse: 2.1108e-05
-
+Lineare Regressionsfunktion der Spannung:
+\begin{equation*}
+\label{eq:Spannung}
+U(T)= 3,997*10^5*T-0,001066
+\end{equation*}
+\begin{equation*}
+R^2=0,9998
+\end{equation*}
+%U(T) = 3,995*x + p2
+%Coefficients (with 95% confidence bounds):
+%p1 =   3.997e-05  (3.847e-05, 4.146e-05)
+%p2 =   -0.001066  (-0.001134, -0.000998)
+%[12:56]
+%sse: 8.9109e-10
+%rsquare: 0.9998
+%dfe: 2
+%adjrsquare: 0.9998
+%rmse: 2.1108e-05
 \begin{figure}[H]
 	\centering
 	\includegraphics[height=0.3\textheight]{../MLAB/Spannung.eps}
@@ -134,7 +140,7 @@ rmse: 2.1108e-05
 
 Die verschiedenen Temperatursensoren finden im Alltag und der Technik verschiedenste Anwendungsfelder und decken damit individuell optimal verschiedenste Anforderungen ab. 
 
-NTC zeichnen sich durch ihren negativen Temperaturkoeffizienten aus. Ihr Widerstand sinkt bei steigender Temperatur ab. Sie finden häuftig Anwendung in der Medizintechnik, beispielsweise in Dialysegeräten, DNA-Sequenzierern und Blutanalysegeräten und könen auch noch optimal in Temperaturbereichen bis \SI{-150}{\celsius} betrieben werden. Sie finden zusätzlich Anwendung in Küchenherden oder Haushaltsgeräten oder bei der Regelung von Akkutemperaturen für Elektroautos. 
+NTCs zeichnen sich durch ihren negativen Temperaturkoeffizienten aus. Ihr Widerstand sinkt bei steigender Temperatur. Sie finden häufig Anwendung in der Medizintechnik, beispielsweise in Dialysegeräten, DNA-Sequenzierern und Blutanalysegeräten und können auch noch optimal in Temperaturbereichen bis zu \SI{-150}{\celsius} betrieben werden. Sie finden zusätzlich Anwendung in Küchenherden oder Haushaltsgeräten oder bei der Regelung von Akkutemperaturen für Elektroautos. 
 
 Thermoelemente zeichnen sich in der Anwendung bei extremen Temperaturen und Umweltbedingungen aus. Sie können häufig Temperaturen von bis zu \SI{1700}{\celsius} betrieben werden. 
 
@@ -156,22 +162,22 @@ Sensor 6: Pt100 4L\\
 
 \subsection{Teil III: Wärmebildkamera}
 
-Für den Versuch Wärmebildkamera wurde die verschiedenen Probenplatten (s. Abb. \ref{fig:VersuchsaufbauWBK}) in dem temperierten Wasserbad mit der Einstellung von \SI{60}{\celsius} mittels einer Wärmebildkamera des Typs E60 der Firma FLIR verwendet. Für die Wärmebildkamera muss vor der Messung ein Emissgrad eingestellt werden. Hierfür wurde ein Emissionsgrad von $\epsilon=0,95$ gewählt. Die Wärmebildkamera kann bei korrekter Benutzung die Temperatur auf eine Genauigkeit von $\Delta_T = \pm \SI{2}{\celsius}$ ermitteln.
+Für den Versuch Wärmebildkamera wurde die verschiedenen Probenplatten (s. Abb. \ref{fig:VersuchsaufbauWBK}) in dem temperierten Wasserbad mit der Einstellung von \SI{60}{\celsius} mittels einer Wärmebildkamera des Typs E60 der Firma FLIR verwendet. Für die Wärmebildkamera muss vor der Messung ein Emissionsgrad eingestellt werden. Hierfür wurde ein Emissionsgrad von $\epsilon=0,95$ gewählt, der den Punkten auf den Proben entspricht. Die Wärmebildkamera kann bei korrekter Benutzung die Temperatur auf eine Genauigkeit von $\Delta T = \pm \SI{2}{\celsius}$ ermitteln.
 
 Die rechte Abbildung zeigt beispielhaft ein Foto der Wärmebildkamera mit allen Probenmaterialien. 
 
 \begin{figure}[H]
 	\begin{minipage}{0.5\textwidth}
 		\centering
-		\includegraphics[width=0.8\textwidth]{../FLIR_100/FLIR2240.jpg}
-		\caption[Versuchsaufbau Wärmebildkamera]{Versuchsaufbau Wärmebildkamera: Die unterschiedlichen Probenplatten wurden im selben Wärmebad mit \SI{60,0}{\celsius} temperiert.}
+		\includegraphics[width=0.5\textwidth]{../FLIR_100/FLIR2240.jpg}
+		\caption{\textwidth}{Versuchsaufbau Wärmebildkamera: Die unterschiedlichen Probenplatten wurden im selben Wärmebad mit \SI{60,0}{\celsius} temperiert.}
 		\label{fig:VersuchsaufbauWBK}
-	\end{minipage}\hfill
+	\end{minipage}
 	\begin{minipage}{0.5\textwidth}
 		\centering
-		\includegraphics[width=0.6\textwidth]{../FLIR_100/FLIR2241.jpg}
-		\caption[Foto der Wärmebildkamera über alle Probenplatten]{Foto der Wärmebildkamera über alle Probenplatten bei gleicher Temperatur.}
-		\label{fig:VersuchsaufbauWBK}
+		\includegraphics[width=0.5\textwidth]{../FLIR_100/FLIR2241.jpg}
+		\caption{\textwidth}{Foto der Wärmebildkamera über alle Probenplatten bei gleicher Temperatur.}
+		\label{fig:FotoWBK}
 	\end{minipage}
 \end{figure}
 
@@ -219,5 +225,29 @@ Es wurden folgende Beobachtungen gemacht:
 
 Die mit dem Messfühler ermittelte Temperatur der Proben wird im folgenden als die wahre Temperatur angenommen. Über die mit der Wärmebildkamera ermittelte Temperatur und der Angabe der Umgebungstemperatur, kann über folgende Formel der Emissionsgrad des jeweiligen Materials bestimmt werden. 
 
-KACKFormel umstellen!!!!
-und Emissionsgrade berechnen! 
+\begin{equation}\label{\epsilon}
+\epsilon=\frac{T_A^4-T_U^4}{T_M^4-T_U^4}
+\end{equation}
+
+\begin{center}
+	\begin{small}
+		$\epsilon$: Emissionsgrad\\
+		$T_A$: angezeigte Temperatur\\
+		$T_U$: Umgebungstemperatur\\
+		$T_M$: Messobjekttemperatur\\
+	\end{small}
+\end{center}
+
+In der folgenden Tabelle sind die nach Gleichung \ref{epsilon} berechneten Emissionsgrade angegeben. 
+
+\begin{table}[]
+	\begin{tabular}{cc}
+		& \textbackslash{}epsilon   \\
+		Probe 1 &                         \\
+		Probe 2 &                          \\
+		Probe 3 &                         \\
+		Probe 4& \\
+		Probe 5& \\
+		Probe 6& \\
+	\end{tabular}
+\end{table}
