@@ -16,7 +16,7 @@ WTsekAus = d.SpeicherA.T_WT_sek_ausC;
 WTprimEin = d.SpeicherA.T_WT_prim_einC;
 
 
-namesa = {'sek Ein','prim Aus','sek Aus','prim Ein'};
+namesa = {'sek Ein','prim Aus','sek Aus','Vblau','prim Ein'};
 figure
 hold on
 grid on
@@ -122,6 +122,7 @@ xlabel('Scan [5s]');
 ylabel('Temperatur [$^{\circ}C$]');
 legend(namesb,'location','best');
 run plotsettings.m
+print('../DATA/RohrWT_B.eps','-depsc');
 hold off
 
 %ab Scan 200 Konstanter Bereich

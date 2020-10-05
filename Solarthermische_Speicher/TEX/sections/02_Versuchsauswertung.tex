@@ -81,5 +81,49 @@ Zunächst wurde erhitztes Wasser bis zur \SI{30}{\liter} Markierung des Speicher
 
 \subsection{Speicher B}
 \subsubsection{UA-Wert Rohrbündel}
-Bei der Ermittlung des UA-Wertes wird analog zum vorherigen Versuchsteil vorgegangen. Da das Steigrohr fast den  Boden des Speichers berührt, wird dieses als Sekundärseite des Wärmeübertragers betrachtet. Der unterste Messpunkt der Temperaturlanze dient als Einlass ($T_{sek,ein}$), der am oberen Ende des Steigrohres montierte Temperaturfühler als Auslass ($T_{sek,aus}$). Der blaue MID erfasst den Volumenstrom im Steigrohr, welcher nach Abzug des gegebenen Messfehlers 
+Bei der Ermittlung des UA-Wertes wird analog zum vorherigen Versuchsteil vorgegangen. Da das Steigrohr fast den  Boden des Speichers berührt, wird dieses als Sekundärseite des Wärmeübertragers betrachtet. Der unterste Messpunkt der Temperaturlanze dient als Einlass ($T_{sek,ein}$), der am oberen Ende des Steigrohres montierte Temperaturfühler als Auslass ($T_{sek,aus}$). Abbildung \ref{fig:intWT} zeigt den Messverlauf der beschriebenen Größen. Zur Berechnung wurden die letzten 50 Scans gemittelt.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{../DATA/RohrWT_B.eps}
+	\caption[Temperaturverläufe des Rohr-WÜT]{Temperaturverläufe des Rohr-WÜT}
+	\label{fig:intWT}
+\end{figure}
+
+Der blaue MID erfasst den Volumenstrom im Steigrohr, welcher nach Abzug des gegebenen Messfehlers \SI{0,1175}{\cubic\meter\per\hour} beträgt. Die Temperaturen sind in folgender Tabelle zusammengefasst.
+\begin{center}
+	\begin{tabular}{l|c}
+		\label{tab:intWT}
+		
+		\textbf{Messwert} & \textbf{Mittelwert} [${\celsius}$] \\
+		\hline
+		$T_{sek,ein}$ & 26,6349 $\pm$0,2263\\
+		$T_{sek,aus}$ & 44,4749 $\pm$0,1786\\
+		$T_{prim,ein}$ & 58,2179 $\pm$0,3096\\
+		$T_{prim,aus}$ & 28,7390 $\pm$0,1990\\
+		
+	\end{tabular}
+\end{center}
+
+Die Berechnung nach Gleichung \ref{eq:UAext} ergibt einen UA-Wert von
+
+\begin{equation}
+	\label{eq:UAint}
+	UA_{WÜT} = \frac{\SI{4032,8}{\watt}}{\SI{6.2019}{\kelvin}} = \SI{650,3}{\watt\per\kelvin}
+\end{equation}
+
+\subsubsection{Volumenstrom Steigrohr}
+Neben der Messung mittels MID kann der Volumenstrom im Steigrohr auch über die sekundärseitige Energiebilanz des Wärmeübertragers bestimmt werden. Umstellen von Gleichung \ref{eq:QextWT} und Einsetzen der Temperaturen und des Wärmestroms aus Gleichung \ref{eq:UAint} ergibt
+
+\begin{equation}
+	\label{eq:Vdot}
+	\dot V_{Rohr}  =\frac{\dot Q_{WÜT}}{\rho_{w} *  * c_{p,w} * (T_{sek,aus}-T_{sek,ein})}  = \SI{0,194}{\cubic\meter\per\hour}
+\end{equation}
+
+Der berechnete Wert liegt 65\% über dem ausgegebenen Wert des MID. Grund dafür könnte das stark vereinfachte Modell zur Beschreibung des Wärmeübertragers sein. Die Temperatur der Sekundärseite wurde lediglich anhand der Messlanze geschätzt und komplexere Strömungseffekte im und am Steigrohr wurden vernachlässigt.
+
+%%%%Berechnung delta p drive und umrechnung auf Volumenstrom
+
+Die thermosiphonische Strömung kommt zum Erliegen, wenn sich die Temperatur (und somit die Dichte) innerhalb und außerhalb des Steigrohres angleicht. In diesem Fall gilt für die antreibende Druckdifferenz $\Delta p_{drive}=0$.  
+
 
