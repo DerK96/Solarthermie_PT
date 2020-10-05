@@ -96,7 +96,8 @@ plot(t1,Lanze6,t1,Lanze12,t1,Lanze18,t1,Lanze24,t1,Lanze30,t1,Lanze36,t1,Lanze42
 plot(t1,Lanze66,t1,Lanze72,t1,Lanze78,t1,Lanze84,t1,Lanze90,t1,Lanze96,t1,Lanze102,t1,Lanze108,t1,Lanze114,t1,Lanze120)
 xlabel('Scan [5s]')
 ylabel('Temperatur [$^{\circ}C$]')
-legend(fnlanzen(25:2:63),'location','bestoutside','Orientation','horizontal')
+fleg = legend(fnlanzen(25:2:63),'location','southoutside');
+fleg.NumColumns = 3;
 run plotsettings.m
 hold off
 print('../DATA/SpA_Lanzen.eps','-depsc')

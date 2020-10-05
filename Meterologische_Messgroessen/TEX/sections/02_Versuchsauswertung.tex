@@ -23,7 +23,7 @@ Der Schattenring des Pyranometers zur Messung der Diffusstrahlung wurde nach Tab
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{../DATA/Messreihe_Strahlung.eps}
+	\includegraphics[width=0.7\textwidth]{../DATA/Messreihe_Strahlung.eps}
 	\caption[Messreihe zur Bestimmung der Solarstrahlung]{Messreihe zur Bestimmung der Solarstrahlung}
 	\label{fig:radiation}
 \end{figure}
@@ -55,7 +55,7 @@ Aus dem Datensatz geht hervor, dass die Halbleitersensoren verglichen mit den Py
 Wie im vorherigen Teil der Auswertung wurden bereitgestellte Daten verwendet. Die Messreihe ist in Abbildung \ref{fig:response} gezeigt.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{../DATA/Messreihe_Ansprechzeit.eps}
+	\includegraphics[width=0.7\textwidth]{../DATA/Messreihe_Ansprechzeit.eps}
 	\caption[Messreihe zur Bestimmung des Ansprechverhaltens.]{Messreihe zur Bestimmung des Ansprechverhaltens.}
 	\label{fig:response}
 \end{figure}
@@ -65,7 +65,7 @@ Zunächst wurden die Umgebungstemperatur und die Ausgangsspannung des Feuchtesen
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{../DATA/Messreihe_Umgebung.eps}
+	\includegraphics[width=0.7\textwidth]{../DATA/Messreihe_Umgebung.eps}
 	\caption[Messreihe Umgebung]{Messreihe zur Bestimmung der Umgebungstemperatur und -luftfeuchte.}
 	\label{fig:amb}
 \end{figure}
@@ -85,7 +85,7 @@ Zur Bestimmung der relativen Feuchte wurde eine Kalibriergerade anhand zweier Me
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{../DATA/Messreihe_Feuchtekalibration.eps}
+	\includegraphics[width=0.7\textwidth]{../DATA/Messreihe_Feuchtekalibration.eps}
 	\caption[Kalibrationsmessung]{Kalibrationsmessung anhand zweier Salzlösungen. Zum Zeitpunkt t=1500s wurde der Sensor von der NaCl-Lösung über die LiCl-Lösung überführt.}
 	\label{fig:cal}
 \end{figure}
@@ -126,9 +126,7 @@ Zur Umrechnung der absoluten Feuchte wird der temperaturabhängige Sättigungspa
 
 \begin{equation}
 	\label{eq:pds}
-	
 	p_{D,S}(\SI{24}{\celsius}) = 611*exp(-1,91275*10^{-4}+7,258*10^{-2}*\SI{24}{\celsius}-2,939*10^{-4}*(\SI{24}{\celsius})^2+9,841*10^{-7}*(\SI{24}{\celsius})^3-1,92*10^{-9}*(\SI{24}{\celsius})^4)=\SI{2982,47}{\pascal}
-	
 \end{equation}
 
 \begin{equation}
@@ -147,7 +145,7 @@ Zur Simulation des Niederschlags wurde in drei Durchläufen je \SI{1}{\liter} Wa
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{../DATA/Messreihe_Niederschlag.eps}
+	\includegraphics[width=0.7\textwidth]{../DATA/Messreihe_Niederschlag.eps}
 	\caption[Datenerfassung zur Niederschlagsbestimmung]{Datenerfassung zur Niederschlagsbestimmung.}
 	\label{fig:cal2}
 \end{figure}
@@ -166,7 +164,7 @@ Die Impulszahl entspricht jeweils der Differenz des Ordinatenabschnittes zwische
  	\end{tabular}
  \end{center}
 
-Das Messergebnis ist in erster Linie vom zufließenden Volumenstrom abhängig. Bei geringerem Zufluss wird Wippe  langsam an ihren Kipppunkt gebracht, während sie bei höheren Zuflussraten durch den Impuls des Fluids schon vor der vollständigen Befüllung kippt. Dieser Trend ist in Tabelle \ref{tab:rain} zu sehen. Das Volumen pro Impuls ist bei Messung 2 am geringsten, der bilanzielle Volumenstrom am größten. Die Messmethode ist daher tendenziell für die Messung bei leichten Regenschauern geeignet. Bei Starkregen versagt sie.
+Das Messergebnis ist in erster Linie vom zufließenden Volumenstrom abhängig. Bei geringerem Zufluss wird Wippe  langsam an ihren Kipppunkt gebracht, während sie bei höheren Zuflussraten durch den Impuls des Fluids schon vor der vollständigen Befüllung kippt. Dieser Trend ist in Tabelle \ref{tab:rain} zu sehen. Das Volumen pro Impuls ist bei Messung 2 am geringsten, der bilanzielle Volumenstrom am größten. Die Messmethode ist daher tendenziell für die Messung bei leichten Regenschauern geeignet. Bei Starkregen versagt sie. Das Volumen einer Kippwaage ist mit \SI{2}{\cubic\centi\meter} angegeben. Somit enspricht das getestete Volumen von einem Liter in der Theorie 500 Impulsen. 
 
 Für die Bestimmung der Niederschlagshöhe wird zunächst nach Gleichung \ref{eq:rain} die Tricherfläche bestimmt:
 
@@ -183,36 +181,37 @@ Die normierte Niederschlagshöhe ergibt sich entsprechend Gleichung \ref{eq:rain
 \end{equation}
 
 \subsection{Windmessung}
-Eine sinnvolle Messung der Luftströmung war aufgrund der ungünstigen Position der Messstation nicht möglich. Daher wird auch bei diesem Versuchsteil auf einen bereitgestellten Dtensatz zurückgegriffen.
+Eine sinnvolle Messung der Luftströmung war aufgrund der ungünstigen Position der Messstation nicht möglich. Daher wird auch bei diesem Versuchsteil auf einen bereitgestellten Datensatz zurückgegriffen.
 
 \subsubsection{Windrichtung}
 
+Zunächst ist die Aufnahme der Windrichtung in Abbildung \ref{fig:winddir} gezeigt. Ohne weitere Datenaufarbeitung ist der Datensatz kaum interpretierbar. Die statistische Verteilung in Abbildung \ref{fig:winddirCN} dargestellt.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{../DATA/Windrichtung.eps}
+	\includegraphics[width=0.7\textwidth]{../DATA/Windrichtung.eps}
 	\caption[Windrichtung]{Windrichtung.}
 	\label{fig:winddir}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{../DATA/WinddirCN.eps}
+	\includegraphics[width=0.7\textwidth]{../DATA/WinddirCN.eps}
 	\caption[Windrichtung Verteilung]{Windrichtung Verteilung.}
 	\label{fig:winddirCN}
 \end{figure}
-
+Am Häufigsten wehte der Wind aus SWS mit einem Anteil von 0,18. Davon ausgehend ist eine abnehmende Verteilung gegen den Uhrzeigersinn bis NO zu sehen, im Uhrzeigersinn bis WNW. windrichtung der Klasse 8 (NWN) wurde nie gemessen.
 \subsubsection{Windgeschwindigkeit}
-
+Die Windgeschwindigkeit kann bereits anhand der Rohdaten (vgl. Abbildung \ref{fig:windspd}) interpretiert werden. Zu großen Anteilen betrug die Windgeschwindigkeit zwischen 0 und \SI{1}{\meter\per\second}. Zwischenzeitlich wurde eine Spitze mit \SI{5}{\meter\per\second} gemessen. Die Häufigkeitsverteilung (Abbildung \ref{fig:windspdCN}) bestätigt diese Beobachtung. Die Geschwindigkeitsklasse 0 bis \SI{1}{\meter\per\second} ist mit einer statistischen Häufigkeit von 0,8 vertreten, gefolgt von 1 bis \SI{2}{\meter\per\second} mit einer Häufigkeit von 0,1.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{../DATA/Windgeschwindigkeit.eps}
+	\includegraphics[width=0.7\textwidth]{../DATA/Windgeschwindigkeit.eps}
 	\caption[Windgeschwindigkeit]{Windgeschwindigkeit.}
 	\label{fig:windspd}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{../DATA/WindspdCN.eps}
+	\includegraphics[width=0.7\textwidth]{../DATA/WindspdCN.eps}
 	\caption[Windgeschwindigkeit Verteilung]{Windgeschwindigkeit Verteilung.}
 	\label{fig:windspdCN}
 \end{figure}
