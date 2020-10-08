@@ -2,19 +2,10 @@
 
 \subsection{Teil I: Kalibrierung}
 
-\subsubsection{Fixpunktkalibrations an der Wassertripelpunktzelle}
+\subsubsection{Fixpunktkalibration an der Wassertripelpunktzelle}
 
-Zunächst wurde der Pt-100 (Vierleiterschaltung) Referenzsensor anhand der Wassertripelzelle (Tripelpunkt bei \SI{0,01}{\celsius} und \SI{6,1}{\milli\bar}) mittels Fixpunktkalibration kalibriert. In der folgenden Abbildung \ref{fig:Fixpunkt} wird der Temperaturverlauf in Abhängigkeit der Zeit (die Scanrate beträgt \SI{1}{\second}) für den Pt-100 Sensor abgebildet. 
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[height=0.3\textheight]{../MLAB/Fixpunktkalibration.eps}
-	\caption[Temperaturverlauf des Pt100 Temperatursensors mittels Wassertripelpunktzelle]{ Temperaturverlauf des Pt100 Temperatursensors mittels Wassertripelpunktzelle im Metallblockkalibrator.}
-	\label{fig:Fixpunkt}
-\end{figure}
-
-Folgende Daten wurden für den Mittelwert, die Standardabweichung und den Offset des Referenzsensors gegenüber der Temperatur der Tripelpunktzelle ermittelt: 
-
+Zunächst wurde der Pt-100 (Vierleiterschaltung) Referenzsensor anhand der Wassertripelzelle (Tripelpunkt bei \SI{0,01}{\celsius} und \SI{6,1}{\milli\bar}) mittels Fixpunktkalibration kalibriert. 
+Folgende Daten wurden für den Mittelwert, die Standardabweichung und den Offset des Referenzsensors gegenüber der Temperatur der Tripelpunktzelle ermittelt (Temperaturverlauf s. Anhang): 
 
 \begin{table}[H]
 	\centering
@@ -36,7 +27,7 @@ Die Vergleichskalibration der unterschiedlichen Sensoren erfolgte in einem Tempe
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[height=0.5\textheight]{../MLAB/Widerstandsgeraden.eps}
+	\includegraphics[height=0.25\textheight]{../MLAB/Widerstandsgeraden.eps}
 	\caption[Ermittelte Widerstandswerte der untersuchten Temperatursensoren ]{Ermittelte Widerstandswerte der untersuchten Temperatursensoren (Pt100 4L, Pt100 2L, Pt1000, KTY, NTC bei den Temperturen \SI{0}{\celsius}, \SI{20}{\celsius}, \SI{40}{\celsius} und \SI{80}{\celsius} im Metallblockkalibrator eingestellt über den Pt100 4L Referenzsensor. }
 	\label{fig:Widerstand}
 \end{figure}
@@ -70,7 +61,7 @@ Die folgende Abbildung \ref{fig:2L4L} zeigt die Messung der beiden Pt100 Tempera
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[height=0.3\textheight]{../MLAB/Vergleich2L4L.eps}
+	\includegraphics[height=0.2\textheight]{../MLAB/Vergleich2L4L.eps}
 	\caption[Temperaturverlauf des Pt100 Temperatursensors mittels Wassertripelpunktzelle]{ Temperaturverlauf des Pt100 Temperatursensors mittels Wassertripelpunktzelle im Metallblockkalibrator.}
 	\label{fig:2L4L}
 \end{figure}
@@ -131,7 +122,7 @@ R^2=0,9998
 %rmse: 2.1108e-05
 \begin{figure}[H]
 	\centering
-	\includegraphics[height=0.3\textheight]{../MLAB/Spannung.eps}
+	\includegraphics[height=0.2\textheight]{../MLAB/Spannung.eps}
 	\caption[Spannungverlauf des Thermoelements in Abhängigkeit der Temperatur im Bereich von \SI{0}{\celsius} bis \SI{80}{\celsius} ]{Spannungverlauf des Thermoelements in Abhängigkeit der Temperatur im Bereich von \SI{0}{\celsius} bis \SI{80}{\celsius}.}
 	\label{fig:Spannung}
 \end{figure}
@@ -153,33 +144,16 @@ In großen Fertigungsanlagen war es früher üblich kostengünstigere Thermomete
 Für die Identifizierung der Temperatursensoren unterschiedlicher Typen stand ein Multimeter und die Kennliniendiagramme verschiedener Widerstandssensoren aus dem Praktikumsskript zur Verfügung. Die verschiedenen Temperatursensoren wurden jeweils an das Multimeter angeschlossen und ihr Widerstand bei Raumtemperatur (ca. \SI{23}{\celsius}) ermittelt. Anschließend wurde der jeweilige Sensor mit der Hand erwärmt, was zu einem Temperaturanstieg und der Veränderung des Widerstands führte. Anhand der erhaltenen Widerstandswerte wurde mithilfe der Kennliniendiagramme der jeweilige Sensor identifiziert. 
 Folgende Sensoren wurden anhand dieser Methode identifiziert:
 
-Sensor 1: NTC\\
-Sensor 2: Thermoelement\\
-Sensor 3: Pt 1000\\
-Sensor 4: KTY\\
-Sensor 5: Pt100 2L\\
-Sensor 6: Pt100 4L\\
+\begin{table}[H]
+	\begin{tabular}{lll}
+		Sensor 1: NTC           & Sensor 3: PT1000 2L & Sensor 5: Pt100 2L \\
+		Sensor 2: Thermoelement & Sensor 4: KTY    & Sensor 6: Pt100 4L \\
+	\end{tabular}
+\end{table}
 
 \subsection{Teil III: Wärmebildkamera}
 
 Für den Versuch Wärmebildkamera wurde die verschiedenen Probenplatten (s. Abb. \ref{fig:VersuchsaufbauWBK}) in dem temperierten Wasserbad mit der Einstellung von \SI{60}{\celsius} mittels einer Wärmebildkamera des Typs E60 der Firma FLIR verwendet. Für die Wärmebildkamera muss vor der Messung ein Emissionsgrad eingestellt werden. Hierfür wurde ein Emissionsgrad von $\epsilon=0,95$ gewählt, der den Punkten auf den Proben entspricht. Die Wärmebildkamera kann bei korrekter Benutzung die Temperatur auf eine Genauigkeit von $\Delta T = \pm \SI{2}{\celsius}$ ermitteln.
-
-Die rechte Abbildung zeigt beispielhaft ein Foto der Wärmebildkamera mit allen Probenmaterialien. 
-
-\begin{figure}[H]
-	\begin{minipage}{0.5\textwidth}
-		\centering
-		\includegraphics[width=0.5\textwidth]{../FLIR_100/FLIR2240.jpg}
-		\caption{Versuchsaufbau Wärmebildkamera: Die unterschiedlichen Probenplatten wurden im selben Wärmebad mit \SI{60,0}{\celsius} temperiert.}
-		\label{fig:VersuchsaufbauWBK}
-	\end{minipage}
-	\begin{minipage}{0.5\textwidth}
-		\centering
-		\includegraphics[width=0.5\textwidth]{../FLIR_100/FLIR2241.jpg}
-		\caption{Foto der Wärmebildkamera über alle Probenplatten bei gleicher Temperatur.}
-		\label{fig:FotoWBK}
-	\end{minipage}
-\end{figure}
 
 In der folgende Tabelle sind die Probenmaterialien und die mithilfe der Wärmebildkamera und dem Temperaturfühler ermittelten Temperaturen aufgeführt. 
 
@@ -199,27 +173,13 @@ In der folgende Tabelle sind die Probenmaterialien und die mithilfe der Wärmebi
 	\end{tabular} 
 \end{table}
 
-Es wurden folgende Beobachtungen gemacht:
+Es wurden folgende Beobachtungen gemacht (aufgenommene Bilder s. Anhang):
 
 - Mit einem für die Wärmebildkamera voreingestellten Emissionsgrad von $\epsilon=0,95$ können die Temperaturen der  Kunststoffe (3 und 6) und des eloxierten (beschichteten) Aluminium (1) annähernd gut ermittelt werden. Da der Emissionsgrad $\epsilon$ der Metalle geringer ist, erscheinen sie in Betrachtung durch die  Wärmebildkamera kälter. \\
 - Der aufgeklebte Kunststoffpunkt auf den Proben 3 (weißer Kunststoffpunkt auf Kunststoff) und 5 (schwarzer Kunststoffpunkt auf Metall) ist unabhängig seiner Farbe gut zu erkennen, da sein Emissionsgrad annähernd dem voreingestellten der Kamera entspricht und die Temperatur am aufgeklebten Punkt relativ genau ermittelt werden kann. Der Emissionsgrad ist demzufolge material- aber nicht farbunabhängig. Diese Beobachtung deckt sich zusätzlich mit der direkten Messung der aus dem selben Material bestehenden Kunststoffproben unterschiedlicher Farbe (3 und 6). \\
 -  Steht die Kamera korrekt (senkrecht, ca. \SI{1}{m} über dem Messobjekt) können sich teilweise die Wärmeabstrahlung der Deckenbeleuchtung oder Wärmeabstrahlung von beispielsweise Händen die senkrecht über die Kamera gehalten werden von dieser zusätzlich durch Reflexion an beispielsweise den Metallproben erfasst werden, sodass das Messobjekt mit einer Schattenabbildung der Lampe oder der Hand fotografiert wird. \\
 - Wird der Winkel oder die Entfernung der Wärmebildkamera zum Messobjekt verändert, kann diese die Temperatur nicht mehr optimal ermitteln. Durch Spiegelungen und Reflexionen erscheinen die Materialien teilweise wärmer oder kälter, auch innerhalb einer Materialprobe. 
 
-\begin{figure}[H]
-	\begin{minipage}{0.5\textwidth}
-		\centering
-		\includegraphics[width=0.8\textwidth]{../FLIR_100/FLIR2249.jpg}
-		\caption[Ermitteltes Wärmekamerafoto mit Hand als Störfaktor]{Ermitteltes Wärmekamerafoto mit Hand als Störfaktor.}
-		\label{fig:WBKHand}
-	\end{minipage}\hfill
-	\begin{minipage}{0.5\textwidth}
-		\centering
-		\includegraphics[width=0.8\textwidth]{../FLIR_100/FLIR2243.jpg}
-		\caption[Ermitteltes Wärmekamerafoto mit Deckenbeleuchtung als Störfaktor]{Ermitteltes Wärmekamerafoto mit Deckenbeleuchtung als Störfaktor}
-		\label{fig:WBKDecke}
-	\end{minipage}
-\end{figure}
 
 \subsubsection{Berechnung der Emissionsgrade}
 
@@ -244,14 +204,11 @@ In der folgenden Tabelle sind die nach Gleichung \ref{epsilon} berechneten Emiss
 	\centering
 	\caption{Berechnete Emissionsgrade für die Probenmaterialien.}
 	\label{tab:emissionsgrade}
-	\begin{tabular}{cc}
-		& $\epsilon$   \\
-		Probe 1 &     1.06                    \\
-		Probe 2 & 0,14                         \\
-		Probe 3 &         1,16                \\
-		Probe 4& 0,25\\
-		Probe 5&0,13 \\
-		Probe 6& 1,08
+	\begin{tabular}{llllll}
+		&    $\epsilon$  &        &  $\epsilon$    &         &  $\epsilon$    \\
+		Probe 1 & 1,06 & Probe 3 & 1,16 & Probe 5 & 0,13 \\
+		Probe 2 & 0,14 & Prbe 4  & 0,25 & Probe 6 & 1,08 \\
+		&      &         &      &         &     
 	\end{tabular}
 \end{table}
 
