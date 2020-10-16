@@ -4,20 +4,27 @@ clear;
 clc;
 close all;
 %% Import Data
-SolarAnlage = importfile('../DATA/InbetriebnahmeSolaranlagen08.09.2020 15_09_52 1.csv');
-% DataChrisMainz = importfile('../DATA/Vers_Kollektor_Kennline_Dachlabor_10.09.2020_12_20_45_1.csv');
+% SolarAnlage = importfile('../DATA/InbetriebnahmeSolaranlagen08.09.2020 15_09_52 1.csv');
+DataChrisMainz = importfile('../DATA/Vers_Kollektor_Kennline_Dachlabor_10.09.2020_12_20_45_1.csv');
 DrainAnlage = importfileD('../DATA/Drainback-Anlage_Versuch 114_26_08 1.csv');
+SolarAnlage = DataChrisMainz; % this is only that we dont have to replace all varnames
 %% plot fun
 figure
 hold on
 grid on
 plot(SolarAnlage.Scan,SolarAnlage.I_KollinWprom2)
 xlabel('Scan [arbitrary]')
-ylabel('Einstrahlung $G \left[\frac{W}{m^{2}}\right]$')
+ylabel('Einstrahlung $G \frac{W}{m^{2}}$')
 run plotsettings.m
 % legend('$G = 600 \left[\frac{W}{m^{2}}\right]$','$G = 800 \left[\frac{W}{m^{2}}\right]$','$G = 1000 \left[\frac{W}{m^{2}}\right]$')
 printPath = '../DATA/DataEinstrahlung';
 print(printPath,'-depsc');
+
+%% calc Einstrahlungsparameter
+
+I_Kollektor = mean(SolarAnlage.I_KollinWprom2(871,:):SolarAnlage.I_KollinWprom2(1088,:));
+std_Kollektor = std(SolarAnlage.I_KollinWprom2(871,:):SolarAnlage.I_KollinWprom2(1088,:));
+
 %% calc Kennlinie
 
 G = [600 800 1000];
@@ -30,7 +37,8 @@ a2 = 0.020;
 deltaT = ((SolarAnlage.T_VL_KollC+SolarAnlage.T_RL_KollC)./2)-SolarAnlage.T_U_DachC;
 
 eta = eta0-(a1*((Tf-Ta)./(G)))-(a2*(((Tf-Ta)^2)./(G)));
-%etaGemessen = eta0-(a1*((deltaT)./(G_vg)))-(a2*(((deltaT).^2)./(G_vg)));
+G_vg = I_Kollektor;
+etaGemessen = eta0-(a1*((deltaT)./(G_vg)))-(a2*(((deltaT).^2)./(G_vg)));
 
 %% plot fun
 figure
@@ -40,10 +48,10 @@ fplot(eta,'-')
 fplot(Tf)
 xlim([Ta 500])
 ylim([0 1])
-xlabel('$\frac{T_{f}-T_{a}}{G} \left[\frac{K  m^{2}}{W}\right]$')
+xlabel('$\frac{T_{f}-T_{a}}{G} \frac{K m^{2}}{W}$')
 ylabel('Wirkungsgrad $\eta$ [arbitrary]')
 run plotsettings.m
-legend('$G = 600 \left[\frac{W}{m^{2}}\right]$','$G = 800 \left[\frac{W}{m^{2}}\right]$','$G = 1000 \left[\frac{W}{m^{2}}\right]$')
+legend('$G = 600 \frac{W}{m^{2}}$','$G = 800 \frac{W}{m^{2}}$','$G = 1000 \frac{W}{m^{2}}$')
 printPath = '../DATA/KennlinieTheo';
 print(printPath,'-depsc');
 
@@ -64,7 +72,7 @@ grid on
 hold on
 yyaxis left
 plot(SolarAnlage.Scan,QdotKoll,'-x')
-ylabel('Momentanleistung Kollektor [W]')
+ylabel('Momentanleistung Kollektor [P] = W')
 yyaxis right
 plot(SolarAnlage.Scan,etaWahr,'--o')
 xlabel('Scan')
@@ -84,7 +92,11 @@ plot(SolarAnlage.Scan,SolarAnlage.T_RL_SpeiC,'--')
 plot(SolarAnlage.Scan,SolarAnlage.T_VL_SpeiC,'--')
 legend('RL Koll','VL Koll','RL Spei','VL Spei','location','best')
 xlabel('Scan')
-ylabel('Temperatur [$^{\circ}C$]')
+ylabel('Temperatur $^{\circ}C$')
 run plotsettings.m
 printPath = '../DATA/TempTime';
 print(printPath,'-depsc');
+
+%% plot Fehlerbalken
+
+% errorplot()

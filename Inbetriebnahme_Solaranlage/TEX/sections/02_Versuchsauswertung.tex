@@ -23,7 +23,7 @@ V_u= \frac{(V_t * C_e + V_{vap} + V_r)*(p_{max} + 1)}{(p_{max}-p_{min})}
 	\end{small}
 \end{center}
 
-Das Flüssigkeitsvolumen des Solarkreises setzt sich aus den Volumen des Kollektors, dem Inhalt der Rohrleitung und dem Inhalts der Amaturen und des Wärmeübertragers zusammen. Bei dem Kollektor handelt es sich um einen Flachkollektor des Typ Vaillant auroTHERM classic VFK 140/2D* mit gutmütigem Ausdampfverhalten ohne direkten Verbindungsleitungen und einem Fluidinhalt von \SI{1,35}{\liter}. Für das Rohleitungssystem wurde eine Länge von \SI{30}{\metre} angenommen, bei denen es sich jeweils um \SI{50}{\percent} Kupferrohr des Typs DN15 (\SI{0,1771}{\litre\per\metre}) und \SI{50}{\percent} Edelstahl-WR DN16 (\SI{0,2641}{\litre\per\metre}). Der interne Wärmeübertrager wurde mit \SI{2}{\metre} Edelstahl-WR DN20 mit \SI{0,3941}{\litre\per\metre} angenommen. Die Anlagenhöhe beträgt ca. \SI{8}{\metre} und der Auslösedruck des Sicherheitsventils ist mit \SI{6}{\bar} angegeben. Als Wärmeträgerfluid wurde TYFOCOR LS angenommen. Aus dem Datenblatt wurde einen kubischer Ausdehnungskoeffizient für den maximalen Temperaturfall bei \SI{120}{\celsius} von \SI{74}{10^-5\per\kelvin} Wärmefluids und eine Dichte von \SI{1013,5}{\kg\per\litre} für eine Umgebungstemperatur von \SI{25}{\celsius} approximiert. Unter der Angabe, dass der Kollektor keine direkte Verbindungsleitungen besitzt, beträgt das Verdampfungsvolumen näherungsweise dem Kollektorvolumen. Der minimale Anlagendruck beträgt dabei die Summe des statischen Drucks addiert zu \SI{0,5}{\bar} für den gasseitigen Druck und \SI{0,3}{\bar} für die Sicherheit. 
+Das Flüssigkeitsvolumen des Solarkreises setzt sich aus den Volumen des Kollektors, dem Inhalt der Rohrleitung und dem Inhalts der Amaturen und des Wärmeübertragers zusammen. Bei dem Kollektor handelt es sich um einen Flachkollektor des Typ Vaillant auroTHERM classic VFK 140/2D* mit gutmütigem Ausdampfverhalten ohne direkten Verbindungsleitungen und einem Fluidinhalt von \SI{1,35}{\liter}. Für das Rohleitungssystem wurde eine Länge von \SI{30}{\metre} angenommen, bei denen es sich jeweils um \SI{50}{\percent} Kupferrohr des Typs DN15 (\SI{0,1771}{\litre\per\metre}) und \SI{50}{\percent} Edelstahl-WR DN16 (\SI{0,2641}{\litre\per\metre}). Der interne Wärmeübertrager wurde mit \SI{2}{\metre} Edelstahl-WR DN20 mit \SI{0,3941}{\litre\per\metre} angenommen. Die Anlagenhöhe beträgt ca. \SI{8}{\metre} und der Auslösedruck des Sicherheitsventils ist mit \SI{6}{\bar} angegeben. Als Wärmeträgerfluid wurde TYFOCOR LS angenommen. Aus dem Datenblatt wurde einen kubischer Ausdehnungskoeffizient für den maximalen Temperaturfall bei \SI{120}{\celsius} von \SI{74e-5}{\per\kelvin} Wärmefluids und eine Dichte von \SI{1013,5}{\kg\per\litre} für eine Umgebungstemperatur von \SI{25}{\celsius} approximiert. Unter der Angabe, dass der Kollektor keine direkte Verbindungsleitungen besitzt, beträgt das Verdampfungsvolumen näherungsweise dem Kollektorvolumen. Der minimale Anlagendruck beträgt dabei die Summe des statischen Drucks addiert zu \SI{0,5}{\bar} für den gasseitigen Druck und \SI{0,3}{\bar} für die Sicherheit. 
 
 $V_u$ unter den angegebenen Bedingung folgenden Wert an:
 
@@ -36,17 +36,19 @@ $V_u$ unter den angegebenen Bedingung folgenden Wert an:
 
 \subsubsection{Anlagenleistung}
 
-In der folgenden Abbildung sind die Einstrahlungwerte über den gesamten Messzeitraum von ca. \SI{30}{\minute} für die Standard-Versuchsanlage abgebildet. 
-Die Einstrahlungswerte liegen grundsätzlich unter der Randbedingung von mind. \SI{800}{\watt\per\meter\squared} bei denen die Leistungsparameter bestimmt wurden. Aufgrund der extrem großen Varianz der Messwerte, die zu keinem Zeitpunkt der Messzeit ansatzweise konstant geworden sind, ist die Berechnung eines Einstrahlungsmittelwertes nicht möglich. 
+In der folgenden Abbildung sind die Einstrahlungwerte über den gesamten Messzeitraum von ca. \SI{54}{\minute} für die Standard-Versuchsanlage abgebildet. 
+Die Einstrahlungswerte liegen über der durch die Norm spezifizierten Randbedingung von mind. \SI{800}{\watt\per\meter\squared} bei denen die Leistungsparameter bestimmt wurden. Für die Auswertung wurden die Daten im Scanbereich 874 bis 1088 verwendet.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[height=0.3\textheight]{../DATA/DataEinstrahlung.eps}
-	\caption[Gemessene Einstrahlung während der Betiebsdauer der Standard Versuchsanlage]{Gemessene Einstrahlung während der Betiebsdauer der Standard Versuchsanlage.}
+	\caption[Gemessene Einstrahlung während der Betriebsdauer der Standard Versuchsanlage]{Gemessene Einstrahlung während der Betriebsdauer der Standard Versuchsanlage.}
 	\label{fig:Einstrahlung}
 \end{figure}
 
-Es wurde im folgenden die momentane Kollektorleistung und der momentane Anlagenwirkungsgrad abgebildet. 
+Für den definierten Messbereich ergibt sich eine Einstrahlleistung von \SI{1007.5(41)}{\watt\per\meter\squared}.
+
+In der folgenden Abbildung wurde die momentane Kollektorleistung gegen den momentanen Anlagenwirkungsgrad dargestellt. 
 Die momentane Kollektorleistung wurde nach Gleichung 2.4 des Praktikumsskripts berechnet. Der Anlagenwirkungsgrad wurden nach Gleichung 2.2 des Praktikumsskripts ermittelt. 
 
 \begin{figure}[H]
@@ -56,7 +58,7 @@ Die momentane Kollektorleistung wurde nach Gleichung 2.4 des Praktikumsskripts b
 	\label{fig:Momentanleistung}
 \end{figure}
 
-Die theoretische Kennlinie des Kollektors wurde anhand der im Praktikumskript angegebenen Daten für den Kollektor für Einstrahlungen von \SI{1000}{\watt\per\meter\squared}, \SI{800}{\watt\per\meter\squared} und \SI{600}{\watt\per\meter\squared} (schon unterhalb für die ermittelten Leistungsparameter benötigte Einstrahlung) berechnet und in der folgenden Abbildung dargestellt.
+Die theoretische Kennlinie des Kollektors wurde anhand der im Praktikumsskript angegebenen Daten für den Kollektor für Einstrahlungen von \SI{1000}{\watt\per\meter\squared}, \SI{800}{\watt\per\meter\squared} und \SI{600}{\watt\per\meter\squared} (schon unterhalb für die ermittelten Leistungsparameter benötigte Einstrahlung) berechnet und in der folgenden Abbildung dargestellt.
 
 \begin{figure}[H]
 	\centering
