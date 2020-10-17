@@ -61,19 +61,21 @@ Wie im vorherigen Teil der Auswertung wurden bereitgestellte Daten verwendet. Di
 Den Erwartungen entsprechend reagiert der SSR 81 Halbleiter direkt auf die Verschattung, während die Pyranometer eine Latenz aufweisen. Der TA GBS verzögert für einen Halbleiter ungewöhnlich lang.
 
 \subsection{Luftfeuchtemessung}
-Zunächst wurden die Umgebungstemperatur und die Ausgangsspannung des Feuchtesensors ermittelt:
+Zunächst wurden die Umgebungstemperatur und die Ausgangsspannung des Feuchtesensors ermittelt. Zur Bestimmung der relativen Feuchte wurde eine Kalibriergerade anhand zweier Messpunkte angefertigt. Hierzu wurde die Ausgangsspannung des Sensors zunächst über einer NaCl-Lösung, anschließend über einer LiCl-Lösung gemessen. Der Messverlauf ist in Abbildung \ref{fig:cal} aufgetragen. Es wurden jeweils die letzten 100 Scans zur Bestimmung der Ausgangsspannung gemittelt. Bei der vorliegenden Umgebungstemperatur von ca. \SI{24}{\celsius} entspricht die relative Luftfeuchte über NaCl 75\,\%, über LiCl 12\,\%. Die nachfolgende Tabelle zeigt die ermittelten Größen.
 \begin{center}
-	\begin{tabular}{l|c}
+	\begin{tabular}{l|l|c}
 		\label{tab:amb}
 		
-		\textbf{Messgröße} & \textbf{Mittelwerte}\\
+		\textbf{Messgröße} & \textbf{Mittelwerte} & \textbf{Lit. rel. Feuchte}\\
 		\hline
-		Umgebungstemperatur & \SI{24,1005}{\celsius} $\pm$0,0434\\
-		Umgebungsluftfeuchte & 5,9791\,V $\pm$0,0284
+		Umgebungstemperatur & 24,1005 $\pm$0,0434\,$\celsius$ &\\
+		Umgebungsluftfeuchte & 5,9791 $\pm$0,0284\,V & \\
+		LiCl & 1,3298 $\pm$0,0052\,V & 12\,\%\\
+		NaCl & 7,2433 $\pm$0,0056\,V & 75\,\%
 	\end{tabular}
 \end{center}
 
-Zur Bestimmung der relativen Feuchte wurde eine Kalibriergerade anhand zweier Messpunkte angefertigt. Hierzu wurde die Ausgangsspannung des Sensors zunächst über einer NaCl-Lösung, anschließend über einer LiCl-Lösung gemessen. Der Messverlauf ist in Abbildung \ref{fig:cal} aufgetragen. Es wurden jeweils die letzten 100 Scans zur Bestimmung der Ausgangsspannung gemittelt (vgl. Tabelle \ref{tab:cal}). Bei der vorliegenden Umgebungstemperatur von ca. \SI{24}{\celsius} entspricht die relative Luftfeuchte über NaCl 75\,\%, über LiCl 12\,\%. 
+
 
 \begin{figure}[H]
 	\centering
@@ -82,72 +84,44 @@ Zur Bestimmung der relativen Feuchte wurde eine Kalibriergerade anhand zweier Me
 	\label{fig:cal}
 \end{figure}
 
-Aus Abbildung \ref{fig:cal} geht hervor, dass die Spannungen nicht konstant gemessen wurden. Für eine genauere Kalibration ist eine längere Verweilzeit über den Salzlösungen nötig. Prinzipiell eignen sich die gewählten Messpunkte gut, da die Luftfeuchte über den verwendeten Lösungen nahezu temperaturunabhängig ist. Die Messkurve des Sensors wird im Versuch als linear betrachtet, über den wahren Verlauf kann keine Aussage getroffen werden. Zur Optimierung müssen daher weitere Messpunkte aufgenommen werden.
-\begin{center}
-	\begin{tabular}{l|c|c}
-		\label{tab:cal}
-		
-		\textbf{Kalibrierlösung} & \textbf{Mittelwerte} [V] & \textbf{rel. Feuchte} [\%]\\
-		\hline
-		LiCl & 1,3298 $\pm$0,0052 & 12\\
-		NaCl & 7,2433 $\pm$0,0056 & 75
-	\end{tabular}
-\end{center}
+Aus Abbildung \ref{fig:cal} geht hervor, dass die Spannungen nicht konstant gemessen wurden. Für eine genauere Kalibration ist eine längere Verweilzeit über den Salzlösungen nötig. Prinzipiell eignen sich die gewählten Messpunkte gut, da die Luftfeuchte über den verwendeten Lösungen nahezu temperaturunabhängig ist. Zur genaueren Kalibration müssten jedoch weitere Messpunkte bestimmt werden, da der Sensor nicht zwangsweise ein lineares Verhalten aufweist, welches für die Kalibrierung angenommen wurde. Aus den beiden Kalibrierpunkten und Einsetzen der Umgebungsfeuchte ergibt sich folgende Kalibriergleichung:
 
-Die Kalibriergerade (vgl. Abbildung \ref{fig:cal2}) wurde anhand der Spannungen aus Tabelle \ref{tab:cal} erstellt. Diese wird als Polynom erster Ordnung beschrieben (vgl. Gleichung \ref{eq:pol}).
-\begin{equation}
-	\label{eq:pol}
-	\varphi(\text{V}) = p1*\text{V} + p2
-\end{equation}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.8\textwidth]{../DATA/Kalibriergerade_Feuchte.eps}
-	\caption[Kalibrationsgerade des Temperatursensors]{Kalibrationsgerade des Temperatursensors mit der Fit-Funktion $f(x) = p1*x + p2$ und den Parametern p1=10,65 und p2=0.2034}
-	\label{fig:cal2}
-\end{figure}
-
-Die relative Feuchte der Umgebungsluft errechnet sich nach Abbildung \ref{fig:cal2} und Gleichung \ref{eq:pol} zu
 
 \begin{equation}
 	\label{eq:cal}
 	\varphi(\text{V})=10,65*\SI{5,9791}{\volt}-2,167=\SI{61,51}{\percent}
 \end{equation}
 
-Zur Umrechnung der absoluten Feuchte wird der temperaturabhängige Sättigungspartialdampfdruck des Wassers näherungsweise nach Gleichung \ref{eq:pds} bestimmt. 
+Zur Umrechnung der absoluten Feuchte wird der temperaturabhängige Sättigungspartialdampfdruck des Wassers näherungsweise nach Gleichung \ref{eq:pds} bestimmt und in Gleichung \ref{eq:x} eingesetzt. 
 
-\begin{equation}
+\begin{multline}
 	\label{eq:pds}
-	p_{D,S}(\SI{24}{\celsius}) = 611*exp(-1,91275*10^{-4}+7,258*10^{-2}*\SI{24}{\celsius}-2,939*10^{-4}*(\SI{24}{\celsius})^2\linebreak+9,841*10^{-7}*(\SI{24}{\celsius})^3-1,92*10^{-9}*(\SI{24}{\celsius})^4)=\SI{2982,47}{\pascal}
-\end{equation}
-
-\begin{equation}
-\label{eq:pd}
-p_D=p_{D,S}*\varphi= \SI{2982,47}{\pascal}*\SI{61,51}{\percent}=\SI{1834,52}{\pascal}	
-\end{equation}
+	p_{D,S}(\SI{24}{\celsius}) = 611*exp(-1,91275*10^{-4}+7,258*10^{-2}*\SI{24}{\celsius}-2,939*10^{-4}\\*(\SI{24}{\celsius})^2 +9,841*10^{-7}*(\SI{24}{\celsius})^3-1,92*10^{-9}*(\SI{24}{\celsius})^4)=\SI{2982,47}{\pascal}
+\end{multline}
 
 \begin{equation}
 	\label{eq:x}
-	x=0,622*\frac{p_D}{p-p_D}=\frac{\SI{1834,52}{\pascal}}{\SI{100000}{\pascal}-\SI{1834,52}{\pascal}}=\SI{0,0116}{\kilogram\per\kilogram}
+	x=0,622*\frac{p_{D,S}*\varphi}{p-p_D}=\frac{\SI{2982,47}{\pascal}*\SI{61,51}{\percent}}{\SI{100000}{\pascal}-\SI{1834,52}{\pascal}}=\SI{0,0116}{\kilogram\per\kilogram}
 \end{equation}
 
 		
 \subsection{Niederschlag}
-Zur Simulation des Niederschlags wurde in drei Durchläufen je \SI{1}{\liter} Wasser in den Auffangtrichter gegossen und die Impulse der Messwippe gezählt. Zusätzlich wurde die Messdauer betrachtet und der Volumenstrom bilanziell aus dem Kehrwert der Messdauer berechnet. Das Volumen einer Kippwaage ist mit \SI{2}{\cubic\centi\meter} angegeben. Somit enspricht das getestete Volumen von einem Liter in der Theorie 500 Impulsen. Zum Vergleich wurde das Volumen ebenfalls aus dem Kehrwert der Impulszahl berechnet (Auswertung s. folgende Tabelle.)
+Zur Berechnung des simulierten Niederschlags wurden die Messdauer und Impulszahl ermittelt. Das Volumen einer Kippwaage ist mit \SI{2}{\cubic\centi\meter} angegeben. Somit entspricht das Testvolumen von einem Liter in der Theorie 500 Impulsen. Zum Vergleich wurde das Waagenvolumen ebenfalls aus dem Kehrwert der Impulszahl berechnet (Auswertung s. folgende Tabelle.)
 
  \begin{center}
- 	\begin{tabular}{c|c|c|c|c}
+ 	\begin{tabular}{c|c|c|c}
  		\label{tab:rain}
- 		\textbf{Messung} & \textbf{Impulszahl} & \textbf{Messdauer} [s] & \textbf{Volumenstrom} [$\frac{ml}{s}$] & \textbf{Liter pro impuls}\\
+ 		\textbf{Messung} & \textbf{Impulszahl} & \textbf{Messdauer} [s] & \textbf{V pro impuls} [\si{\cubic\centi\meter}]\\
  		\hline
- 		1 & 166 & 168 & 5,95 & 6,02\\
- 		2 & 200 & 105 & 9,52 & 5,00\\
- 		3 & 153 & 171 & 5,85 & 6,54\\
- 		Mittel & 173 & 148 & 7,11 & 5,85
+ 		1 & 166 & 168  & 6,02\\
+ 		2 & 200 & 105  & 5,00\\
+ 		3 & 153 & 171  & 6,54\\
+ 		Mittel & 173 & 148  & 5,85
  	\end{tabular}
  \end{center}
 
-Das Messergebnis ist in erster Linie vom zufließenden Volumenstrom abhängig. Bei geringerem Zufluss wird Wippe  langsam an ihren Kipppunkt gebracht, während sie bei höheren Zuflussraten durch den Impuls des Fluids schon vor der vollständigen Befüllung kippt. Dieser Trend ist in Tabelle \ref{tab:rain} zu sehen. Das Volumen pro Impuls ist bei Messung 2 am geringsten, der bilanzielle Volumenstrom am größten. Die Messmethode ist daher tendenziell für die Messung bei leichten Regenschauern geeignet. Bei Starkregen versagt sie. 
+Das Messergebnis ist in erster Linie vom Impulsübertrag auf die Wippe abhängig. Bei geringerem Zufluss wird Wippe durch die Gewichtskraft entleert, bei starkem Niederschlag durch die Strömung des Wassers frühzeitig gekippt. Das theoretische Volumen weicht bei Messung 2 am meisten vom tatsächlichen ab. Die Messmethode ist daher tendenziell für die Messung leichter Regenschauer geeignet. Bei Starkregen versagt sie. 
 Die normierte Niederschlagshöhe ergibt sich entsprechend Gleichung \ref{eq:rain2} aus dem Quotienten der Niederschlagsmenge und Trichterfläche (Annahme laut Skript \SI{0,02}{\square\meter}):
 
 \begin{equation}
