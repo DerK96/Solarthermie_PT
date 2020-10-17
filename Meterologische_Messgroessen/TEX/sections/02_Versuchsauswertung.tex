@@ -3,23 +3,8 @@
 \subsection{Solarstrahlung} 
 
 \subsubsection{Aufnahme der Messdaten}
-Zur Bestimmung der Solarstrahlung wurden folgende Halbleitersensoren und Pyranometern in die Messdatenerfassung eingebunden:
 
-\begin{center}
-	
-\begin{tabular}{l|l}	
-	\label{tab:Sensoren}
-	\textbf{Sensorname} & \textbf{Sensorart}\\
-	\hline
-	CM 11 & Thermosäule\\
-	CM 11 (mit Schattenring) & Thermosäule\\
-	CM3 & Thermosäule\\
-	SSR 81 & Halbleiter\\
-	TA GBS & Halbleiter
-\end{tabular}
-\end{center}
-
-Der Schattenring des Pyranometers zur Messung der Diffusstrahlung wurde nach Tabelle 5 des Praktikumsskriptes ausgerichtet. Die Ausrichtung der Messtafel mit den übrigen Sensoren Richtung Sonne konnte nur geschätzt werden, da der Himmel zum Zeitpunkt der Messung bedeckt war. Für die weitere Auswertung wird daher ein bereitgestellter Datensatz (vgl. Abbildung \ref{fig:radiation}) verwendet.
+Der Schattenring des CM11 Pyranometers zur Messung der Diffusstrahlung wurde nach Tabelle 5 des Praktikumsskriptes ausgerichtet. Die Ausrichtung der Messtafel mit den übrigen Sensoren Richtung Sonne konnte nur geschätzt werden, da der Himmel zum Zeitpunkt der Messung bedeckt war. Für die weitere Auswertung wird daher ein bereitgestellter Datensatz (vgl. Abbildung \ref{fig:radiation}) verwendet.
 
 \begin{figure}[H]
 	\centering
@@ -27,7 +12,8 @@ Der Schattenring des Pyranometers zur Messung der Diffusstrahlung wurde nach Tab
 	\caption[Messreihe zur Bestimmung der Solarstrahlung]{Messreihe zur Bestimmung der Solarstrahlung}
 	\label{fig:radiation}
 \end{figure}
-Zum Vergleich der Messwerte wurden der Mittelwert und die Standardabweichung der einzelnen Sensoren über den stationären Messbereich zwischen Sekunde 170 und Sekunde 220 gebildet. Tabelle \ref{tab:radiation} zeigt die bestimmten Werte.
+Zum Vergleich der Messwerte wurden der Mittelwert und die Standardabweichung der einzelnen Sensoren über den stationären Messbereich zwischen Sekunde 170 und Sekunde 220 gebildet. Die folgende Tabelle zeigt die bestimmten Werte.
+
 \begin{center}
 \begin{tabular}{l|c}
 	\label{tab:radiation}
@@ -52,7 +38,7 @@ Aus dem Datensatz geht hervor, dass die Halbleitersensoren verglichen mit den Py
 
 
 \subsubsection{Bestimmung des Ansprechverhaltens}
-Wie im vorherigen Teil der Auswertung wurden bereitgestellte Daten verwendet. Die Messreihe ist in Abbildung \ref{fig:response} gezeigt.
+Wie im vorherigen Teil der Auswertung wurden bereitgestellte Daten verwendet. Die Messreihe ist in Abbildung \ref{fig:response} gezeigt.Bei Scannr. 89 wurde die Abdeckung entfernt, bei Scannr. 132 haben alle Sensoren den Zielwert erreicht.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\textwidth]{../DATA/Messreihe_Ansprechzeit.eps}
@@ -60,16 +46,22 @@ Wie im vorherigen Teil der Auswertung wurden bereitgestellte Daten verwendet. Di
 	\label{fig:response}
 \end{figure}
 
+\begin{center}
+	\begin{tabular}{c|c|c|c|c}
+		\label{tab:response}
+		
+		\textbf{Sensor} & \textbf{Minimum} [$\frac{W}{m^2}$] & \textbf{Maximum} [$\frac{W}{m^2}$]& \textbf{95\% Treshold} [$\frac{W}{m^2}$] & \textbf{Dauer} [s]\\
+		\hline
+		TA GBS & 8,75 & 824,1 & 782,9 & 36 \\
+		SSR 81 & 43,54 & 898,7 & 853,8 & 1 \\
+		CM 3 & 15,12 & 908,0 & 862,4 & 18 \\
+		CM11 & 25,84 & 903,9 & 858,7 & 22 \\
+	\end{tabular}
+\end{center}
+Den Erwartungen entsprechend reagiert der SSR 81 Halbleiter direkt auf die Verschattung, während die Pyranometer eine Latenz aufweisen. Der TA GBS verzögert für einen Halbleiter ungewöhnlich lang.
+
 \subsection{Luftfeuchtemessung}
-Zunächst wurden die Umgebungstemperatur und die Ausgangsspannung des Feuchtesensors ermittelt. Abbildung \ref{fig:amb} zeigt den Messverlauf. Die Mittelwerte und Standardabweichungen sind in Tabelle \ref{tab:amb} zusammengefasst.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\textwidth]{../DATA/Messreihe_Umgebung.eps}
-	\caption[Messreihe Umgebung]{Messreihe zur Bestimmung der Umgebungstemperatur und -luftfeuchte.}
-	\label{fig:amb}
-\end{figure}
-
+Zunächst wurden die Umgebungstemperatur und die Ausgangsspannung des Feuchtesensors ermittelt:
 \begin{center}
 	\begin{tabular}{l|c}
 		\label{tab:amb}
@@ -95,7 +87,7 @@ Aus Abbildung \ref{fig:cal} geht hervor, dass die Spannungen nicht konstant geme
 	\begin{tabular}{l|c|c}
 		\label{tab:cal}
 		
-		\textbf{Kalibrierlösung} & \textbf{Mittelwerte} [V] & rel. Feuchte [\%]\\
+		\textbf{Kalibrierlösung} & \textbf{Mittelwerte} [V] & \textbf{rel. Feuchte} [\%]\\
 		\hline
 		LiCl & 1,3298 $\pm$0,0052 & 12\\
 		NaCl & 7,2433 $\pm$0,0056 & 75
@@ -141,16 +133,7 @@ p_D=p_{D,S}*\varphi= \SI{2982,47}{\pascal}*\SI{61,51}{\percent}=\SI{1834,52}{\pa
 
 		
 \subsection{Niederschlag}
-Zur Simulation des Niederschlags wurde in drei Durchläufen je \SI{1}{\liter} Wasser in den Auffangtrichter gegossen und die Impulse der Messwippe gezählt. Abbildung \ref{fig:rain} zeigt die aufgenommenen Messdaten. 
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\textwidth]{../DATA/Messreihe_Niederschlag.eps}
-	\caption[Datenerfassung zur Niederschlagsbestimmung]{Datenerfassung zur Niederschlagsbestimmung.}
-	\label{fig:cal2}
-\end{figure}
-
-Die Impulszahl entspricht jeweils der Differenz des Ordinatenabschnittes zwischen den Messungen. Zusätzlich wurde die Messdauer betrachtet und der Volumenstrom bilanziell aus dem Kehrwert der Messdauer berechnet. Das Volumen der Wippen wurde aus dem Kehrwert der Impulszahl berechnet (vgl. Tabelle \ref{tab:rain}).
+Zur Simulation des Niederschlags wurde in drei Durchläufen je \SI{1}{\liter} Wasser in den Auffangtrichter gegossen und die Impulse der Messwippe gezählt. Zusätzlich wurde die Messdauer betrachtet und der Volumenstrom bilanziell aus dem Kehrwert der Messdauer berechnet. Das Volumen einer Kippwaage ist mit \SI{2}{\cubic\centi\meter} angegeben. Somit enspricht das getestete Volumen von einem Liter in der Theorie 500 Impulsen. Zum Vergleich wurde das Volumen ebenfalls aus dem Kehrwert der Impulszahl berechnet (Auswertung s. folgende Tabelle.)
 
  \begin{center}
  	\begin{tabular}{c|c|c|c|c}
@@ -164,20 +147,12 @@ Die Impulszahl entspricht jeweils der Differenz des Ordinatenabschnittes zwische
  	\end{tabular}
  \end{center}
 
-Das Messergebnis ist in erster Linie vom zufließenden Volumenstrom abhängig. Bei geringerem Zufluss wird Wippe  langsam an ihren Kipppunkt gebracht, während sie bei höheren Zuflussraten durch den Impuls des Fluids schon vor der vollständigen Befüllung kippt. Dieser Trend ist in Tabelle \ref{tab:rain} zu sehen. Das Volumen pro Impuls ist bei Messung 2 am geringsten, der bilanzielle Volumenstrom am größten. Die Messmethode ist daher tendenziell für die Messung bei leichten Regenschauern geeignet. Bei Starkregen versagt sie. Das Volumen einer Kippwaage ist mit \SI{2}{\cubic\centi\meter} angegeben. Somit enspricht das getestete Volumen von einem Liter in der Theorie 500 Impulsen. 
-
-Für die Bestimmung der Niederschlagshöhe wird zunächst nach Gleichung \ref{eq:rain} die Tricherfläche bestimmt:
-
-\begin{equation}
-	\label{eq:rain}
-	A= \pi * r^2= \pi * (\frac{\SI{0,165}{\meter}}{2})^2 = \SI{0,0214}{\square\meter}
-\end{equation}
-
-Die normierte Niederschlagshöhe ergibt sich entsprechend Gleichung \ref{eq:rain2} aus dem Quotienten der Niederschlagsmenge und der Trichterfläche:
+Das Messergebnis ist in erster Linie vom zufließenden Volumenstrom abhängig. Bei geringerem Zufluss wird Wippe  langsam an ihren Kipppunkt gebracht, während sie bei höheren Zuflussraten durch den Impuls des Fluids schon vor der vollständigen Befüllung kippt. Dieser Trend ist in Tabelle \ref{tab:rain} zu sehen. Das Volumen pro Impuls ist bei Messung 2 am geringsten, der bilanzielle Volumenstrom am größten. Die Messmethode ist daher tendenziell für die Messung bei leichten Regenschauern geeignet. Bei Starkregen versagt sie. 
+Die normierte Niederschlagshöhe ergibt sich entsprechend Gleichung \ref{eq:rain2} aus dem Quotienten der Niederschlagsmenge und Trichterfläche (Annahme laut Skript \SI{0,02}{\square\meter}):
 
 \begin{equation}
 	\label{eq:rain2}
-	h = \frac{V}{A} = \frac{\SI{0,001}{\cubic\meter}}{\SI{0,0214}{\square\meter}} = \SI{0,0467}{\meter} = \SI{46,7}{\milli\meter}
+	h = \frac{V}{A} = \frac{\SI{0,001}{\cubic\meter}}{\SI{0,02}{\square\meter}} = \SI{0,05}{\meter} = \SI{50}{\milli\meter}
 \end{equation}
 
 \subsection{Windmessung}
@@ -185,33 +160,41 @@ Eine sinnvolle Messung der Luftströmung war aufgrund der ungünstigen Position 
 
 \subsubsection{Windrichtung}
 
-Zunächst ist die Aufnahme der Windrichtung in Abbildung \ref{fig:winddir} gezeigt. Ohne weitere Datenaufarbeitung ist der Datensatz kaum interpretierbar. Die statistische Verteilung in Abbildung \ref{fig:winddirCN} dargestellt.
+Zunächst ist die Aufnahme der Windrichtung in Abbildung \ref{fig:winddir} gezeigt. Ohne weitere Datenaufarbeitung ist der Datensatz kaum interpretierbar. Die statistische Verteilung ist in Abbildung \ref{fig:winddirCN} dargestellt.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.7\textwidth]{../DATA/Windrichtung.eps}
-	\caption[Windrichtung]{Windrichtung.}
-	\label{fig:winddir}
+	\begin{minipage}[t]{0.45\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{../DATA/Windrichtung.eps}
+		\caption[Windrichtung]{Windrichtung.}
+		\label{fig:winddir}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.45\textwidth}
+		\centering
+		\centering
+		\includegraphics[width=\textwidth]{../DATA/WinddirCN.eps}
+		\caption[Windrichtung Verteilung]{Windrichtung Verteilung.}
+		\label{fig:winddirCN}
+	\end{minipage}
 \end{figure}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\textwidth]{../DATA/WinddirCN.eps}
-	\caption[Windrichtung Verteilung]{Windrichtung Verteilung.}
-	\label{fig:winddirCN}
-\end{figure}
-Am Häufigsten wehte der Wind aus SWS mit einem Anteil von 0,18. Davon ausgehend ist eine abnehmende Verteilung gegen den Uhrzeigersinn bis NO zu sehen, im Uhrzeigersinn bis WNW. windrichtung der Klasse 8 (NWN) wurde nie gemessen.
+Etwa 40\,\% der Zeit wehte de Wind aus SSO bis SSW. Weitere 30\,\% der Zeit aus SWS bzw. OSO zu gleichen Teilen. Die verbleibenden Anteile fallen stärker auf die nordöstliche Richtung als Nordwest. aus NNW wehte der Wind nie.
 \subsubsection{Windgeschwindigkeit}
 Die Windgeschwindigkeit kann bereits anhand der Rohdaten (vgl. Abbildung \ref{fig:windspd}) interpretiert werden. Zu großen Anteilen betrug die Windgeschwindigkeit zwischen 0 und \SI{1}{\meter\per\second}. Zwischenzeitlich wurde eine Spitze mit \SI{5}{\meter\per\second} gemessen. Die Häufigkeitsverteilung (Abbildung \ref{fig:windspdCN}) bestätigt diese Beobachtung. Die Geschwindigkeitsklasse 0 bis \SI{1}{\meter\per\second} ist mit einer statistischen Häufigkeit von 0,8 vertreten, gefolgt von 1 bis \SI{2}{\meter\per\second} mit einer Häufigkeit von 0,1.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.7\textwidth]{../DATA/Windgeschwindigkeit.eps}
+	\begin{minipage}[t]{0.45\textwidth}
+	\centering
+	\includegraphics[width=\textwidth]{../DATA/Windgeschwindigkeit.eps}
 	\caption[Windgeschwindigkeit]{Windgeschwindigkeit.}
 	\label{fig:windspd}
-\end{figure}
-
-\begin{figure}[H]
+	\end{minipage}
+\hfill
+	\begin{minipage}[t]{0.45\textwidth}
 	\centering
-	\includegraphics[width=0.7\textwidth]{../DATA/WindspdCN.eps}
+	\includegraphics[width=\textwidth]{../DATA/WindspdCN.eps}
 	\caption[Windgeschwindigkeit Verteilung]{Windgeschwindigkeit Verteilung.}
 	\label{fig:windspdCN}
+	\end{minipage}
 \end{figure}

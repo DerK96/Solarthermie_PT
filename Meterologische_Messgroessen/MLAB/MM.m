@@ -28,6 +28,7 @@ plot(t1,CM11ges);
 plot(t1,CM11dif);
 xlabel('Scan [s]')
 ylabel('Strahlung $\left[\frac{W}{m^2}\right]$')
+pbaspect([3 1 1])
 legend(names,'location','best')
 run plotsettings.m
 print('../DATA/Messreihe_Strahlung.eps','-depsc');
@@ -70,7 +71,8 @@ plot(t2,CM3res);
 plot(t2,CM11res);
 xlabel('Scan [s]')
 ylabel('Strahlung $\left[\frac{W}{m^2}\right]$')
-legend(names2,'location','best')
+pbaspect([3 1 1])
+legend(names2,'location','east')
 run plotsettings.m
 print('../DATA/Messreihe_Ansprechzeit.eps','-depsc');
 hold off
@@ -100,7 +102,8 @@ plot(d.Humidity2.Scan,d.Humidity2.TemperatureC)
 plot(d.Humidity2.Scan,d.Humidity2.RelativeFeuchteinV)
 xlabel('Scan [s]')
 ylabel('Rel. Feuchte [V] / Temperatur [$^{\circ}C$]')
-legend(names3,'location','best')
+pbaspect([3 1 1])
+legend(names3,'location','east')
 run plotsettings.m
 print('../DATA/Messreihe_Umgebung.eps','-depsc');
 hold off
@@ -113,6 +116,7 @@ grid on
 plot(t3,Hum)
 xlabel('Scan [s]')
 ylabel('Spannung [V]')
+pbaspect([3 1 1])
 run plotsettings.m
 print('../DATA/Messreihe_Feuchtekalibration.eps','-depsc');
 hold off
@@ -122,9 +126,10 @@ f = fit(FitHum(:,1),FitHum(:,2),'poly1')
 hold on
 grid on
 plot(f,FitHum(:,1),FitHum(:,2))
-legend('location','best')
+legend('location','southeast')
 ylabel('Relative Luftfeuchte [\%]')
 xlabel('Spannung [V]')
+pbaspect([3 1 1])
 run plotsettings.m
 print('../DATA/Kalibriergerade_Feuchte.eps','-depsc');
 
@@ -140,6 +145,7 @@ plot(t3,Rain)
 %legend('location','best')
 ylabel('Anzahl Impulse')
 xlabel('Scan [s]')
+pbaspect([3 1 1])
 run plotsettings.m
 print('../DATA/Messreihe_Niederschlag.eps','-depsc');
 
@@ -172,9 +178,10 @@ print('../DATA/Windrichtung.eps','-depsc');
 %Windrichtung Verteilung
 figure 
 grid on
-histogram(Winddir,8,'Normalization','probability')
+edges = [0 46 91 136 181 226 271 316 359]
+histogram(Winddir,8,'Normalization','probability','BinEdges',edges)
 %legend('location','best')
-xlabel('Windrichtung $\left[\frac{m}{s}\right]$')
+xlabel('Windrichtung')
 ylabel('Relative Häufigkeit')
 run plotsettings.m
 print('../DATA/WinddirCN.eps','-depsc');
@@ -182,6 +189,7 @@ print('../DATA/WinddirCN.eps','-depsc');
 % Windgeschwindigkeit Verteilung
 figure 
 grid on
+
 histogram(Windspd,8,'BinWidth',1,'Normalization','probability')
 %legend('location','best')
 xlabel('Windrichtung $\left[\frac{m}{s}\right]$')

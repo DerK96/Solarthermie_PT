@@ -80,7 +80,7 @@ In folgender Tabelle sind die Differenzen des Pt100 in Zwei und Vierleiter für 
 \begin{table}[H]
 	\centering
 	\caption{Differenz der Widerstände der Temperatursensoren von Zwei- und Vierleiterschaltung bei den eingestellten Temperaturpunkten und der gewichtete Mittelwert über den Messbereich.}
-	\label{tab:VergleichTPZ}
+	\label{tab:Vergleich}
 	\begin{tabular}{cccccc}
 		Temperatur [\si{\celsius}] & \SI{0}{\celsius} & \SI{20}{\celsius} & \SI{40}{\celsius}&\SI{80}{\celsius} & avg\\ 
 		$\Delta$R [\ohm] & \num{0,6582} & \num{0.6688} &  \num{0,7259}& \num{0,7259}& \num{0.7071} \\
@@ -170,13 +170,13 @@ Die rechte Abbildung zeigt beispielhaft ein Foto der Wärmebildkamera mit allen 
 	\begin{minipage}{0.5\textwidth}
 		\centering
 		\includegraphics[width=0.5\textwidth]{../FLIR_100/FLIR2240.jpg}
-		\caption{\textwidth}{Versuchsaufbau Wärmebildkamera: Die unterschiedlichen Probenplatten wurden im selben Wärmebad mit \SI{60,0}{\celsius} temperiert.}
+		\caption{Versuchsaufbau Wärmebildkamera: Die unterschiedlichen Probenplatten wurden im selben Wärmebad mit \SI{60,0}{\celsius} temperiert.}
 		\label{fig:VersuchsaufbauWBK}
 	\end{minipage}
 	\begin{minipage}{0.5\textwidth}
 		\centering
 		\includegraphics[width=0.5\textwidth]{../FLIR_100/FLIR2241.jpg}
-		\caption{\textwidth}{Foto der Wärmebildkamera über alle Probenplatten bei gleicher Temperatur.}
+		\caption{Foto der Wärmebildkamera über alle Probenplatten bei gleicher Temperatur.}
 		\label{fig:FotoWBK}
 	\end{minipage}
 \end{figure}
@@ -225,7 +225,7 @@ Es wurden folgende Beobachtungen gemacht:
 
 Die mit dem Messfühler ermittelte Temperatur der Proben wird im folgenden als die wahre Temperatur angenommen. Über die mit der Wärmebildkamera ermittelte Temperatur und der Angabe der Umgebungstemperatur, kann über folgende Formel der Emissionsgrad des jeweiligen Materials bestimmt werden. 
 
-\begin{equation}\label{\epsilon}
+\begin{equation}\label{epsilon}
 \epsilon=\frac{T_A^4-T_U^4}{T_M^4-T_U^4}
 \end{equation}
 
@@ -243,7 +243,7 @@ In der folgenden Tabelle sind die nach Gleichung \ref{epsilon} berechneten Emiss
 \begin{table}[H]
 	\centering
 	\caption{Berechnete Emissionsgrade für die Probenmaterialien.}
-	\label{tab:emisionsgrade}
+	\label{tab:emissionsgrade}
 	\begin{tabular}{cc}
 		& $\epsilon$   \\
 		Probe 1 &     1.06                    \\
