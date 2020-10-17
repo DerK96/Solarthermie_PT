@@ -34,7 +34,7 @@ eta0 = 0.830;
 a1 = 3.249;
 a2 = 0.020;
 
-deltaT = ((SolarAnlage.T_VL_KollC+SolarAnlage.T_RL_KollC)./2)-SolarAnlage.T_U_DachC;
+deltaT = ((SolarAnlage.T_VL_KollC + SolarAnlage.T_RL_KollC)./2) - SolarAnlage.T_U_DachC;
 
 eta = eta0-(a1*((Tf-Ta)./(G)))-(a2*(((Tf-Ta)^2)./(G)));
 G_vg = I_Kollektor;

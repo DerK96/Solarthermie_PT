@@ -57,8 +57,8 @@ plot(dfLpH,deviPc(:,6),'--s');
 plot(dfLpH,deviPc(:,7),'-^');
 grid on
 xlim([0 660])
-xlabel('wahrer Durchfluss [$\frac{L}{h}$]')
-ylabel('prozentuale Abweichung [\%]')
+xlabel('wahrer Durchfluss $[\dot{V}] = \frac{L}{h}$')
+ylabel('Abweichung in \%')
 legend('Vortex','US stat','MID','US mobil','RKZ','location','best')
 run plotsettings.m
 printPath = '../DATA/devPcPlot';
@@ -70,8 +70,8 @@ plot(tData.Scan,tData.T1C,'-x');
 plot(tData.Scan,tData.T2C,'-.o');
 grid on
 %xlim([0 660])
-xlabel('elapsed Time [s]')
-ylabel('Temperature [$^{\circ} C$]')
+xlabel('elapsed Time [t] = s')
+ylabel('Temperatur [T] = $^{\circ} C$')
 legend('T1','T2','location','best')
 run plotsettings.m
 printPath = '../DATA/tempPlot';
