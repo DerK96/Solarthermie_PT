@@ -26,8 +26,8 @@ plot(t1,SSR81);
 plot(t1,CM3);
 plot(t1,CM11ges);
 plot(t1,CM11dif);
-xlabel('Scan [s]')
-ylabel('Strahlung $\left[\frac{W}{m^2}\right]$')
+xlabel('elapsed time [t] in s')
+ylabel('Strahlung in $\frac{W}{m^2}$')
 pbaspect([3 1 1])
 legend(names,'location','best')
 run plotsettings.m
@@ -69,8 +69,8 @@ plot(t2,TAGBSres);
 plot(t2,SSR81res);
 plot(t2,CM3res);
 plot(t2,CM11res);
-xlabel('Scan [s]')
-ylabel('Strahlung $\left[\frac{W}{m^2}\right]$')
+xlabel('elapsed time [t] in s')
+ylabel('Strahlung $\frac{W}{m^2}$')
 pbaspect([3 1 1])
 legend(names2,'location','east')
 run plotsettings.m
@@ -100,8 +100,8 @@ hold on
 grid on
 plot(d.Humidity2.Scan,d.Humidity2.TemperatureC)
 plot(d.Humidity2.Scan,d.Humidity2.RelativeFeuchteinV)
-xlabel('Scan [s]')
-ylabel('Rel. Feuchte [V] / Temperatur [$^{\circ}C$]')
+xlabel('elapsed time [t] in s')
+ylabel('Rel. Feuchte [U] in V / Temp. [T] in $^{\circ}C$')
 pbaspect([3 1 1])
 legend(names3,'location','east')
 run plotsettings.m
@@ -114,8 +114,8 @@ figure
 hold on
 grid on
 plot(t3,Hum)
-xlabel('Scan [s]')
-ylabel('Spannung [V]')
+xlabel('elapsed time [t] in s')
+ylabel('Spannung [U] in V')
 pbaspect([3 1 1])
 run plotsettings.m
 print('../DATA/Messreihe_Feuchtekalibration.eps','-depsc');
@@ -127,8 +127,8 @@ hold on
 grid on
 plot(f,FitHum(:,1),FitHum(:,2))
 legend('location','southeast')
-ylabel('Relative Luftfeuchte [\%]')
-xlabel('Spannung [V]')
+ylabel('Relative Luftfeuchte in \%')
+xlabel('Spannung [U] in V')
 pbaspect([3 1 1])
 run plotsettings.m
 print('../DATA/Kalibriergerade_Feuchte.eps','-depsc');
@@ -144,7 +144,7 @@ grid on
 plot(t3,Rain)
 %legend('location','best')
 ylabel('Anzahl Impulse')
-xlabel('Scan [s]')
+xlabel('elapsed time [t] in s')
 pbaspect([3 1 1])
 run plotsettings.m
 print('../DATA/Messreihe_Niederschlag.eps','-depsc');
@@ -161,8 +161,8 @@ figure
 grid on
 plot(tWind,Windspd)
 %legend('location','best')
-ylabel('Windgeschwindigkeit $\left[\frac{m}{s}\right]$')
-xlabel('Scan [s]')
+ylabel('Windgeschwindigkeit [v] in $\frac{m}{s}$')
+xlabel('elapsed time [t] in s')
 run plotsettings.m
 print('../DATA/Windgeschwindigkeit.eps','-depsc');
 
@@ -170,8 +170,8 @@ figure
 grid on
 plot(tWind,Winddir)
 %legend('location','best')
-ylabel('Windrichtung [$^{\circ}$]')
-xlabel('Scan [s]')
+ylabel('Windrichtung in $^{\circ}$')
+xlabel('elapsed time [t] in s')
 run plotsettings.m
 print('../DATA/Windrichtung.eps','-depsc');
 
@@ -181,7 +181,7 @@ grid on
 edges = [0 46 91 136 181 226 271 316 359]
 histogram(Winddir,8,'Normalization','probability','BinEdges',edges)
 %legend('location','best')
-xlabel('Windrichtung')
+xlabel('Windrichtung in $^{\circ}$')
 ylabel('Relative Häufigkeit')
 run plotsettings.m
 print('../DATA/WinddirCN.eps','-depsc');
@@ -192,7 +192,7 @@ grid on
 
 histogram(Windspd,8,'BinWidth',1,'Normalization','probability')
 %legend('location','best')
-xlabel('Windrichtung $\left[\frac{m}{s}\right]$')
+xlabel('Windrichtung in Klassen')
 ylabel('Relative Häufigkeit')
 run plotsettings.m
 print('../DATA/WindspdCN.eps','-depsc');

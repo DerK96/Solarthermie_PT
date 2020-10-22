@@ -24,8 +24,8 @@ plot(t1,WTsekEin);
 plot(t1,WTprimAus);
 plot(t1,WTsekAus);
 plot(t1,WTprimEin);
-xlabel('Scan [5s]');
-ylabel('Temperatur [$^{\circ}C$]');
+xlabel('elapsed time [t] in 5s');
+ylabel('Temperatur [T] in $^{\circ}C$');
 legend(namesa,'location','best');
 run plotsettings.m
 print('../DATA/PlattenWT_A.eps','-depsc');
@@ -94,8 +94,8 @@ hold on
 grid on
 plot(t1,Lanze6,t1,Lanze12,t1,Lanze18,t1,Lanze24,t1,Lanze30,t1,Lanze36,t1,Lanze42,t1,Lanze48,t1,Lanze54,t1,Lanze60)
 plot(t1,Lanze66,t1,Lanze72,t1,Lanze78,t1,Lanze84,t1,Lanze90,t1,Lanze96,t1,Lanze102,t1,Lanze108,t1,Lanze114,t1,Lanze120)
-xlabel('Scan [5s]')
-ylabel('Temperatur [$^{\circ}C$]')
+xlabel('elapsed time [t] in 5s')
+ylabel('Temperatur [T] in $^{\circ}C$')
 fleg = legend(fnlanzen(25:2:63),'location','southoutside');
 fleg.NumColumns = 3;
 run plotsettings.m
@@ -118,8 +118,8 @@ plot(t2,TSpR);
 plot(t2,TSpin);
 plot(t2,TSpout);
 plot(t2,TSp6);
-xlabel('Scan [5s]');
-ylabel('Temperatur [$^{\circ}C$]');
+xlabel('elapsed time [t] in 5s');
+ylabel('Temperatur [T] in $^{\circ}C$');
 legend(namesb,'location','best');
 run plotsettings.m
 print('../DATA/RohrWT_B.eps','-depsc');

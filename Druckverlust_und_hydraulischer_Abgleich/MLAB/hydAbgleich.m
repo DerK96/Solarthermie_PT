@@ -38,8 +38,8 @@ hold on
 plot(kVGem,hGem(1:11),'-x')
 grid on
 % xlim([0 660])
-xlabel('Durchfluss [$H/H_{100}$]')
-ylabel('Druckverlust [$k_v/k_{vs}$]') 
+xlabel('Durchfluss $H/H_{100}$')
+ylabel('Druckverlust $k_v/k_{vs}$') 
 %legend('Messung','Rechnung','location','best')
 run plotsettings.m
 printPath = '../DATA/Ventilkennlinie';
@@ -55,8 +55,8 @@ plot(VSRed.Scan,VSRed.V_Strang_2,'-.','color','k')
 plot(VSRed.Scan,VSRed.V_Strang_3,'-.','color','k')
 legend([p1 p2],'Ausprobieren','Kompensationsmethode','location','best')
 grid on
-xlabel('vergangene Zeit [$s$]')
-ylabel('Durchfluss $\left[\frac{L}{h}\right]$') 
+xlabel('elapsed time [t] in s')
+ylabel('Durchfluss [$\dot V$] in $\frac{l}{h}$') 
 run plotsettings.m
 printPath = '../DATA/Ausprobieren';
 print(printPath,'-depsc');
@@ -69,8 +69,8 @@ plot(Tichel.Scan,Tichel.V_Strang_2,'-.')
 plot(Tichel.Scan,Tichel.V_Strang_3,'-')
 legend('Strang 1','Strang 2','Strang 3','location','best')
 grid on
-xlabel('vergangene Zeit [$s$]')
-ylabel('Durchfluss $\left[\frac{L}{h}\right]$') 
+xlabel('elapsed time [t] in s')
+ylabel('Durchfluss [$\dot V$] in $\frac{l}{h}$') 
 run plotsettings.m
 printPath = '../DATA/Tichel';
 print(printPath,'-depsc');

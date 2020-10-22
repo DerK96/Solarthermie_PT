@@ -53,8 +53,8 @@ hold on
 plot(NennVp,dPKr,'-x');
 plot(NennVp,dPReib,'-.o')
 grid on
-xlabel('Durchfluss [$\frac{L}{h}$]')
-ylabel('Druckverlust [$pa$]') 
+xlabel('Durchfluss [$\dot V$]$ in \frac{L}{h}$')
+ylabel('Druckverlust [p] in pa') 
 legend('Messung','Rechnung','location','best')
 run plotsettings.m
 printPath = '../DATA/dPPlot';

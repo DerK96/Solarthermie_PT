@@ -18,13 +18,17 @@ Die benötigten Temperaturen sind in folgender Tabelle zusammengefasst. Der Volu
 	\begin{tabular}{l|c}
 		\label{tab:extWT}
 		
-		\textbf{Messwert} & \textbf{Mittelwert} [${\celsius}$] \\
+		\textbf{Messwert} & \textbf{Mittelwert} [T] in ${\celsius}$\\
 		\hline
-	$T_{sek,ein}$ & 20,0646 $\pm$0,0397\\
-	$T_{sek,aus}$ & 47,1604 $\pm$0,5687\\
-	$T_{prim,ein}$ & 58,8494 $\pm$0,8431\\
-	$T_{prim,aus}$ & 21,0185 $\pm$0,0965\\
-	
+	$T_{sek,ein}$ & 20,06 $\pm$0,04\\
+	$T_{sek,aus}$ & 47,16 $\pm$0,57\\
+	$T_{prim,ein}$ & 58,85 $\pm$0,84\\
+	$T_{prim,aus}$ & 21,02 $\pm$0,10\\
+
+	%$T_{sek,ein}$ & 20,0646 $\pm$0,0397\\
+	%$T_{sek,aus}$ & 47,1604 $\pm$0,5687\\
+	%$T_{prim,ein}$ & 58,8494 $\pm$0,8431\\
+	%$T_{prim,aus}$ & 21,0185 $\pm$0,0965\\	
 	\end{tabular}
 \end{center}
 Die Berechnung erfolgt gemäß Gleichung \ref{eq:QextWT} bis \ref{eq:UAext}. Näherungsweise wurden eine Wasserdichte von \SI{1000}{\kilogram\per\cubic\meter} und eine Wärmekapazität von \SI{4190}{\joule\per\kilogram\kelvin} angenommen.
@@ -43,6 +47,7 @@ Die Berechnung erfolgt gemäß Gleichung \ref{eq:QextWT} bis \ref{eq:UAext}. Nä
 
 \begin{equation}
 	\label{eq:DeltaTm}
+%	\Delta T_{m} = \frac{|\Delta T_{0} - \Delta T_{1}|}{ln(\frac{\Delta T_{0}}{\Delta T_{1}})} = \SI{4,28}{\kelvin}
 	\Delta T_{m} = \frac{|\Delta T_{0} - \Delta T_{1}|}{ln(\frac{\Delta T_{0}}{\Delta T_{1}})} = \SI{4,2840}{\kelvin}
 \end{equation}
 \begin{center}
@@ -95,12 +100,17 @@ Der blaue MID erfasst den Volumenstrom im Steigrohr, welcher nach Abzug des gege
 	\begin{tabular}{l|c}
 		\label{tab:intWT}
 		
-		\textbf{Messwert} & \textbf{Mittelwert} [${\celsius}$] \\
+		\textbf{Messwert} & \textbf{Mittelwert} [T] in ${\celsius}$\\
 		\hline
-		$T_{sek,ein}$ & 26,6349 $\pm$0,2263\\
-		$T_{sek,aus}$ & 44,4749 $\pm$0,1786\\
-		$T_{prim,ein}$ & 58,2179 $\pm$0,3096\\
-		$T_{prim,aus}$ & 28,7390 $\pm$0,1990\\
+		$T_{sek,ein}$ & 26,63 $\pm$0,23\\
+		$T_{sek,aus}$ & 44,47 $\pm$0,18\\
+		$T_{prim,ein}$ & 58,22 $\pm$0,31\\
+		$T_{prim,aus}$ & 28,74 $\pm$0,20\\
+	
+%		$T_{sek,ein}$ & 26,6349 $\pm$0,2263\\
+%		$T_{sek,aus}$ & 44,4749 $\pm$0,1786\\
+%		$T_{prim,ein}$ & 58,2179 $\pm$0,3096\\
+%		$T_{prim,aus}$ & 28,7390 $\pm$0,1990\\
 		
 	\end{tabular}
 \end{center}
@@ -109,7 +119,8 @@ Die Berechnung nach Gleichung \ref{eq:UAext} ergibt einen UA-Wert von
 
 \begin{equation}
 	\label{eq:UAint}
-	UA_{WÜT} = \frac{\SI{4032,8}{\watt}}{\SI{6.2019}{\kelvin}} = \SI{650,3}{\watt\per\kelvin}
+%	UA_{WÜT} = \frac{\SI{4032,8}{\watt}}{\SI{6.2019}{\kelvin}} = \SI{650,3}{\watt\per\kelvin}
+		UA_{WÜT} = \frac{\SI{4032,8}{\watt}}{\SI{6,20}{\kelvin}} = \SI{650,3}{\watt\per\kelvin}
 \end{equation}
 
 \subsubsection{Volumenstrom Steigrohr}

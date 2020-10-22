@@ -78,11 +78,16 @@ printPath = '../DATA/tempPlot';
 print(printPath,'-depsc');
 %% calc V dot with tempdev
 
-tempDev = 90;       %[s]
-dRohr = 20*10^-3;   %[m]
+tempDev = 70;       %[s]
+rRohr = 10^-2;   %[m]
 lRohr = 9.48;       %[m]
 
-vPs = ((pi*(dRohr^2))*lRohr)/tempDev;
+v = ((pi*(rRohr^2))*lRohr);
+vPs = v/tempDev;
 vPh = vPs*3600000;
+eV = (pi*(rRohr^2))*0.1 %10cm Messungenauigkeit geschätzt
+et = 10 % s Schätzungenauigkeit Flanke
+em3s = eV/tempDev+v/(tempDev^2)*et % Fehler m^3/s
+elh = em3s*3600000 % Fehler l/h
 %% Vdot for comparison (source MID)
 VpMID = mean(tData.MIDinlproh);

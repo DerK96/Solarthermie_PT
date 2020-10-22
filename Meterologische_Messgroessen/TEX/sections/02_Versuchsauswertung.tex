@@ -12,12 +12,11 @@ Der Schattenring des CM11 Pyranometers zur Messung der Diffusstrahlung wurde nac
 	\caption[Messreihe zur Bestimmung der Solarstrahlung]{Messreihe zur Bestimmung der Solarstrahlung}
 	\label{fig:radiation}
 \end{figure}
-Zum Vergleich der Messwerte wurden der Mittelwert und die Standardabweichung der einzelnen Sensoren über den stationären Messbereich zwischen Sekunde 170 und Sekunde 220 gebildet. Die folgende Tabelle zeigt die bestimmten Werte.
+Zum Vergleich der Messwerte wurden der Mittelwert und die Standardabweichung der einzelnen Sensoren über den stationären Messbereich zwischen Sekunde 170 und Sekunde 220 gebildet. Tabelle 1 zeigt die bestimmten Werte. Die angegeben Strahlungswerte beziehen sich auf die Globalstrahlung. Das mit einem Schattenring ausgestattete CM11 Pyranometer misst hingegen nur die Diffusstrahlung. Die Direktstrahlung kann mittels  Gleichung 1 aus den beiden CM11 Pyranometern berechnet werden.
 
-\begin{center}
+\begin{table}[H]
+	\centering
 \begin{tabular}{l|c}
-	\label{tab:radiation}
-	
 	\textbf{Sensor} & \textbf{Strahlung [$\frac{W}{m^2}$]}\\
 	\hline
 	TA GBS & 833,6252 $\pm$2,1081\\
@@ -26,9 +25,12 @@ Zum Vergleich der Messwerte wurden der Mittelwert und die Standardabweichung der
 	CM11 & 964,5125 $\pm$0,4149\\
 	CM11 (diffus) & 68,6927 $\pm$0,1916
 \end{tabular} 
-\end{center}
 
-Die Angegeben Strahlungswerte beziehen sich auf die Globalstrahlung. Das mit einem Schattenring ausgestattete CM11 Pyranometer misst hingegen nur die Diffusstrahlung. Die Direktstrahlung kann mittels folgender Gleichung aus den beiden CM11 Pyranometern berechnet werden:
+	\caption{Gemessene Strahlungsstärken der verschiedenen Sensoren.}
+	\label{tab:radiation}
+\end{table}
+
+
 \begin{equation}
 	\label{eq:Edir}
 	E_{dir}=E_{global}-E_{diffus}=\SI{964.5125}{\watt\per\square\meter}-\SI{68.692}{\watt\per\square\meter} = \SI{895.8205}{\watt\per\square\meter}
@@ -130,21 +132,17 @@ Die normierte Niederschlagshöhe ergibt sich entsprechend Gleichung \ref{eq:rain
 \end{equation}
 
 \subsection{Windmessung}
-Eine sinnvolle Messung der Luftströmung war aufgrund der ungünstigen Position der Messstation nicht möglich. Daher wird auch bei diesem Versuchsteil auf einen bereitgestellten Datensatz zurückgegriffen.
-
-\subsubsection{Windrichtung}
-
-Zunächst ist die Aufnahme der Windrichtung in Abbildung \ref{fig:winddir} gezeigt. Ohne weitere Datenaufarbeitung ist der Datensatz kaum interpretierbar. Die statistische Verteilung ist in Abbildung \ref{fig:winddirCN} dargestellt.
+Eine sinnvolle Messung der Luftströmung war aufgrund der ungünstigen Position der Messstation nicht möglich. Daher wird auch bei diesem Versuchsteil auf einen bereitgestellten Datensatz zurückgegriffen. Zunächst ist die Aufnahme der Windrichtung in Abbildung \ref{fig:winddir} gezeigt. Ohne weitere Datenaufarbeitung ist der Datensatz kaum interpretierbar. Die statistische Verteilung ist in Abbildung \ref{fig:winddirCN} dargestellt.
 \begin{figure}[H]
 	\centering
-	\begin{minipage}[t]{0.45\textwidth}
+	\begin{minipage}[t]{0.4\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{../DATA/Windrichtung.eps}
 		\caption[Windrichtung]{Windrichtung.}
 		\label{fig:winddir}
 	\end{minipage}
 	\hfill
-	\begin{minipage}[t]{0.45\textwidth}
+	\begin{minipage}[t]{0.4\textwidth}
 		\centering
 		\centering
 		\includegraphics[width=\textwidth]{../DATA/WinddirCN.eps}
@@ -153,22 +151,20 @@ Zunächst ist die Aufnahme der Windrichtung in Abbildung \ref{fig:winddir} gezei
 	\end{minipage}
 \end{figure}
 
-Etwa 40\,\% der Zeit wehte de Wind aus SSO bis SSW. Weitere 30\,\% der Zeit aus SWS bzw. OSO zu gleichen Teilen. Die verbleibenden Anteile fallen stärker auf die nordöstliche Richtung als Nordwest. aus NNW wehte der Wind nie.
-\subsubsection{Windgeschwindigkeit}
-Die Windgeschwindigkeit kann bereits anhand der Rohdaten (vgl. Abbildung \ref{fig:windspd}) interpretiert werden. Zu großen Anteilen betrug die Windgeschwindigkeit zwischen 0 und \SI{1}{\meter\per\second}. Zwischenzeitlich wurde eine Spitze mit \SI{5}{\meter\per\second} gemessen. Die Häufigkeitsverteilung (Abbildung \ref{fig:windspdCN}) bestätigt diese Beobachtung. Die Geschwindigkeitsklasse 0 bis \SI{1}{\meter\per\second} ist mit einer statistischen Häufigkeit von 0,8 vertreten, gefolgt von 1 bis \SI{2}{\meter\per\second} mit einer Häufigkeit von 0,1.
+Etwa 40\,\% der Zeit wehte de Wind aus SSO bis SSW. Weitere 30\,\% der Zeit aus SWS bzw. OSO zu gleichen Teilen. Die verbleibenden Anteile fallen stärker auf die nordöstliche Richtung als Nordwest. aus NNW wehte der Wind nie. Die Windgeschwindigkeit kann bereits anhand der Rohdaten (vgl. Abbildung \ref{fig:windspd}) interpretiert werden. Zu großen Anteilen betrug die Windgeschwindigkeit zwischen 0 und \SI{1}{\meter\per\second}. Zwischenzeitlich wurde eine Spitze mit \SI{5}{\meter\per\second} gemessen. Die Häufigkeitsverteilung (Abbildung \ref{fig:windspdCN}) bestätigt diese Beobachtung. Die Geschwindigkeitsklasse 0 bis \SI{1}{\meter\per\second} ist mit einer statistischen Häufigkeit von 0,8 vertreten, gefolgt von 1 bis \SI{2}{\meter\per\second} mit einer Häufigkeit von 0,1.
 \begin{figure}[H]
 	\centering
-	\begin{minipage}[t]{0.45\textwidth}
+	\begin{minipage}[t]{0.4\textwidth}
 	\centering
 	\includegraphics[width=\textwidth]{../DATA/Windgeschwindigkeit.eps}
 	\caption[Windgeschwindigkeit]{Windgeschwindigkeit.}
 	\label{fig:windspd}
 	\end{minipage}
 \hfill
-	\begin{minipage}[t]{0.45\textwidth}
+	\begin{minipage}[t]{0.4\textwidth}
 	\centering
 	\includegraphics[width=\textwidth]{../DATA/WindspdCN.eps}
-	\caption[Windgeschwindigkeit Verteilung]{Windgeschwindigkeit Verteilung.}
+	\caption[Windgeschwindigkeit Verteilung]{Geschwindigkeitsverteilung.}
 	\label{fig:windspdCN}
 	\end{minipage}
 \end{figure}
