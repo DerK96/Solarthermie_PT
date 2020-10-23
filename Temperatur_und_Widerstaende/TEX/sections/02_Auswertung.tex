@@ -56,7 +56,9 @@ Die Temperatursensoren Pt100 4L, Pt100 2L, Pt1000 und KTC zeigen lineare Widerst
 \subsubsection{Vergleich von Pt100 4L und Pt100 2L}
 
 Bei der Messung wurden unter anderem ein Pt100 in Vierleiterschaltung und ein Pt100 in Zweileiterschaltung verwendet. Die beiden Thermometer unterscheiden sich in ihrer Anschlussart. Bei Widerstandsthermometern wird die Messgenauigkeit durch den Leitungswiderstand der Kabel stark beeinflusst wird (dieser wird mit zunehmender Kabellänge größer). Bei einem Pt 100 der Klasse B können pro Meter Leitungslänge ungefähr \SI{0,4}{\kelvin} Messfehler berechnet werden. Eine höhere Genauigkeitsklasse des Thermometer könnte an dieser Stelle keine Verbesserung der Messung hervorrufen, da der größere Messfehler durch das Anschlusskabel entsteht. 
-Dieser Fehler wird bei Drei- oder Vierleiterschaltungen durch eine andere Verdrahtung im Anschluss kompensiert. Bei der Vierleiterschaltung werden zwei zusätzliche Leiter an Messwiderstand und Messgerät angeschlossen. Dadurch werden zwei weitere Messkreise geschlossen, mit denen der Leitungswiderstand des Anschlusskabels doppelt ermittelt wird. Der Eigenwiderstand der Leitung kann dadurch berechnet und kompensiert werden.
+Dieser Fehler wird bei Drei- oder Vierleiterschaltungen durch eine andere Verdrahtung im Anschluss kompensiert. Bei der Vierleitermessung wird der Messstrom über zwei Adern durch den Messwiderstand gespeist und der Spannungsabfall über die beiden anderen Adern bestimmt. Hierdurch kann der Eigenwiderstand der Leitung kompensiert werden.
+
+%Bei der Vierleiterschaltung werden zwei zusätzliche Leiter an Messwiderstand und Messgerät angeschlossen. Dadurch werden zwei weitere Messkreise geschlossen, mit denen der Leitungswiderstand des Anschlusskabels doppelt ermittelt wird. Der Eigenwiderstand der Leitung kann dadurch berechnet und kompensiert werden.
 
 Die folgende Abbildung \ref{fig:2L4L} zeigt die Messung der beiden Pt100 Temperatursensoren in Zwei- und Vierleiterschaltung mit gleicher Kabellänge im Vergleich. Die Kennlinie des Pt100 in Zweileiterschaltung (unkompensiert) liegt infolge des zuvor beschriebenen Phänomens höher, als die des Pt100 in Vierleiterschaltung. 
 
@@ -81,11 +83,11 @@ In folgender Tabelle sind die Differenzen des Pt100 in Zwei und Vierleiter für 
 
 Aus den berechneten Differenzen für die Widerstandswerte lässt sich erkennen, dass der Leitungswiderstand mit steigenden Temperaturen zunimmt. Dieses Verhalten ist nach den physikalischen Gesetzmäßigkeiten zu erwarten. Da das Anschlusskabel nur eine definierte Länge aufweist, wurde für die Abschätzung der Kabellänge der Mittelwert über die Messwerte gebildet und die Kabellänge unter der Annahme der Temperaturunabhängigkeit des Widerstandes berechnet. 
 
-Nach folgender Gleichung \ref{eq:Kabellänge} kann daraus die Länge des Anschlusskabels berechnet werden. Die Angaben für den spezifischen Widerstand der Kabelader und der Kabelquerschnitt wurden den Praktikumsunterlagen entnommen:
+Nach folgender Gleichung \ref{eq:Kabellänge} kann daraus die Länge des Anschlusskabels berechnet werden. Die Angaben für den spezifischen Widerstand der Kabelader und der Kabelquerschnitt wurden den Praktikumsunterlagen entnommen. Das Ergebnis wird halbiert, da sich die Widerstände beider Adern addieren:
 
 \begin{equation}
 \label{eq:Kabellänge}
-l_{Kabel}= \frac{\Delta R*A_{Quer}}{\rho}=\frac{\SI{0,7071}{\ohm}*\SI{0,1}{\milli\meter\squared}}{\SI{0,0278}{\ohm\milli\meter\squared\per\meter}}=\SI{2,5}{\meter}
+l_{Kabel}= \frac{\Delta R*A_{Quer}}{2*\rho}=\frac{\SI{0,7071}{\ohm}*\SI{0,1}{\milli\meter\squared}}{2*\SI{0,0278}{\ohm\milli\meter\squared\per\meter}}=\SI{1,25}{\meter}
 \end{equation}
 
 \begin{center}
@@ -97,7 +99,7 @@ l_{Kabel}= \frac{\Delta R*A_{Quer}}{\rho}=\frac{\SI{0,7071}{\ohm}*\SI{0,1}{\mill
 	\end{small}
 \end{center}
 
-Die berechnete Kabellänge für den Anschluss beträgt \SI{2,5}{\meter}.
+Die berechnete Kabellänge für den Anschluss beträgt \SI{1,25}{\meter}.
 
 \subsubsection{Spannungsverlauf des Thermoelements}
 
@@ -139,7 +141,7 @@ Thermoelemente zeichnen sich in der Anwendung bei extremen Temperaturen und Umwe
 Platin-Temperatursensoren zeichnen sich durch ihren linearen Widerstand über einen großen Temperaturbereich aus (\SI{-200}{\celsius} bis \SI{1000}{\celsius}), was eine sehr stabile Temperaturmessung über sehr große Messbereiche ermöglicht. Sie finden häufig Anwendung in Lebensmittelverarbeitungsanlagen, in der Raumfahrt oder zur Messung von Abgastemperaturen in der Automobilindustrie. Platin ist quasi chemisch inert, sodass es selbst bei Feuchte, korrosiver Umgebung und weiteren extremeren Umweltbelastungen zuverlässig funktionieren kann.\cite{quelle.2020}
 
 In großen Fertigungsanlagen war es früher üblich kostengünstigere Thermometer in Zweileiter-Schaltung anzuschließen. Die durch den Leitungswiderstand entstehende Messfehler wurden tabellarisch aufgeführt und die systematischen Fehler mithilfe der Korrektur-Tabellen angepasst. Mit heutiger digitaler Technik können diese Werte direkt bei der Messung voreingestellt und automatisch korrigiert werden. 
-
+Bei langen Messstrecken mit zwei Adern empfiehlt es sich, Sensoren mit möglichst großen Widerständen zu nutzen, um den anteiligen Fehler durch den Leitungswiderstand gering zu halten. Im Bereich 0..100\si{\celsius} sind hierbei KTY bzw. NTCs denkbar.
 \subsection{Teil II: Identifizierung der Sensoren}
 
 Für die Identifizierung der Temperatursensoren unterschiedlicher Typen stand ein Multimeter und die Kennliniendiagramme verschiedener Widerstandssensoren aus dem Praktikumsskript zur Verfügung. Die verschiedenen Temperatursensoren wurden jeweils an das Multimeter angeschlossen und ihr Widerstand bei Raumtemperatur (ca. \SI{23}{\celsius}) ermittelt. Anschließend wurde der jeweilige Sensor mit der Hand erwärmt, was zu einem Temperaturanstieg und der Veränderung des Widerstands führte. Anhand der erhaltenen Widerstandswerte wurde mithilfe der Kennliniendiagramme der jeweilige Sensor identifiziert. 
@@ -177,7 +179,8 @@ In der folgende Tabelle sind die Probenmaterialien und die mithilfe der Wärmebi
 Es wurden folgende Beobachtungen gemacht (aufgenommene Bilder s. Anhang):
 
 - Mit einem für die Wärmebildkamera voreingestellten Emissionsgrad von $\epsilon=0,95$ können die Temperaturen der  Kunststoffe (3 und 6) und des eloxierten (beschichteten) Aluminium (1) annähernd gut ermittelt werden. Da der Emissionsgrad $\epsilon$ der Metalle geringer ist, erscheinen sie in Betrachtung durch die  Wärmebildkamera kälter. \\
-- Der aufgeklebte Kunststoffpunkt auf den Proben 3 (weißer Kunststoffpunkt auf Kunststoff) und 5 (schwarzer Kunststoffpunkt auf Metall) ist unabhängig seiner Farbe gut zu erkennen, da sein Emissionsgrad annähernd dem voreingestellten der Kamera entspricht und die Temperatur am aufgeklebten Punkt relativ genau ermittelt werden kann. Der Emissionsgrad ist demzufolge material- aber nicht farbunabhängig. Diese Beobachtung deckt sich zusätzlich mit der direkten Messung der aus dem selben Material bestehenden Kunststoffproben unterschiedlicher Farbe (3 und 6). \\
+- Der POM-Messpunkt ist bei Probe 3 (schwarzer Punkt auf weißem Kunststoff) nicht zu erkennen, bei Probe 5 (schwarzer Kunststoffpunkt auf Metall) hingegen schon. Der Emissionsgrad ist demzufolge material- aber nicht farbabhängig. Diese Beobachtung deckt sich zusätzlich mit der direkten Messung der aus dem selben Material bestehenden Kunststoffproben unterschiedlicher Farbe (3 und 6). \\
+%- Der aufgeklebte Kunststoffpunkt auf den Proben 3 (weißer Kunststoffpunkt auf Kunststoff) und 5 (schwarzer Kunststoffpunkt auf Metall) ist unabhängig seiner Farbe gut zu erkennen, da sein Emissionsgrad annähernd dem voreingestellten der Kamera entspricht und die Temperatur am aufgeklebten Punkt relativ genau ermittelt werden kann. Der Emissionsgrad ist demzufolge material- aber nicht farbunabhängig. Diese Beobachtung deckt sich zusätzlich mit der direkten Messung der aus dem selben Material bestehenden Kunststoffproben unterschiedlicher Farbe (3 und 6). \\
 -  Steht die Kamera korrekt (senkrecht, ca. \SI{1}{m} über dem Messobjekt) können sich teilweise die Wärmeabstrahlung der Deckenbeleuchtung oder Wärmeabstrahlung von beispielsweise Händen die senkrecht über die Kamera gehalten werden von dieser zusätzlich durch Reflexion an beispielsweise den Metallproben erfasst werden, sodass das Messobjekt mit einer Schattenabbildung der Lampe oder der Hand fotografiert wird. \\
 - Wird der Winkel oder die Entfernung der Wärmebildkamera zum Messobjekt verändert, kann diese die Temperatur nicht mehr optimal ermitteln. Durch Spiegelungen und Reflexionen erscheinen die Materialien teilweise wärmer oder kälter, auch innerhalb einer Materialprobe. 
 
