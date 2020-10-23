@@ -17,8 +17,8 @@ figure
 hold on
 plot(x,y);
 plot(x,M)
-xlabel('Scan [s]')
-ylabel('Temperatur [$^{\circ}C]$')
+xlabel('elapsed time [t] in s')
+ylabel('Temperatur [T] in $^{\circ}C$')
 run plotsettings.m
 print('Fixpunktkalibration','-depsc');
 hold off
@@ -65,8 +65,8 @@ for h = 1:5
     title(names{h})
     plot(m2(1,:),m2(h+1,:),'x','color','k');
     fplot(pfun{h+1},'color','r');
-    xlabel('Temperatur [$^{\circ}C$]')
-    ylabel('Widerstand [$\Omega$]')
+    xlabel('Temperatur [T] in $^{\circ}C$')
+    ylabel('Widerstand [R] in $\Omega$')
     xlim([-10 85])
 end
 subplot(2,3,6)
@@ -84,8 +84,8 @@ figure
 hold on
 plot(m2(1,:),m2(2,:),'-x');
 plot(m2(1,:),m2(3,:),'-.o');
-xlabel('Temperatur [$^{\circ}C$]')
-ylabel('Widerstand [$\Omega$]')
+xlabel('Temperatur [T] in $^{\circ}C$')
+ylabel('Widerstand [R] in $\Omega$')
 run plotsettings.m
 legend(names{1},names{2},'location','best')
 print('Vergleich2L4L','-depsc');
@@ -96,8 +96,8 @@ hold on
 grid on
 plot(m2(1,:),m2(7,:),'x','color','k');
 fplot(pfun{7},'color','r');
-xlabel('Temperatur [$^{\circ}C$]')
-ylabel('Spannung [$V$]')
+xlabel('Temperatur [T] in $^{\circ}C$')
+ylabel('Spannung [U] in V')
 legend('data','linear fit','location','best')
 run plotsettings.m
 print('Spannung','-depsc');
