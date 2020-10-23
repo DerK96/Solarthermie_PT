@@ -85,9 +85,9 @@ lRohr = 9.48;       %[m]
 v = ((pi*(rRohr^2))*lRohr);
 vPs = v/tempDev;
 vPh = vPs*3600000;
-eV = (pi*(rRohr^2))*0.1 %10cm Messungenauigkeit geschätzt
-et = 10 % s Schätzungenauigkeit Flanke
-em3s = eV/tempDev+v/(tempDev^2)*et % Fehler m^3/s
-elh = em3s*3600000 % Fehler l/h
+eV = (pi*(rRohr^2))*0.1; %10cm Messungenauigkeit geschätzt
+et = 10; % s Schätzungenauigkeit Flanke
+em3s = eV/tempDev+v/(tempDev^2)*et; % Fehler m^3/s
+elh = em3s*3600000; % Fehler l/h
 %% Vdot for comparison (source MID)
 VpMID = mean(tData.MIDinlproh);

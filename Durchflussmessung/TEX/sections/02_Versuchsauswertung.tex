@@ -1,7 +1,8 @@
 \section{Versuchsauswertung}
 
 \subsection{Versuch 1}
-Im ersten Versuchsteil wurden sechs verschiedene Durchflüsse von \SI{60}{\litre\per\hour} bis \SI{660}{\litre\per\hour} mit Hilfe eines Taco-Setters eingestellt und die Messdaten der verbauten Sensoren verglichen. Als Referenz wurde das durchströmende Wasser am Auslass der Messstrecke in einem Eimer gesammelt, gewogen und die Messdauer notiert. Dieser Wert wird als wahrer Durchfluss angenommen. Abbildung \ref{fig:devPc} zeigt die Abweichung der unterschiedlichen Sensoren vom Wahren Durchfluss. 
+Im ersten Versuchsteil wurden sechs verschiedene Durchflüsse von \SI{60}{\liter\per\hour} bis \SI{660}{\liter\per\hour} mit Hilfe eines Taco-Setters eingestellt und die Messdaten der verbauten Sensoren verglichen. Als Referenz wurde das durchströmende Wasser am Auslass der Messstrecke in einem Eimer gesammelt, gewogen und die Messdauer notiert. Dieser Wert wird als wahrer Durchfluss angenommen. Abbildung \ref{fig:devPc} zeigt die Abweichung der unterschiedlichen Sensoren vom wahren Durchfluss. 
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{../DATA/devPcPlot.eps}
@@ -11,7 +12,7 @@ Im ersten Versuchsteil wurden sechs verschiedene Durchflüsse von \SI{60}{\litre
 
 \begin{table}[H]
 	\centering
-	\caption[Arithmetische Mittelwerte und Standardabweichungen der Durchflusssensoren.]{Arithmetische Mittelwerte und Standardabweichungen der Durchflusssensoren.}
+	\caption[Arithmetische Mittelwerte und Standardabweichungen der Durchflusssensoren.]{Arithmetische Mittelwerte und Standardabweichungen der Durchflusssensoren. (MID = Magnetisch induktiver Durchflussmesser, US = Ultraschall, RKZ = Ringkolbenzähler)}
 	\label{tab:meanSigData}
 	\begin{tabular}{S[separate-uncertainty,table-parse-only,table-figures-uncertainty = 1]S[separate-uncertainty,table-parse-only,table-figures-uncertainty = 1]S[separate-uncertainty,table-parse-only,table-figures-uncertainty = 1]S[separate-uncertainty,table-parse-only,table-figures-uncertainty = 1]}
 		
@@ -20,28 +21,28 @@ Im ersten Versuchsteil wurden sechs verschiedene Durchflüsse von \SI{60}{\litre
 		{wahrer Durchfluss}        &  {Vortex}            &{US stat}            &{MID}            \\  
 		{$[\dot{V}] = \si{\litre\per\hour}$}&{$[\dot{V}] = \si{\litre\per\hour}$}&{$[\dot{V}] = \si{\litre\per\hour}$}&{$[\dot{V}] = \si{\litre\per\hour}$}\\
 		\midrule
-		63.14220               &  43.7156  (243188  ) & 63.1847  (  10577) &  69.0083  ( 06710 )  \\
-		116.9762               &  128.1026 ( 09770  ) & 116.8114 (  10102) &  123.8232 ( 08339 )  \\
-		241.8581               &  244.0911 ( 11393  ) & 239.6007 (  10094) &  250.4983 ( 09285 )  \\
-		389.7605               &  385.7592 ( 25079  ) & 389.8219 (195831)  & 400.8603 ( 22251 )   \\
-		488.8910               &  481.8952 ( 18571  ) & 482.9031 (  15359) &  501.6424 ( 13441 )  \\
-		606.4940               &  596.3836 ( 28746  ) & 598.2423 (  27780) &  620.5848 ( 33006 )  \\
+		63(2)               &  43.7  (24  ) & 63.2  (  10) &  69.0  ( 06 )  \\
+		116(2)              &  128.1 ( 09  ) & 116.8 (  10) &  123.8 ( 08 )  \\
+		241(2)               &  244.1 ( 11  ) & 239.6 (  10) &  250.4 ( 09 )  \\
+		389(2)               &  385.8 ( 25  ) & 389.8 (195)  &  400.9 ( 22 )  \\
+		488(2)               &  481.9 ( 18  ) & 482.9 (  15) &  501.6 ( 13 )  \\
+		606(2)               &  596.4 ( 28  ) & 598.2 (  27) &  620.6 ( 33 )  \\
 		\bottomrule
 		{wahrer Durchfluss}&		{US mobil}       &    {RKZ}           				 & {Stichprobengröße} \\
 		{$[\dot{V}] = \si{\litre\per\hour}$}&{$[\dot{V}] = \si{\litre\per\hour}$}&{$[\dot{V}] = \si{\litre\per\hour}$}& {$[n]$ = Stück}\\
 		\midrule
-		63.14220						&		54.4603   ( 14218 ) &  49.1009  ( 181448)  & 514\\
-		116.9762						&		111.1667  ( 12612 ) &   95.0675  ( 350284) & 236\\
-		241.8581						&		242.0576  ( 08049 ) &  217.9288  ( 677619) & 122\\
-		389.7605						&		383.0093  ( 30340 )  & 427.8585  (1323540) & 83\\
-		488.8910						&		478.9012  ( 19726 ) &  432.1874  (1361169) & 64\\
-		606.4940						&		595.8492  ( 31063 ) &  459.7167  (1865268) & 49\\
+		 63(2)	&  54.4  ( 14 ) &   49.1  ( 181) & 514\\
+		116(2)	& 111.1  ( 12 ) &   95.0  ( 350) & 236\\
+		241(2)	& 242.0  ( 08 ) &  217.9  ( 677) & 122\\
+		389(2)	& 383.0  ( 30 ) &  427.8  (1323) &  83\\
+		488(2)	& 478.9  ( 19 ) &  432.1  (1361) &  64\\
+		606(2)	& 595.8  ( 31 ) &  459.7  (1865) &  49\\
 		\bottomrule
 	\end{tabular}
 \end{table}
 
 
-Die geringste Abweichung bietet das Stationäre Ultraschallgerät mit unter \SI{2}{\percent} Abweichung über den gesamten Messbereich hinweg. Auch das mobile Ultraschallgerät bietet ab \SI{240}{\litre\per\hour} eine ähnliche Genauigkeit. Das MID bietet erst ab einem Durchfluss von \SI{300}{\litre\per\hour} eine konstante Genauigkeit bei einer Abweichung von -3\%. Der Vortexmesser ist mit einem minimalen Arbeitsbereich von \SI{50}{\litre\per\hour} angegeben, praktisch liefert er bei \SI{60}{\litre\per\hour} keinen brauchbaren Wert. Ab \SI{240}{\litre\per\hour} liefert er plausible Werte. Am schlechtesten schneidet der Ringkolbenzähler ab, welcher mit hohen Abweichungen im zweistelligen Bereich (je nach Durchflussrate in beide Richtungen) lediglich für qualitative Messungen geeignet ist.
+Die geringste Abweichung bietet das Stationäre Ultraschallgerät mit unter 2\% Abweichung über den gesamten Messbereich hinweg. Auch das mobile Ultraschallgerät bietet ab \SI{240}{\liter\per\hour} eine ähnliche Genauigkeit. Das MID bietet erst ab einem Durchfluss von \SI{300}{\liter\per\hour} eine konstante Genauigkeit bei einer Abweichung von -3\%. Der Vortexmesser ist mit einem minimalen Arbeitsbereich von \SI{50}{\liter\per\hour} angegeben, praktisch liefert er bei \SI{60}{\liter\per\hour} keinen brauchbaren Wert. Ab \SI{240}{\liter\per\hour} liefert er plausible Werte. Am schlechtesten schneidet der Ringkolbenzähler ab, welcher mit hohen Abweichungen im zweistelligen Bereich (je nach Durchflussrate in beide Richtungen) lediglich für qualitative Messungen geeignet ist.
 
 \subsection{Versuch 2}
 

@@ -12,16 +12,6 @@ dfLpH = df*3600; %für rhoH20=1000kg/m^3
 
 %% Fehler Waage
 
-
-m=Waage(6,4)/1000;
-t=Waage(6,3);
-errorm=0,001;
-errort=1;
-
-error =(1/t)*errorm-(m/t^2)*errort;
-errorstd=error*3600;
-
-
 for i = 1:size(Waage,1)
     m = Waage(i,4)/1000;
     t = Waage(i,3);
