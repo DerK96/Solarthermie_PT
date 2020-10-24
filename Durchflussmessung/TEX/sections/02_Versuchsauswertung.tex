@@ -42,7 +42,8 @@ Im ersten Versuchsteil wurden sechs verschiedene Durchflüsse von \SI{60}{\liter
 \end{table}
 
 
-Die geringste Abweichung bietet das Stationäre Ultraschallgerät mit unter 2\% Abweichung über den gesamten Messbereich hinweg. Auch das mobile Ultraschallgerät bietet ab \SI{240}{\liter\per\hour} eine ähnliche Genauigkeit. Das MID bietet erst ab einem Durchfluss von \SI{300}{\liter\per\hour} eine konstante Genauigkeit bei einer Abweichung von -3\%. Der Vortexmesser ist mit einem minimalen Arbeitsbereich von \SI{50}{\liter\per\hour} angegeben, praktisch liefert er bei \SI{60}{\liter\per\hour} keinen brauchbaren Wert. Ab \SI{240}{\liter\per\hour} liefert er plausible Werte. Am schlechtesten schneidet der Ringkolbenzähler ab, welcher mit hohen Abweichungen im zweistelligen Bereich (je nach Durchflussrate in beide Richtungen) lediglich für qualitative Messungen geeignet ist.
+Die geringste Abweichung bietet das Stationäre Ultraschallgerät mit unter 2\% Abweichung über den gesamten Messbereich hinweg. Auch das mobile Ultraschallgerät bietet ab \SI{240}{\liter\per\hour} eine ähnliche Genauigkeit. Das MID bietet erst ab einem Durchfluss von \SI{300}{\liter\per\hour} eine konstante Genauigkeit bei einer Abweichung von -3\%. Der Vortexmesser ist mit einem minimalen Arbeitsbereich von \SI{50}{\liter\per\hour} angegeben, praktisch liefert er bei \SI{60}{\liter\per\hour} keinen brauchbaren Wert. Ab \SI{240}{\liter\per\hour} liefert er plausible Werte. Am schlechtesten schneidet der Ringkolbenzähler ab, welcher mit hohen Abweichungen im zweistelligen Bereich (je nach Durchflussrate in beide Richtungen) lediglich für qualitative Messungen geeignet ist. Die Problematik liegt hierbei in der Messmethode: Der Zähler gibt nur bei jedem ganzen Liter einen Impuls aus. Bei dem maximalen wahren Durchfluss von ca. \SI{600}{\liter\per\hour} entspricht dies einem Impuls alle sechs Sekunden. Bei geringeren Durchflüssen steigt der zeitliche Abstand zwischen den Impulsen. Je nach gewähltem Scanabschnitt bei der Auswertung variiert die Abweichung.
+Für das Wägeverfahren wurde die Genauigkeit der Waage auf ganze Gramm geschätzt, die Unsicherheit bei der Zeitmessung auf eine Sekunde. Mit steigenden Durchflüssen (und kürzeren Messzeiten bis zur Füllung des Eimers) nimmt der Einfluss der Zeitmessung zu.
 
 \subsection{Versuch 2}
 
@@ -65,26 +66,26 @@ Zur Bestimmung des Durchflusses wird  die Laufzeit (Zeitlicher Abstand der Flank
 		
 		\textbf{Flanke} & \textbf{Laufzeit} [t] = s\\
 		\hline
-		steigend & 70 
+		steigend & 70$\pm$5 
 	\end{tabular}
 \end{center}
 
 Für die Auswertung wird die steigende Flanke genutzt, da diese schärfer aufgelöst ist.
 
-Die gemessene Strecke zwischen den beiden Sensoren beträgt \SI{9,48}{\meter}, der Querschnitt der Leitung ist mit \SI{0,02}{\meter} angegeben. Das Volumen der Messstrecke berechnet sich nach Gleichung \ref{eq:vol} zu:
+Die gemessene Strecke zwischen den beiden Sensoren beträgt 9,48$\pm$\si{\meter}, der Querschnitt der Leitung ist mit \SI{0,02}{\meter} angegeben. Das Volumen der Messstrecke berechnet sich nach Gleichung \ref{eq:vol} zu:
 
 \begin{equation}
 	\label{eq:vol}
-	V_{\text{Rohr}} = \pi * r^2 * l = \pi * (\SI{0,01}{\meter})^2 * \SI{9,48}{\meter} = \SI{2,978}{\litre}
+	V_{\text{Rohr}} = \pi * r^2 * l = \pi * (\SI{0,01}{\meter})^2 * \SI{9,48}{\meter} = 2,978\pm0,0314\si{\litre}
 \end{equation}
 
 Der Durchfluss entspricht dem Quotienten aus Rohrvolumen und Laufzeit und ist in Gleichung \ref{eq:flow} berechnet.
 
 \begin{equation}
 	\label{eq:flow}
-	\dot V = \frac{V_{Rohr}}{t_{LZ}}*\SI{3600}{\second\per\hour} = \frac{\SI{2,978}{\litre}}{\SI{70}{\second}}*\SI{3600}{\second\per\hour} = \SI{153,2}{\litre\per\hour}
+	\dot V = \frac{V_{Rohr}}{t_{LZ}}*\SI{3600}{\second\per\hour} = \frac{2,978\pm0,00314\si{\litre}}{70\pm5\si{\second}}*\SI{3600}{\second\per\hour} = 153\pm12\si{\litre\per\hour}
 \end{equation}
 
-Der MID hat während der Flankenmessung einen Durchfluss von \SI{234,4(48)}{\litre\per\hour} angezeigt, was \SI{53}{\percent} über dem experimentell bestimmten Wert liegt. Da es sich bei der Flankenmessung um ein thermisches Messverfahren handelt, ist dieses mit einer gewissen Latenz verbunden. Die Differenz zwischen den gemessenen Flanken sollte ohne diese Einschränkung kürzer ausfallen, wodurch ein höherer Volumenstrom resultiert.
+Der MID hat während der Flankenmessung einen Durchfluss von \SI{234,4(48)}{\litre\per\hour} angezeigt, was \SI{53}{\percent} über dem experimentell bestimmten Wert liegt. Da es sich bei der Flankenmessung um ein thermisches Messverfahren handelt, ist dieses mit einer gewissen Latenz verbunden. Die Differenz zwischen den gemessenen Flanken sollte ohne diese Einschränkung kürzer ausfallen, wodurch ein höherer Volumenstrom resultiert. Die Längenmessung hat einen verhältnismäßig geringen Einfluss auf das Messergebnis und wurde mit einer Unsicherheit von \SI{10}{\centi\meter} geschätzt. Bei \SI{20}{\centi\meter} steigt die Unsicherheit des Ergebnisses auf \SI{14}{\litre\per\hour}. Da die Temperaturflanken eine gewisse Krümmung aufweisen, wurde hier eine Unsicherheit von 5 Sekunden angenommen. Die Zeit hat somit den größeren Einfluss auf die Messung. 
 
 
