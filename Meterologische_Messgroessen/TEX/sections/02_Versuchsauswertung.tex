@@ -19,11 +19,16 @@ Zum Vergleich der Messwerte wurden der Mittelwert und die Standardabweichung der
 \begin{tabular}{l|c}
 	\textbf{Sensor} & \textbf{Strahlung [$\frac{W}{m^2}$]}\\
 	\hline
-	TA GBS & 833,6252 $\pm$2,1081\\
-	SSR81 & 916,4836 $\pm$0,6581\\
-	CM3 & 957,7781 $\pm$1,7451\\
-	CM11 & 964,5125 $\pm$0,4149\\
-	CM11 (diffus) & 68,6927 $\pm$0,1916
+		TA GBS & 833,6 $\pm$2,1\\
+		SSR81 & 916,5 $\pm$0,7\\
+		CM3 & 957,8 $\pm$1,7\\
+		CM11 & 964,5 $\pm$0,4\\
+		CM11 (diffus) & 68,7 $\pm$0,2
+%	TA GBS & 833,6252 $\pm$2,1081\\
+%	SSR81 & 916,4836 $\pm$0,6581\\
+%	CM3 & 957,7781 $\pm$1,7451\\
+%	CM11 & 964,5125 $\pm$0,4149\\
+%	CM11 (diffus) & 68,6927 $\pm$0,1916
 \end{tabular} 
 
 	\caption{Gemessene Strahlungsstärken der verschiedenen Sensoren.}
@@ -54,10 +59,10 @@ Wie im vorherigen Teil der Auswertung wurden bereitgestellte Daten verwendet. Di
 		
 		\textbf{Sensor} & \textbf{Minimum} [$\frac{W}{m^2}$] & \textbf{Maximum} [$\frac{W}{m^2}$]& \textbf{95\% Treshold} [$\frac{W}{m^2}$] & \textbf{Dauer} [s]\\
 		\hline
-		TA GBS & 8,75 & 824,1 & 782,9 & 36 \\
-		SSR 81 & 43,54 & 898,7 & 853,8 & 1 \\
-		CM 3 & 15,12 & 908,0 & 862,4 & 18 \\
-		CM11 & 25,84 & 903,9 & 858,7 & 22 \\
+		TA GBS & 8,8 & 824,1 & 782,9 & 36 \\
+		SSR 81 & 43,5 & 898,7 & 853,8 & 1 \\
+		CM 3 & 15,1 & 908,0 & 862,4 & 18 \\
+		CM11 & 25,8 & 903,9 & 858,7 & 22 \\
 	\end{tabular}
 \end{center}
 Den Erwartungen entsprechend reagiert der SSR 81 Halbleiter direkt auf die Verschattung, während die Pyranometer eine Latenz aufweisen. Der TA GBS verzögert für einen Halbleiter ungewöhnlich lang.
@@ -70,10 +75,10 @@ Zunächst wurden die Umgebungstemperatur und die Ausgangsspannung des Feuchtesen
 		
 		\textbf{Messgröße} & \textbf{Mittelwerte} & \textbf{Lit. rel. Feuchte}\\
 		\hline
-		Umgebungstemperatur & 24,1005 $\pm$0,0434\,$\celsius$ &\\
-		Umgebungsluftfeuchte & 5,9791 $\pm$0,0284\,V & \\
-		LiCl & 1,3298 $\pm$0,0052\,V & 12\,\%\\
-		NaCl & 7,2433 $\pm$0,0056\,V & 75\,\%
+		Umgebungstemperatur & 24,10 $\pm$0,04\,$\celsius$ &\\
+		Umgebungsluftfeuchte & 5,979 $\pm$0,028\,V & \\
+		LiCl & 1,330 $\pm$0,005\,V & 12\,\%\\
+		NaCl & 7,243 $\pm$0,006\,V & 75\,\%
 	\end{tabular}
 \end{center}
 
@@ -92,7 +97,7 @@ Aus Abbildung \ref{fig:cal} geht hervor, dass die Spannungen nicht konstant geme
 
 \begin{equation}
 	\label{eq:cal}
-	\varphi(\text{V})=10,65*\SI{5,9791}{\volt}-2,167=\SI{61,51}{\percent}
+	\varphi(\text{V})=10,65*\SI{5,979}{\volt}-2,167=\SI{61,5}{\percent}
 \end{equation}
 
 Zur Umrechnung der absoluten Feuchte wird der temperaturabhängige Sättigungspartialdampfdruck des Wassers näherungsweise nach Gleichung \ref{eq:pds} bestimmt und in Gleichung \ref{eq:x} eingesetzt. 
@@ -104,7 +109,7 @@ Zur Umrechnung der absoluten Feuchte wird der temperaturabhängige Sättigungspa
 
 \begin{equation}
 	\label{eq:x}
-	x=0,622*\frac{p_{D,S}*\varphi}{p-p_D}=\frac{\SI{2982,47}{\pascal}*\SI{61,51}{\percent}}{\SI{100000}{\pascal}-\SI{1834,52}{\pascal}}=\SI{0,0116}{\kilogram\per\kilogram}
+	x=0,622*\frac{p_{D,S}*\varphi}{p-p_D}=\frac{\SI{2982,47}{\pascal}*\SI{61,5}{\percent}}{\SI{100000}{\pascal}-\SI{1834,52}{\pascal}}=\SI{0,0116}{\kilogram\per\kilogram}
 \end{equation}
 
 		
@@ -116,10 +121,10 @@ Zur Berechnung des simulierten Niederschlags wurden die Messdauer und Impulszahl
  		\label{tab:rain}
  		\textbf{Messung} & \textbf{Impulszahl} & \textbf{Messdauer} [s] & \textbf{V pro impuls} [\si{\cubic\centi\meter}]\\
  		\hline
- 		1 & 166 & 168  & 6,02\\
- 		2 & 200 & 105  & 5,00\\
- 		3 & 153 & 171  & 6,54\\
- 		Mittel & 173 & 148  & 5,85
+ 		1 & 166 & 168  & 6,0\\
+ 		2 & 200 & 105  & 5,0\\
+ 		3 & 153 & 171  & 6,5\\
+ 		Mittel & 173 & 148  & 5,9
  	\end{tabular}
  \end{center}
 
