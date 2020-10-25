@@ -54,7 +54,7 @@ for m = 1:size(m2t,2)
 end
 
 
-%% plot Data
+%% plot fits
 % linStyles = {'-x','-.o',':^','--s','-+','-.*'};
 names = {'Pt100 (4L)';'Pt100 (2L)';'Pt1000';'KTY';'NTC'};
 figure

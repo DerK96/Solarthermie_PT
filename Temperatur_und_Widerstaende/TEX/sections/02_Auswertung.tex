@@ -69,7 +69,7 @@ Die folgende Abbildung \ref{fig:2L4L} zeigt die Messung der beiden Pt100 Tempera
 	\label{fig:2L4L}
 \end{figure}
 
-In folgender Tabelle sind die Differenzen des Pt100 in Zwei und Vierleiter für die Messpunkte aufgetragen.
+In folgender Tabelle sind die Differenzen des Pt100 in Zwei und Vierleiterschaltung für die Messpunkte aufgetragen.
 
 \begin{table}[H]
 	\centering
@@ -77,6 +77,7 @@ In folgender Tabelle sind die Differenzen des Pt100 in Zwei und Vierleiter für 
 	\label{tab:Vergleich}
 	\begin{tabular}{cccccc}
 		Temperatur in \si{\celsius}& \SI{0}{\celsius} & \SI{20}{\celsius} & \SI{40}{\celsius}&\SI{80}{\celsius} & avg\\ 
+		\hline
 		$\Delta$R in \ohm & \num{0,6582} & \num{0.6688} &  \num{0,7259}& \num{0,7259}& \num{0.7071} \\
 	\end{tabular} 
 \end{table}
@@ -87,14 +88,14 @@ Nach folgender Gleichung \ref{eq:Kabellänge} kann daraus die Länge des Anschlu
 
 \begin{equation}
 \label{eq:Kabellänge}
-l_{Kabel}= \frac{\Delta R*A_{Quer}}{2*\rho}=\frac{\SI{0,7071}{\ohm}*\SI{0,1}{\milli\meter\squared}}{2*\SI{0,0278}{\ohm\milli\meter\squared\per\meter}}=\SI{1,25}{\meter}
+l_{\text{Kabel}}= \frac{\Delta R*A_{\text{quer}}}{2*\rho}=\frac{\SI{0,7071}{\ohm}*\SI{0,1}{\milli\meter\squared}}{2*\SI{0,0278}{\ohm\milli\meter\squared\per\meter}}=\SI{1,25}{\meter}
 \end{equation}
 
 \begin{center}
 	\begin{small}
-		$l_{Kabel}$: Länge des Anschlusskabels des Temperatursensors des Pt100,
+		$l_{\text{Kabel}}$: Länge des Anschlusskabels des Temperatursensors des Pt100,
 		$\Delta R$: gemittelte Differenz der Widerstandswerte des Pt100 4L und Pt100 2L,
-		$A_{Quer}$: Querschnittfläche des Kabels,
+		$A_{\text{quer}}$: Querschnittfläche des Kabels,
 		$\rho$: spezifischer Widerstand einer Ader des Kabels.
 	\end{small}
 \end{center}
@@ -165,7 +166,7 @@ In der folgende Tabelle sind die Probenmaterialien und die mithilfe der Wärmebi
 	\caption{Verwendete Probenmaterialien und ermittelte Temperatur durch Wärmebildkamera und Temperaturfühler.}
 	\label{tab:Proben,Eigenschaften}
 	\begin{tabular}{cccccc}
-		Nr. & Bezeichnung & Gruppe & Messpunkt & $T_{WBK} in \celsius$ & $T_{Fühler} in \celsius$\\
+		Nr. & Bezeichnung & Gruppe & Messpunkt & $T_{\text{WBK}}$ in \textcelsius & $T_{\text{Fühler}}$ \text{in} \textcelsius\\
 		\hline
 	1& Alu. silber eloxiert&Metall&Nein&57,5&55,6\\
 	2& Kupfer glänzend&Metall&Nein&27,8&56,9\\
@@ -191,15 +192,15 @@ Es wurden folgende Beobachtungen gemacht (aufgenommene Bilder s. Anhang):
 Die mit dem Messfühler ermittelte Temperatur der Proben wird im folgenden als die wahre Temperatur angenommen. Über die mit der Wärmebildkamera ermittelte Temperatur und der Angabe der Umgebungstemperatur, kann über folgende Formel der Emissionsgrad des jeweiligen Materials bestimmt werden. 
 
 \begin{equation}\label{epsilon}
-\epsilon=\frac{T_A^4-T_U^4}{T_M^4-T_U^4}
+\epsilon=\frac{T_{\text{A}}^4-T_{\text{U}}^4}{T_{\text{M}}^4-T_{\text{U}}^4}
 \end{equation}
 
 \begin{center}
 	\begin{small}
 		$\epsilon$: Emissionsgrad\\
-		$T_A$: angezeigte Temperatur\\
-		$T_U$: Umgebungstemperatur\\
-		$T_M$: Messobjekttemperatur\\
+		$T_{\text{A}}$: angezeigte Temperatur\\
+		$T_{\text{U}}$: Umgebungstemperatur\\
+		$T_{\text{M}}$: Messobjekttemperatur\\
 	\end{small}
 \end{center}
 
@@ -209,8 +210,9 @@ In der folgenden Tabelle sind die nach Gleichung \ref{epsilon} berechneten Emiss
 	\centering
 	\caption{Berechnete Emissionsgrade für die Probenmaterialien.}
 	\label{tab:emissionsgrade}
-	\begin{tabular}{llllll}
+	\begin{tabular}{lclclc}
 		&    $\epsilon$  &        &  $\epsilon$    &         &  $\epsilon$    \\
+		\hline
 		Probe 1 & 1,06 & Probe 3 & 1,16 & Probe 5 & 0,13 \\
 		Probe 2 & 0,14 & Prbe 4  & 0,25 & Probe 6 & 1,08 \\
 		&      &         &      &         &     
