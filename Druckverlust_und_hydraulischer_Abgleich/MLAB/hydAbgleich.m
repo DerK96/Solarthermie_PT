@@ -35,7 +35,7 @@ kVGem = kV./kV(1,1);
 %% plot Ventilkennlinie
 figure
 hold on
-plot(kVGem,hGem(1:11),'-x')
+plot(hGem(1:11),kVGem,'-x')
 grid on
 % xlim([0 660])
 xlabel('Durchfluss $H/H_{100}$')
@@ -55,8 +55,8 @@ plot(VSRed.Scan,VSRed.V_Strang_2,'-.','color','k')
 plot(VSRed.Scan,VSRed.V_Strang_3,'-.','color','k')
 legend([p1 p2],'Ausprobieren','Kompensationsmethode','location','best')
 grid on
-xlabel('elapsed time [t] in s')
-ylabel('Durchfluss [$\dot V$] in $\frac{l}{h}$') 
+xlabel('vergangene Zeit [t] = s')
+ylabel('Durchfluss [$\dot V$] = $\frac{l}{h}$') 
 run plotsettings.m
 printPath = '../DATA/Ausprobieren';
 print(printPath,'-depsc');
@@ -69,7 +69,7 @@ plot(Tichel.Scan,Tichel.V_Strang_2,'-.')
 plot(Tichel.Scan,Tichel.V_Strang_3,'-')
 legend('Strang 1','Strang 2','Strang 3','location','best')
 grid on
-xlabel('elapsed time [t] in s')
+xlabel('vergangene Zeit [t] in s')
 ylabel('Durchfluss [$\dot V$] in $\frac{l}{h}$') 
 run plotsettings.m
 printPath = '../DATA/Tichel';

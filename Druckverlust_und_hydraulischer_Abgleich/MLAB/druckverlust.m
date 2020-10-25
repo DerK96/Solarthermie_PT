@@ -47,14 +47,17 @@ zeta = 2*zetaAng*(zetaRohrQ*nQuerRohr);
 
 dPReib = ((rho/2)*(v_inf).^2).*lambda*(l/d2)+((rho/2)*(v_inf).^2).*zeta;
 
-%% plot Vergleich Mesung Rechnung
+%% plot Vergleich Messung Rechnung
 figure
 hold on
 plot(NennVp,dPKr,'-x');
 plot(NennVp,dPReib,'-.o')
 grid on
-xlabel('Durchfluss [$\dot V$]$ in \frac{L}{h}$')
-ylabel('Druckverlust [p] in pa') 
+axis equal
+xlim([0 3000])
+ylim([0 11000])
+xlabel('Durchfluss [$\dot V$]$ = \frac{L}{h}$')
+ylabel('Druckverlust [p] = pa') 
 legend('Messung','Rechnung','location','best')
 run plotsettings.m
 printPath = '../DATA/dPPlot';

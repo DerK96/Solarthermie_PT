@@ -20,12 +20,32 @@ Mit Hilfe der Bernoulligleichung \ref{eq:Bernoulli} und dem im Praktikum angegeb
 Die experimentell ermittelten Druckverluste sind größer als die berechneten. Diese Abweichungen der berechneten Daten von der Realität kommt durch verschiedene Effekte zustande. Die Bernoulligleichung ist in ihrer Formulierung nur für stationäre Strömungen anzunehmen. Unter Anderem wird die Verkettung der den Hauptströmungsweg kreuzenden Röhren nicht berücksichtigt. Es wird bei der Anströmung jedes einzelnen Röhrchens von einer idealen stationären Anströmung ausgegangen, was in der gegebenen Anordnung nicht der Fall ist. Mit
 
 \begin{align}
+	\Delta p_{\text{Sammler}} &= \Delta p_{\text{gesamt}} - \Delta p_{\text{Beruhigungsstrecke}}
+	\intertext{Werte siehe Tabelle~\ref{tab:dP_ges_DN20}}
 	\lambda &= \frac{\Delta p_V}{q}*\frac{D_{\text{Hyd}}}{l}
 	\intertext{und}
 	\zeta &= \sum\zeta_i = 2*\zeta_{\text{Ang}} + \zeta_{\text{QuerRohr}} = \num{0.960}
 	\intertext{berechnet sich $\zeta_M$ des Sammlers zu}
 	\zeta_M &= \frac{\sum_{i=1}^{n} \dot{V}_i*\zeta_i}{\sum_{i=1}^{n} \dot{V}_i} = \num{3.9163}
 \end{align}
+
+\begin{table}[H]
+	\centering
+	\caption{Gesamtdruckverluste und Druckverlust der DN-20 Beruhigungsstrecke.}
+	\label{tab:dP_ges_DN20}
+	\begin{tabular}{ccc}
+		\toprule
+		Nenndurchfluss $[\dot{V}] = \frac{\si{\litre}}{\si{\hour}}$ & Gesamtdruckverlust $[p] = \si{\pascal}$ & Druckverlust DN-20 $[p] = \si{\pascal}$\\
+		\midrule
+		 600 & 968,1 &  76,12 \\
+		1310 &  4176 & 354,97 \\
+		2147 & 10068 &  884,4 \\
+		2855 & 11450 & 1501,8 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+Die verwendete Berechnungsvorschrift für die $\zeta$ und Druckverluste befindet sich in Listing \textsc{druckverlust.m} Zeile 12-48 und 68ff. Der theoretische $\zeta$ Wert für ein kreuzendes Röhrchen wurde nach Abbildung 6.1 des Praktikumsskripts zu \num{0.5} bestimmt. Die theoretischen $\zeta$ Werte für die Winkelaufweitung wurden den Vorlesungsunterlagen Fluiddynamik entnommen, und pro Winkeländerung zu \num{0.08} bestimmt.
 
 \subsection{Versuch 2: Hydraulischer Abgleich}
 
@@ -39,14 +59,16 @@ Für die Aufnahme der Ventilkennlinie wurden zunächst das Strangventils 2 volls
 	\label{fig:Ventil}
 	\end{figure}
 
-Wird das Ventil langsam zugeschraubt, verringert sich bis zu einer Ventilstellung von \num{3,0} der Durchfluss nur gering. Erst bei kleinen Ventilöffnungen kommt es zu einer überproportionalen Verringerung des Durchflusses. Die ermittelte Ventilkennlinie kommt der im Praktikumsskript gegebenen Kennlinie für das Ventil des Herstellers Vexve am nächsten. 
+Wird das Ventil langsam zugeschraubt, verringert sich bis zu einer Ventilstellung von \num{3,0} der Durchfluss nur gering. Erst bei kleinen Ventilöffnungen kommt es zu einer überproportionalen Verringerung des Durchflusses. Die ermittelte Ventilkennlinie kommt der im Praktikumsskript gegebenen Kennlinie für das Ventil des Herstellers Oventrop am nächsten. 
 
 \subsubsection{Hydraulischer Abgleich durch Ausprobieren und mit Kompensationsmethode }
 
 In dem Versuchsteil hydraulischer Abgleich durch Ausprobieren wurde versucht, eine Schaltung von drei parallelen Strängen durch ausprobieren auf die selben Volumenströme zu bringen. Es wurde über das Pumpen- und Bypass-Ventil zunächst ein Volumenstrom von \SI{2000}{\litre\per\hour} bei vollständig geöffneten Strangventilen 1-4 eingestellt. Anschließend wurde der Volumenstrom des obersten Strangventils 1 als Soll-Wert angenommen und die anderen Ventile darauf eingestellt. Es wurden folgende Volumenströme und Ventilstellungen ermittelt:
 
-\begin{center}
-	\begin{tabular}{c|c|c}
+\begin{table}[H]
+	\centering
+	\caption{Ventilstellungen}
+	\begin{tabular}{ccc}
 		\label{tab:ausprobieren}
 		
 		\textbf{Ventil} & \textbf{Volumenstrom} in $\frac{l}{h}$ & \textbf{Ventilstellung nach Abgleich}\\
@@ -55,12 +77,14 @@ In dem Versuchsteil hydraulischer Abgleich durch Ausprobieren wurde versucht, ei
 		2 & 610 & 3,25\\
 		3 & 762 & 2,75
 	\end{tabular}
-\end{center}
+\end{table}
 
 Bei der Kompensationsmethode wurden alle Strangventile sowie das Partnerventil auf den Wert 1,0 voreingestellt. 
 
-\begin{center}
-	\begin{tabular}{c|c|c|c|c|c|c|c}
+\begin{table}[H]
+	\centering
+	\caption{Ventilstellungen Kompensationsmethode.}
+	\begin{tabular}{cccccccc}
 		\label{tab:komp}
 		
 		\textbf{Durchlauf} & \multicolumn{2}{c}{\textbf{Ventil 1}} & \multicolumn{2}{c}{\textbf{Ventil 2}} & \multicolumn{2}{c}{\textbf{Ventil 3}} & \textbf{Partner}\\
@@ -73,12 +97,14 @@ Bei der Kompensationsmethode wurden alle Strangventile sowie das Partnerventil a
 		3 & 330 & 1 & 330 & 0,68 & 330 & 0,42 & 0,6
 	
 	\end{tabular}
-\end{center}
+\end{table}
 
 Im letzten Schritt wurde der Eingangdruck reduziert um zu sehen, ob der hydraulische Abgleich auch bei schwankenden Eingangsvolumenströmen funktioniert. Dieser ist durch das Verstellen der Ventile ohnehin bereits auf \SI{900}{\litre\per\hour} gesunken.
 
-\begin{center}
-	\begin{tabular}{c|c|c|c}
+\begin{table}[H]
+	\centering
+	\caption{Teilvolumenströme}
+	\begin{tabular}{cccc}
 		\label{tab:komp2}
 		
 		\textbf{\.V\textsubscript{Pumpe}} in $\frac{l}{h}$ & \textbf{\.V\textsubscript{1}} in $\frac{l}{h}$ & \textbf{\.V\textsubscript{2}} in $\frac{l}{h}$ & \textbf{\.V\textsubscript{3}} in $\frac{l}{h}$\\
@@ -87,7 +113,7 @@ Im letzten Schritt wurde der Eingangdruck reduziert um zu sehen, ob der hydrauli
 		700 & 234 & 230 & 223\\
 		600 & 205 & 200 & 190\\
 	\end{tabular}
-\end{center}
+\end{table}
 
 Bei der Reduktion des Eingangsvolumenstroms versagt der hydraulische Abgleich nach der hier angewandten Methodik. In der Praxis wird daher der Druckverlust anstelle des Volumenstroms am Ventil als Referenzgröße genutzt. Bei der Methode durch Ausprobieren wurden die optimalen Einstellungen durch immer kleiner werdende Änderungen der Ventilstellungen ermittelt. Diese Methode ist generell nicht praxistauglich, da sie zu viele iterative Schritte benötigt und schlichtweg zu viel Zeit beansprucht.
 
