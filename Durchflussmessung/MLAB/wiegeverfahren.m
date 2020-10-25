@@ -21,10 +21,10 @@ for i = 1:size(Waage,1)
     toff = (Waage(i,3)-1);
     
     vP(i,1) = (m/t)*3600; %Berechneter Volumenstrom l/h
-    errorG(i,2) =(1/t)*errorm - (m/t^2)*errort;
-    errorstd(i,3) = errorG(i,2)*3600; %Gauss, l/h
-    vPerror(i,4) = (moff/toff)*3600;
-    maxerrorstd(i,5) = vPerror(i,4)-vP(i,1); %Max. Fehler l/h
+    errorG(i,1) =(1/t)*errorm - (m/t^2)*errort;
+    errorstd(i,1) = errorG(i,1)*3600; %Gauss, l/h
+    vPerror(i,1) = (moff/toff)*3600;
+    maxerrorstd(i,1) = vPerror(i,1)-vP(i,1); %Max. Fehler l/h
 end
 
 
