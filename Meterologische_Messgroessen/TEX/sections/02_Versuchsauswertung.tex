@@ -18,13 +18,15 @@ Zum Vergleich der Messwerte wurden der Mittelwert und die Standardabweichung der
 	\centering
 	\caption{Gemessene Strahlungsstärken der verschiedenen Sensoren.}
 \begin{tabular}{l S[separate-uncertainty,table-parse-only,table-figures-uncertainty = 1]}
+	\toprule
 	\textbf{Sensor} & \textbf{Strahlung [E] = $\frac{W}{m^2}$}\\
-	\hline
+	\midrule
 		TA GBS & 833,6(21)\\
 		SSR81 & 916,5(7)\\
 		CM3 & 957,8(17)\\
 		CM11 & 964,5(4)\\
-		CM11 (diffus) & 68,7(2)
+		CM11 (diffus) & 68,7(2)\\
+		\bottomrule
 %	TA GBS & 833,6252 $\pm$2,1081\\
 %	SSR81 & 916,4836 $\pm$0,6581\\
 %	CM3 & 957,7781 $\pm$1,7451\\
@@ -55,15 +57,17 @@ Wie im vorherigen Teil der Auswertung wurden bereitgestellte Daten verwendet. Di
 \begin{table}[H]
 \centering
 \caption{Ausgabewerte der Sensoren zur Bestimmung des Ansprechverhaltens.}
-	\begin{tabular}{c c c c c}
-		\label{tab:response}
+	\label{tab:response}
+	\begin{tabular}{ccccc}
+		\toprule
 		
 		\textbf{Sensor} & \textbf{Minimum} $\frac{W}{m^2}$ & \textbf{Maximum} $\frac{W}{m^2}$& \textbf{95\% Threshold} $\frac{W}{m^2}$ & \textbf{Ansprechzeit} s\\
-		\hline
+		\midrule
 		TA GBS & 8,8 & 824,1 & 782,9 & 36 \\
 		SSR 81 & 43,5 & 898,7 & 853,8 & 1 \\
 		CM 3 & 15,1 & 908,0 & 862,4 & 18 \\
 		CM11 & 25,8 & 903,9 & 858,7 & 22 \\
+		\bottomrule
 	\end{tabular}
 \end{table}
 Den Erwartungen entsprechend reagiert der SSR 81 Halbleiter direkt auf die Verschattung, während die Pyranometer eine Latenz aufweisen. Der TA GBS verzögert für einen Halbleiter ungewöhnlich lang.
@@ -73,15 +77,18 @@ Zunächst wurden die Umgebungstemperatur und die Ausgangsspannung des Feuchtesen
 \begin{table}[H]
 	\centering
 	\caption{Ermittelte Größen zur Bestimmung der relativen Luftfeuchte.}
+	\label{tab:amb}
 	\begin{tabular}{lS[separate-uncertainty,table-parse-only,table-figures-uncertainty = 1]c}
-		\label{tab:amb}
+		
+		\toprule
 		
 		\textbf{Messgröße} & \textbf{Mittelwerte} & \textbf{Lit. rel. Feuchte}\\
-		\hline
+		\midrule
 		Umgebungstemperatur & 24,10(4) \si{\celsius} &\\
 		Umgebungsluftfeuchte & 5,979(28) \si{\volt} & \\
-		LiCl & 1,330(5) \si{\volt} & 12\,\%\\
-		NaCl & 7,243(6) \si{\volt} & 75\,\%
+		LiCl & 1,330(5) \si{\volt} & 12\,\%  \\
+		NaCl & 7,243(6) \si{\volt} & 75\,\%  \\
+		\bottomrule
 	\end{tabular}
 \end{table}
 
@@ -118,14 +125,16 @@ Zur Berechnung des simulierten Niederschlags wurden die Messdauer und Impulszahl
  \begin{table}
  	\centering
  	\caption{Messdaten der Kippwaage zur Ermittlung der Niederschlagsmengen.}
+ 	\label{tab:rain}
  	\begin{tabular}{cccc}
- 		\label{tab:rain}
+ 		\toprule
  		\textbf{Messung} & \textbf{Impulszahl} n & \textbf{Messdauer} s & \textbf{$V$ pro Impuls} \si{\cubic\centi\meter}\\
- 		\hline
+ 		\midrule
  		1 & 166 & 168  & 6,0\\
  		2 & 200 & 105  & 5,0\\
  		3 & 153 & 171  & 6,5\\
- 		Mittel & 173 & 148  & 5,9
+ 		Mittel & 173 & 148  & 5,9\\
+ 		\bottomrule
  	\end{tabular}
  \end{table}
 

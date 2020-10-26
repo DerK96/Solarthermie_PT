@@ -8,28 +8,35 @@ close all;
 DataChrisMainz = importfile('../DATA/Vers_Kollektor_Kennline_Dachlabor_10.09.2020_12_20_45_1.csv');
 DrainAnlage = importfileD('../DATA/Drainback-Anlage_Versuch 114_26_08 1.csv');
 SolarAnlage = DataChrisMainz; % this is only that we dont have to replace all varnames
+%% Start/Stop Time
+ScanStart = 871;
+ScanStop = 1088;
+EndVal = size(SolarAnlage,1);
 %% plot fun
 figure
 hold on
 grid on
-plot(SolarAnlage.Scan,SolarAnlage.I_KollinWprom2)
-xlabel('vergangene Zeit [t] = s')
+plot(SolarAnlage.Scan(1:ScanStart-1),SolarAnlage.I_KollinWprom2(1:ScanStart-1),'color','k')
+lgd = plot(SolarAnlage.Scan(ScanStart:ScanStop),SolarAnlage.I_KollinWprom2(ScanStart:ScanStop),'color','r','DisplayName','verwendete Werte');
+plot(SolarAnlage.Scan(ScanStop+1:EndVal),SolarAnlage.I_KollinWprom2(ScanStop+1:EndVal),'color','k')
+xlabel('Scan')
 ylabel('Einstrahlung $[G] = \frac{W}{m^{2}}$')
 run plotsettings.m
-% legend('$G = 600 \left[\frac{W}{m^{2}}\right]$','$G = 800 \left[\frac{W}{m^{2}}\right]$','$G = 1000 \left[\frac{W}{m^{2}}\right]$')
+legend('Show',[lgd],'location','best')
 printPath = '../DATA/DataEinstrahlung';
 print(printPath,'-depsc');
 
 %% calc Einstrahlungsparameter
 
-I_Kollektor = mean(SolarAnlage.I_KollinWprom2(871,:):SolarAnlage.I_KollinWprom2(1088,:));
-std_Kollektor = std(SolarAnlage.I_KollinWprom2(871,:):SolarAnlage.I_KollinWprom2(1088,:));
+I_Kollektor = mean(SolarAnlage.I_KollinWprom2(ScanStart,:):SolarAnlage.I_KollinWprom2(ScanStop,:));
+std_Kollektor = std(SolarAnlage.I_KollinWprom2(ScanStart,:):SolarAnlage.I_KollinWprom2(ScanStop,:));
 
 %% calc Kennlinie
 
-G = [600 800 1000];
+G = 1007.5;
 Ta = 296.15;
 syms Tf;
+Tf = Tf+Ta;
 eta0 = 0.830;
 a1 = 3.249;
 a2 = 0.020;
@@ -40,32 +47,43 @@ eta = eta0-(a1*((Tf-Ta)./(G)))-(a2*(((Tf-Ta)^2)./(G)));
 G_vg = I_Kollektor;
 etaGemessen = eta0-(a1*((deltaT)./(G_vg)))-(a2*(((deltaT).^2)./(G_vg)));
 
+%% calc Leistung over Time
+
+rhoH2O = 1.000;
+cpH2O = 1.16;
+Aap = 2.35;
+QdotKoll = (SolarAnlage.T_VL_KollC - SolarAnlage.T_RL_KollC).*rhoH2O.*(SolarAnlage.Vpkt_Vortex.*60).*cpH2O;
+
+QdotSpei = (SolarAnlage.T_VL_SpeiC - SolarAnlage.T_RL_SpeiC).*rhoH2O.*(SolarAnlage.Vpkt_Vortex.*60).*cpH2O;
+PipeLoss = abs(QdotKoll-QdotSpei);
+etaWahr = QdotKoll./(Aap.*SolarAnlage.I_KollinWprom2);
+
+etaWahrPlot = mean(etaWahr(ScanStart:ScanStop));
+
+eqn = eta0-(a1*((Tf-Ta)./(G)))-(a2*(((Tf-Ta)^2)./(G))) == etaWahrPlot;
+
+etaXP = solve(eqn); % find xPos
+
+% calculate errors
+yneg = 0.1;
+ypos = 0.1;
+xneg = 10;
+xpos = 10;
+
 %% plot fun
 figure
 hold on
 grid on
-fplot(eta,'-')
-fplot(Tf)
-xlim([Ta 500])
+fplot(eta,'-','color','k')
+errorbar(etaXP(2),etaWahrPlot,yneg,ypos,xneg,xpos,'x','color','r');
+xlim([0 150])
 ylim([0 1])
-xlabel('$\frac{T_{f}-T_{a}}{G} \frac{K m^{2}}{W}$')
+xlabel('$\frac{\Delta T}{G}$ in $\frac{K m^{2}}{kW}$')
 ylabel('Wirkungsgrad $\eta$')
 run plotsettings.m
-legend('$G = 600 \frac{W}{m^{2}}$','$G = 800 \frac{W}{m^{2}}$','$G = 1000 \frac{W}{m^{2}}$')
+legend('$G = 1007.5 \frac{W}{m^{2}}$')
 printPath = '../DATA/KennlinieTheo';
 print(printPath,'-depsc');
-
-%% calc Leistung over Time
-
-rhoH2O = 1000;
-cpH2O = 1.16;
-Aap = 2.35;
-QdotKoll = (SolarAnlage.T_VL_KollC - SolarAnlage.T_RL_KollC).*rhoH2O.*(SolarAnlage.Vpkt_Vortex./60).*cpH2O;
-
-QdotSpei = (SolarAnlage.T_VL_SpeiC - SolarAnlage.T_RL_SpeiC).*rhoH2O.*(SolarAnlage.Vpkt_Vortex./60).*cpH2O;
-PipeLoss = abs(QdotKoll-QdotSpei);
-etaWahr = QdotKoll./(Aap.*SolarAnlage.I_KollinWprom2);
-
 %% plot Leistung/Time
 figure
 grid on
@@ -91,12 +109,9 @@ plot(SolarAnlage.Scan,SolarAnlage.T_VL_KollC,'-')
 plot(SolarAnlage.Scan,SolarAnlage.T_RL_SpeiC,'--')
 plot(SolarAnlage.Scan,SolarAnlage.T_VL_SpeiC,'--')
 legend('RL Koll','VL Koll','RL Spei','VL Spei','location','best')
-xlabel('vergangene Zeit [t] = s')
+xlabel('Scan')
 ylabel('Temperatur [T] = $^{\circ}C$')
 run plotsettings.m
 printPath = '../DATA/TempTime';
 print(printPath,'-depsc');
 
-%% plot Fehlerbalken
-
-% errorplot()

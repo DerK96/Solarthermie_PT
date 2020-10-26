@@ -3,7 +3,7 @@
 \subsection{Standard-Versuchsanlage} 
 
 \subsubsection{Dimensionierung des MAGs}
-Für die Inbetriebnahme der Standard-Druckanlage sollte zunächst die Dimensionierung des Ausdehnungsgefäßes (MAG) mit Hilfe der Gleichung nach Schnauss erfolgen. Nach folgender Gleichung X gilt [aus Praktikumsskript entnommen]: 
+Für die Inbetriebnahme der Standard-Druckanlage sollte zunächst die Dimensionierung des Ausdehnungsgefäßes (MAG) mit Hilfe der Gleichung nach Schnauss erfolgen. Nach Gleichung \eqref{eq:eff.VolMAG} gilt [aus Praktikumsskript entnommen]: 
 
 \begin{equation}
 \label{eq:eff.VolMAG}
@@ -17,7 +17,7 @@ V_{\text{u}}= \frac{(V_{\text{t}} * C_{\text{e}} + V_{\text{vap}} + V_{\text{r}}
 		$C_{\text{e}}$: Ausdehnungskoeffizient des Wärmeträgerfluids,
 		$V_{\text{vap}}$: entstehendes Dampfvolumen im Stagnationsfall,
 		$V_\text{r}$: Reservevolumen,
-		$p_{\text{max}}$:maximaler Druck $=p_{\text{vs}}*0,9$,
+		$p_{\text{max}}$:maximaler Druck $=p_{\text{vs}}*\num{0,9}$ ,
 		$p_{\text{min}}$: minimaler Druck,
 		$p_{\text{vs}}$: Auslösedruck des Sicherheitsventils.
 	\end{small}
@@ -37,7 +37,7 @@ $V_{\text{u}}$ unter den angegebenen Bedingung folgenden Wert an:
 \subsubsection{Anlagenleistung}
 
 In der folgenden Abbildung sind die Einstrahlungwerte über den gesamten Messzeitraum von ca. \SI{54}{\minute} für die Standard-Versuchsanlage abgebildet. 
-Die Einstrahlungswerte liegen über der durch die Norm spezifizierten Randbedingung von mind. \SI{800}{\watt\per\meter\squared} bei denen die Leistungsparameter bestimmt wurden. Für die Auswertung wurden die Daten im Scanbereich 874 bis 1088 verwendet.
+Die Einstrahlungswerte liegen über der durch die Norm spezifizierten Randbedingung von mind. \SI{800}{\watt\per\meter\squared} bei denen die Leistungsparameter bestimmt wurden. Für die Auswertung wurden die Daten im Scanbereich 871 bis 1088 verwendet.
 
 \begin{figure}[H]
 	\centering
@@ -47,23 +47,22 @@ Die Einstrahlungswerte liegen über der durch die Norm spezifizierten Randbeding
 \end{figure}
 
 Für den definierten Messbereich ergibt sich eine Einstrahlleistung von \SI{1007.5(41)}{\watt\per\meter\squared}.
+ 
+Die momentane Kollektorleistung wurde nach Gleichung 2.4 des Praktikumsskripts berechnet. Der Anlagenwirkungsgrad wurde nach Gleichung 2.2 des Praktikumsskripts ermittelt. 
 
-In der folgenden Abbildung wurde die momentane Kollektorleistung gegen den momentanen Anlagenwirkungsgrad dargestellt. 
-Die momentane Kollektorleistung wurde nach Gleichung 2.4 des Praktikumsskripts berechnet. Der Anlagenwirkungsgrad wurden nach Gleichung 2.2 des Praktikumsskripts ermittelt. 
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[height=0.3\textheight]{../DATA/LeistungTime.eps}
+%	\caption[Auftragung der Momentanleistung des Kollektors und des Momentanen Anlagenwirkungsgerades]{Auftragung der Momentanleistung des Kollektors und des Momentanen Anlagenwirkungsgerades.}
+%	\label{fig:Momentanleistung}
+%\end{figure}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[height=0.3\textheight]{../DATA/LeistungTime.eps}
-	\caption[Auftragung der Momentanleistung des Kollektors und des Momentanen Anlagenwirkungsgerades]{Auftragung der Momentanleistung des Kollektors und des Momentanen Anlagenwirkungsgerades.}
-	\label{fig:Momentanleistung}
-\end{figure}
-
-Die theoretische Kennlinie des Kollektors wurde anhand der im Praktikumsskript angegebenen Daten für den Kollektor für Einstrahlungen von \SI{1000}{\watt\per\meter\squared}, \SI{800}{\watt\per\meter\squared} und \SI{600}{\watt\per\meter\squared} (schon unterhalb für die ermittelten Leistungsparameter benötigte Einstrahlung) berechnet und in der folgenden Abbildung dargestellt.
+Die theoretische Kennlinie des Kollektors wurde anhand der im Praktikumsskript angegebenen Daten für den Kollektor für die ermittelte Einstrahlung in der folgenden Abbildung dargestellt.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[height=0.3\textheight]{../DATA/KennlinieTheo.eps}
-	\caption[Theoretische Kennlinie des verwendeten Kollektors für Einstrahlwerte von von \SI{1000}{\watt\per\meter\squared}, \SI{800}{\watt\per\meter\squared} und \SI{600}{\watt\per\meter\squared}]{Theoretische Kennlinie des verwendeten Kollektors für Einstrahlwerte von von \SI{1000}{\watt\per\meter\squared}, \SI{800}{\watt\per\meter\squared} und \SI{600}{\watt\per\meter\squared}}
+	\caption{Theoretische Kennlinie des verwendeten Kollektors bei Einstrahlung [G] = \SI{1007.5}{\watt\per\meter\squared}}
 	\label{fig:KennKoll}
 \end{figure}
 

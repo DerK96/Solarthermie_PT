@@ -12,9 +12,11 @@ Folgende Daten wurden für den Mittelwert, die Standardabweichung und den Offset
 	\caption{Mittelwert, Standardabweichung und Offset des Pt100 4L Referenzsensors zur Tripelpunktzelle.}
 	\label{tab:VergleichTPZ}
 	\begin{tabular}{cccc}
+		\toprule
 		Temperatur TP in \si{\celsius} & avg & std & Offset \\ 
-		\hline 
+		\midrule 
 		\num{0.01} & \num{0.6691} & \num{0.0024} &  \num{0.6591}\\ 
+		\bottomrule
 	\end{tabular} 
 \end{table}
 
@@ -38,16 +40,16 @@ In der folgenden Tabelle werden die Regressionsfunktion der verschiedenen Fits a
 	\caption{Fitfunktionen der Temperatursensoren.}
 	\label{tab:FitFun}
 	\begin{tabular}{ccS[separate-uncertainty,table-parse-only,table-figures-uncertainty = 1]S[separate-uncertainty,table-parse-only,table-figures-uncertainty = 1]S}
-		
+		\toprule
 		Sensortyp & Regressionsfunktion & {Koeff $a$} & {Koeff $b$} & {$R^2$} \\
-		\hline
+		\midrule
 		
 		Pt100 (4L) & $ax+b$ & 0.3849(48) & 99.9695(2168) & 1 \\
 		Pt100 (2L) & $ax+b$ & 0.3864(49) & 100.62(22) & 1 \\
 		Pt1000 & $ax+b$ & 3.8471(525) & 1002(2) & 1 \\
 		KTY & $ax+b$ & 16.749(2723) & 1582.7(1238) & 0.9972 \\
 		NTC & $a^{bx}$ & 5149.3(3914) & -0.0411(75) & 0.9988 \\
-		
+		\bottomrule
 	\end{tabular} 
 \end{table}
 
@@ -76,9 +78,11 @@ In folgender Tabelle sind die Differenzen des Pt100 in Zwei und Vierleiterschalt
 	\caption{Differenz der Widerstände der Temperatursensoren von Zwei- und Vierleiterschaltung bei den eingestellten Temperaturpunkten und der gewichtete Mittelwert über den Messbereich.}
 	\label{tab:Vergleich}
 	\begin{tabular}{cccccc}
+		\toprule
 		Temperatur in \si{\celsius}& \SI{0}{\celsius} & \SI{20}{\celsius} & \SI{40}{\celsius}&\SI{80}{\celsius} & avg\\ 
-		\hline
+		\midrule
 		$\Delta$R in \ohm & \num{0,6582} & \num{0.6688} &  \num{0,7259}& \num{0,7259}& \num{0.7071} \\
+		\bottomrule
 	\end{tabular} 
 \end{table}
 
@@ -166,14 +170,16 @@ In der folgende Tabelle sind die Probenmaterialien und die mithilfe der Wärmebi
 	\caption{Verwendete Probenmaterialien und ermittelte Temperatur durch Wärmebildkamera und Temperaturfühler.}
 	\label{tab:Proben,Eigenschaften}
 	\begin{tabular}{cccccc}
+		\toprule
 		Nr. & Bezeichnung & Gruppe & Messpunkt & $T_{\text{WBK}}$ in \textcelsius & $T_{\text{Fühler}}$ \text{in} \textcelsius\\
-		\hline
+		\midrule
 	1& Alu. silber eloxiert&Metall&Nein&57,5&55,6\\
 	2& Kupfer glänzend&Metall&Nein&27,8&56,9\\
 	3&POM weiß&Kunststoff&Ja&54,5&50,3/50,8\\
 	4&Alu. rau&Metall& Nein&32,0&56,4\\
 	5&Alu. glänzend& Metall&Ja&27,5/58,0&57,2/56,9\\
-	6&POM schwarz&Kunststoff&Nein&53,7&51,5\\	
+	6&POM schwarz&Kunststoff&Nein&53,7&51,5\\
+	\bottomrule	
 	\end{tabular} 
 \end{table}
 
@@ -211,11 +217,12 @@ In der folgenden Tabelle sind die nach Gleichung \ref{epsilon} berechneten Emiss
 	\caption{Berechnete Emissionsgrade für die Probenmaterialien.}
 	\label{tab:emissionsgrade}
 	\begin{tabular}{lclclc}
+		\toprule
 		&    $\epsilon$  &        &  $\epsilon$    &         &  $\epsilon$    \\
-		\hline
+		\midrule
 		Probe 1 & 1,06 & Probe 3 & 1,16 & Probe 5 & 0,13 \\
 		Probe 2 & 0,14 & Prbe 4  & 0,25 & Probe 6 & 1,08 \\
-		&      &         &      &         &     
+		\bottomrule
 	\end{tabular}
 \end{table}
 

@@ -17,7 +17,7 @@ Im ersten Versuchsteil wurden sechs verschiedene Durchflüsse von \SI{60}{\liter
 	\begin{tabular}{S[separate-uncertainty,table-parse-only,table-figures-uncertainty = 1]S[separate-uncertainty,table-parse-only,table-figures-uncertainty = 1]S[separate-uncertainty,table-parse-only,table-figures-uncertainty = 1]S[separate-uncertainty,table-parse-only,table-figures-uncertainty = 1]}
 		
 		
-		
+		\toprule
 		{wahrer Durchfluss}        &  {Vortex}            &{US stat}            &{MID}            \\  
 		{$[\dot{V}] = \si{\litre\per\hour}$}&{$[\dot{V}] = \si{\litre\per\hour}$}&{$[\dot{V}] = \si{\litre\per\hour}$}&{$[\dot{V}] = \si{\litre\per\hour}$}\\
 		\midrule
@@ -61,7 +61,7 @@ Abbildung \ref{fig:temp} zeigt den gemessenen Temperaturverlauf der beiden Senso
 Zur Bestimmung des Durchflusses wird  die Laufzeit (Zeitlicher Abstand der Flanken beider Verläufe) bestimmt. Dieser ist Abbildung \ref{fig:temp} zu entnehmen und abzuschätzen.
 
 \begin{center}
-	\begin{tabular}{l|c}
+	\begin{tabular}{lc}
 		\label{tab:}
 		
 		\textbf{Flanke} & \textbf{Laufzeit} [t] = s\\
@@ -83,7 +83,7 @@ Der Durchfluss entspricht dem Quotienten aus Rohrvolumen und Laufzeit und ist in
 
 \begin{equation}
 	\label{eq:flow}
-	\dot V = \frac{V_{Rohr}}{t_{LZ}}*\SI{3600}{\second\per\hour} = \frac{2,978\pm0,00314\si{\litre}}{70\pm5\si{\second}}*\SI{3600}{\second\per\hour} = 153\pm12\si{\litre\per\hour}
+	\dot V = \frac{V_{\text{Rohr}}}{t_{\text{LZ}}}*\SI{3600}{\second\per\hour} = \frac{2,978\pm0,00314\si{\litre}}{70\pm5\si{\second}}*\SI{3600}{\second\per\hour} = 153\pm12\si{\litre\per\hour}
 \end{equation}
 
 Der MID hat während der Flankenmessung einen Durchfluss von \SI{234,4(48)}{\litre\per\hour} angezeigt, was \SI{53}{\percent} über dem experimentell bestimmten Wert liegt. Da es sich bei der Flankenmessung um ein thermisches Messverfahren handelt, ist dieses mit einer gewissen Latenz verbunden. Die Differenz zwischen den gemessenen Flanken sollte ohne diese Einschränkung kürzer ausfallen, wodurch ein höherer Volumenstrom resultiert. Die Längenmessung hat einen verhältnismäßig geringen Einfluss auf das Messergebnis und wurde mit einer Unsicherheit von \SI{10}{\centi\meter} geschätzt. Bei \SI{20}{\centi\meter} steigt die Unsicherheit des Ergebnisses auf \SI{14}{\litre\per\hour}. Da die Temperaturflanken eine gewisse Krümmung aufweisen, wurde hier eine Unsicherheit von 5 Sekunden angenommen. Die Zeit hat somit den größeren Einfluss auf die Messung. 
