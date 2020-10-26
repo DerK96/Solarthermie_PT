@@ -13,8 +13,8 @@ figure
 hold on
 grid on
 plot(SolarAnlage.Scan,SolarAnlage.I_KollinWprom2)
-xlabel('Scan [arbitrary]')
-ylabel('Einstrahlung $G \frac{W}{m^{2}}$')
+xlabel('vergangene Zeit [t] = s')
+ylabel('Einstrahlung $[G] = \frac{W}{m^{2}}$')
 run plotsettings.m
 % legend('$G = 600 \left[\frac{W}{m^{2}}\right]$','$G = 800 \left[\frac{W}{m^{2}}\right]$','$G = 1000 \left[\frac{W}{m^{2}}\right]$')
 printPath = '../DATA/DataEinstrahlung';
@@ -49,7 +49,7 @@ fplot(Tf)
 xlim([Ta 500])
 ylim([0 1])
 xlabel('$\frac{T_{f}-T_{a}}{G} \frac{K m^{2}}{W}$')
-ylabel('Wirkungsgrad $\eta$ [arbitrary]')
+ylabel('Wirkungsgrad $\eta$')
 run plotsettings.m
 legend('$G = 600 \frac{W}{m^{2}}$','$G = 800 \frac{W}{m^{2}}$','$G = 1000 \frac{W}{m^{2}}$')
 printPath = '../DATA/KennlinieTheo';
@@ -91,8 +91,8 @@ plot(SolarAnlage.Scan,SolarAnlage.T_VL_KollC,'-')
 plot(SolarAnlage.Scan,SolarAnlage.T_RL_SpeiC,'--')
 plot(SolarAnlage.Scan,SolarAnlage.T_VL_SpeiC,'--')
 legend('RL Koll','VL Koll','RL Spei','VL Spei','location','best')
-xlabel('Scan')
-ylabel('Temperatur $^{\circ}C$')
+xlabel('vergangene Zeit [t] = s')
+ylabel('Temperatur [T] = $^{\circ}C$')
 run plotsettings.m
 printPath = '../DATA/TempTime';
 print(printPath,'-depsc');
