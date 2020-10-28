@@ -3,18 +3,15 @@ clc;
 clear;
 close all;
 %% import Data
-
 d.SpeicherA = importfile('../DATA/SolarspeicherA_07.09.2020 11_51_36.csv');
 d.SpeicherB = importfile('../DATA/SolarspeicherB_2_07.09.2020 13_36_42.csv');
 d.SpeicherB2 = importfile('../DATA/SolarspeicherB_07.09.2020 13_13_26.csv');
 %% Berechnung UA Wert
-
 t1 = d.SpeicherA.Scan;
 WTsekEin = d.SpeicherA.T_WT_sek_einC;
 WTprimAus = d.SpeicherA.T_WT_prim_ausC;
 WTsekAus = d.SpeicherA.T_WT_sek_ausC;
 WTprimEin = d.SpeicherA.T_WT_prim_einC;
-
 
 namesa = {'sek Ein','prim Aus','sek Aus','Vblau','prim Ein'};
 figure;
@@ -24,7 +21,7 @@ plot(t1,WTsekEin);
 plot(t1,WTprimAus);
 plot(t1,WTsekAus);
 plot(t1,WTprimEin);
-xlabel('elapsed time [t] in 5s');
+xlabel('vergangene Zeit [t] = 5s');
 ylabel('Temperatur [T] in $^{\circ}C$');
 legend(namesa,'location','north');
 pbaspect([3 1 1])
@@ -42,7 +39,6 @@ for k = 1:numel(dataPoints) %Zeige Mittelwerte in m2, Standardabweichung in s2
      m2(:,k) = mean(curr(150:270,k));
      s2(:,k) = std(curr(150:270,k));
 end
-
 
 disp(m2);
 disp(s2);
@@ -95,7 +91,7 @@ hold on
 grid on
 plot(t1,Lanze6,t1,Lanze12,t1,Lanze18,t1,Lanze24,t1,Lanze30,t1,Lanze36,t1,Lanze42,t1,Lanze48,t1,Lanze54,t1,Lanze60);
 plot(t1,Lanze66,t1,Lanze72,t1,Lanze78,t1,Lanze84,t1,Lanze90,t1,Lanze96,t1,Lanze102,t1,Lanze108,t1,Lanze114,t1,Lanze120);
-xlabel('elapsed time [t] in 5s')
+xlabel('vergangene Zeit [t] = 5s')
 ylabel('Temperatur [T] in $^{\circ}C$')
 fleg = legend(fnlanzen(25:2:63),'location','southoutside');
 fleg.NumColumns = 3;
@@ -111,7 +107,7 @@ TSpin = d.SpeicherB2.T_WT_Speicher_einC;
 TSpout = d.SpeicherB2.T_WT_Speicher_ausC;
 TSp6 = d.SpeicherB2.T_Lanze_6cmC;
 
-namesb = {'$T_{Steigrohr}$','$T_{WT,ein}$','$T_{WT,aus}$','$T_{Lanze,6cm}$',};
+namesb = {'$T_{\mathrm{Steigrohr}}$','$T_{\mathrm{WT,ein}}$','$T_{\mathrm{WT,aus}}$','$T_{\mathrm{Lanze,6cm}}$',};
 figure
 hold on
 grid on
@@ -119,7 +115,7 @@ plot(t2,TSpR);
 plot(t2,TSpin);
 plot(t2,TSpout);
 plot(t2,TSp6);
-xlabel('elapsed time [t] in 5s');
+xlabel('vergangene Zeit [t] = 5s');
 ylabel('Temperatur [T] in $^{\circ}C$');
 legend(namesb,'location','east');
 pbaspect([3 1 1])
@@ -177,8 +173,8 @@ plot(TLanze,hLanze)
 xlim([25 50])
 pbaspect([1 2 1])
 xlabel('Temperatur [T] in $^{\circ}C$')
-ylabel('Höhe in cm')
-legend('T_Sp','T_Rohr','location','northwest')
+ylabel('Hoehe in cm')
+legend('$T_{\mathrm{Sp}}$','$T_{\mathrm{Rohr}}$','location','northwest')
 pbaspect([1 2 1])
 run plotsettings.m
 print('../DATA/siphon.eps','-depsc');
@@ -213,7 +209,7 @@ problem.objective = @(vpipe) pdrive-((zeta0+(0.3164/((rhoTemp(TLanze(1,18))*vpip
 problem.x0 = 0.16; %Entspricht Vdot MID /A_Steigrohr in m/s
 problem.solver = 'fzero';
 problem.options = optimset(@fzero);
-vpipe = (fzero(problem))*pi*(dpipe/2).^2*3600 %Ausgabe in m3/h
+vpipe = (fzero(problem))*pi*(dpipe/2).^2*3600; %Ausgabe in m3/h
 
 %% Speicher B
 t3 = d.SpeicherB.Scan;

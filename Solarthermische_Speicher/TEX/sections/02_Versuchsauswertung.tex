@@ -12,68 +12,68 @@ Zur Bestimmung des UA-Wertes wurden die zu Beginn der Speicherbeladung aufgenomm
 	\label{fig:extWT}
 \end{figure}
 
-Die benötigten Temperaturen sind in folgender Tabelle zusammengefasst. Der Volumenstrom beträgt 0,0874 $\pm1,8614*10^{-4} \frac{m^3}{h}$.
+Die benötigten Temperaturen sind in folgender Tabelle zusammengefasst. Der Volumenstrom beträgt \SI{87,4(1)}{\litre\per\hour}.
 
 \begin{table}[H]
 	\centering
-	
-	\begin{tabular}{l|c}
-		
-		
-		\textbf{Messwert} & \textbf{Mittelwert} [T] in ${\celsius}$\\
-		\hline
-	$T_{sek,ein}$ & 20,06 $\pm$0,04\\
-	$T_{sek,aus}$ & 47,16 $\pm$0,57\\
-	$T_{prim,ein}$ & 58,85 $\pm$0,84\\
-	$T_{prim,aus}$ & 21,02 $\pm$0,10\\
-
+	\caption[UA-Wert-Bestimmung Speicher A]{UA-Wert-Bestimmung Speicher A}
+	\begin{tabular}{lS[separate-uncertainty,table-parse-only,table-figures-uncertainty = 1]}
+		\toprule
+		\textbf{Messwert} & {\textbf{Mittelwert} [T] in ${\celsius}$}\\
+		\midrule
+	$T_{\text{sek,ein}}$ & 20,06(4)\\
+	$T_{\text{sek,aus}}$ & 47,16(57)\\
+	$T_{\text{prim,ein}}$ & 58,85(84)\\
+	$T_{\text{prim,aus}}$ & 21,02(10)\\
+		\bottomrule
 	%$T_{sek,ein}$ & 20,0646 $\pm$0,0397\\
 	%$T_{sek,aus}$ & 47,1604 $\pm$0,5687\\
 	%$T_{prim,ein}$ & 58,8494 $\pm$0,8431\\
 	%$T_{prim,aus}$ & 21,0185 $\pm$0,0965\\	
 	\end{tabular}
-\caption[UA-Wert-Bestimmung Speicher A]{UA-Wert-Bestimmung Speicher A}
+
 \label{tab:extWT}
 \end{table}
+
 Die Berechnung erfolgt gemäß Gleichung \ref{eq:QextWT} bis \ref{eq:UAext}. Näherungsweise wurden eine Wasserdichte von \SI{1000}{\kilogram\per\cubic\meter} und eine Wärmekapazität von \SI{4190}{\joule\per\kilogram\kelvin} angenommen.
+
 \begin{equation}
 	\label{eq:QextWT}
-	\dot Q_{WÜT} = \rho_{w} * \dot V_{MID,orange} * c_{p,w} * (T_{prim,ein}-T_{prim,aus}) = \SI{3850}{\watt}
+	\dot{Q}_{\text{WÜT}} = \rho_{\text{w}} * \dot{V}_{\text{MID,orange}} * c_{p\text{,w}} * (T_{\text{prim,ein}}-T_{\text{prim,aus}}) = \SI{3850}{\watt}
 \end{equation}
 
 \begin{center}
 	\begin{small}
-	$\dot Q_{WÜT}$:Wärmestrom am WÜT,	
-	$\rho_{w}$:	Dichte von Wasser,
-	$c_{p,w}$: Wärmekapazität von Wasser
+	$\dot{Q}_{\text{WÜT}}$:Wärmestrom am WÜT,	
+	$\rho_{\text{w}}$:	Dichte von Wasser,
+	$c_{p\text{,w}}$: Wärmekapazität von Wasser
 	\end{small}
 \end{center}
 
 \begin{equation}
 	\label{eq:DeltaTm}
-%	\Delta T_{m} = \frac{|\Delta T_{0} - \Delta T_{1}|}{ln(\frac{\Delta T_{0}}{\Delta T_{1}})} = \SI{4,28}{\kelvin}
-	\Delta T_{m} = \frac{|\Delta T_{0} - \Delta T_{1}|}{ln(\frac{\Delta T_{0}}{\Delta T_{1}})} = \SI{4,2840}{\kelvin}
+	\Delta T_{m} = \frac{|\Delta T_{0} - \Delta T_{1}|}{\ln\left(\frac{\Delta T_{0}}{\Delta T_{1}}\right)} = \SI{4,2840}{\kelvin}
 \end{equation}
 \begin{center}
 	\begin{small}
-		$\Delta T_{m}$: Mittlere Temperaturdifferenz
+		$\Delta T_{\text{m}}$: Mittlere Temperaturdifferenz
 	\end{small}
 \end{center}
 
 mit
 \begin{equation}
 	\label{eq:DeltaT0}
-	\Delta T_{0} = T_{prim,ein} - T_{sek,aus}
+	\Delta T_{0} = T_{\text{prim,ein}} - T_{\text{sek,aus}}
 \end{equation}
 
 \begin{equation}
 	\label{eq:DeltaT1}
-	\Delta T_{1} = T_{prim,aus} - T_{sek,ein}
+	\Delta T_{1} = T_{\text{prim,aus}} - T_{\text{sek,ein}}
 \end{equation}
 Der UA Wert ergibt sich aus dem Quotienten von Gleichung \ref{eq:QextWT} und \ref{eq:DeltaTm}.
 \begin{equation}
 	\label{eq:UAext}
-	UA_{WÜT} = \frac{\dot Q_{WÜT}}{\Delta T_{m}} = \SI{898,7}{\watt\per\kelvin}
+	\mathit{UA}_{\text{WÜT}} = \frac{\dot{Q}_{\text{WÜT}}}{\Delta T_{\text{m}}} = \SI{898,7}{\watt\per\kelvin}
 \end{equation}
 
 \subsubsection{Füllvorgang}
@@ -86,7 +86,7 @@ Bei der Befüllung wurde der Temperaturverlauf an der Messlanze beobachtet und a
 	\label{fig:SpAfill}
 \end{figure}
 
-Zunächst wurde erhitztes Wasser bis zur \SI{30}{\liter} Markierung des Speichers durch den Bodeneinlass aufgefüllt. Beim eintauchen in das Wasser steigt die gemessene Temperatur an der jeweiligen Lanzenhöhe sehr schnell an. Aufgrund der Wärmeverluste und der Wärmeverteilung durch die Temperaturschichtung kann die Speichereintrittstemperatur nicht überall gehalten werden, an den höheren Sensoren wird daher eine etwas niedrigere Temperatur gemessen. Im nächsten Schritt wird der Speicher über die Prallplatte mit kaltem Wasser bis zur \SI{50}{\liter} Markierung gefüllt. (Scan 300 bis 450). Die Temperatur fällt an den unteren Sensoren ab, an den oberen Sensoren bleibt die Temperatur stabil oder sinkt nur leicht. Beim wechsel auf den Bodeneinlass (Scan 450 bis 500) wird die Schicht bis zu einer Speicherhöhe von \SI{36}{\centi\meter} gestört. Beim Wechsel auf das Steigrohr (Scan 500 bis 650) tritt zunächst kein Temperatursprung auf, bis schließlich die Temperaturen auf einer Höhe zwischen 40 und \SI{50}{\centi\meter}abfallen. Ein Zeichen dafür, dass die Schichtung funktioniert und durch den Zufluss des kalten Wassers die warme Schicht angehoben wird. Beim abschließenden Wechsel auf heißes Wasser ist ein Temperaturhub an den obersten Schichten festzustellen. Auch in diesem Fall erfüllt das Steigrohr seinen Zweck.
+Zunächst wurde erhitztes Wasser bis zur \SI{30}{\litre} Markierung des Speichers durch den Bodeneinlass aufgefüllt. Beim eintauchen in das Wasser steigt die gemessene Temperatur an der jeweiligen Lanzenhöhe sehr schnell an. Aufgrund der Wärmeverluste und der Wärmeverteilung durch die Temperaturschichtung kann die Speichereintrittstemperatur nicht überall gehalten werden, an den höheren Sensoren wird daher eine etwas niedrigere Temperatur gemessen. Im nächsten Schritt wird der Speicher über die Prallplatte mit kaltem Wasser bis zur \SI{50}{\litre} Markierung gefüllt. (Scan 300 bis 450). Die Temperatur fällt an den unteren Sensoren ab, an den oberen Sensoren bleibt die Temperatur stabil oder sinkt nur leicht. Beim wechsel auf den Bodeneinlass (Scan 450 bis 500) wird die Schicht bis zu einer Speicherhöhe von \SI{36}{\centi\meter} gestört. Beim Wechsel auf das Steigrohr (Scan 500 bis 650) tritt zunächst kein Temperatursprung auf, bis schließlich die Temperaturen auf einer Höhe zwischen 40 und \SI{50}{\centi\meter} abfallen. Ein Zeichen dafür, dass die Schichtung funktioniert und durch den Zufluss des kalten Wassers die warme Schicht angehoben wird. Beim abschließenden Wechsel auf heißes Wasser ist ein Temperaturhub an den obersten Schichten festzustellen. Auch in diesem Fall erfüllt das Steigrohr seinen Zweck.
 
 \subsection{Speicher B}
 \subsubsection{UA-Wert Rohrbündel}
@@ -102,24 +102,22 @@ Bei der Ermittlung des UA-Wertes wird analog zum vorherigen Versuchsteil vorgega
 
 \begin{table}[H]
 	\centering
-	
-	\begin{tabular}{l|c}
-		
-		
+	\caption[UA-Wert-Bestimmung Speicher B]{UA-Wert-Bestimmung Speicher B}
+	\begin{tabular}{lS[separate-uncertainty,table-parse-only,table-figures-uncertainty = 1]}
+		\toprule
 		\textbf{Messwert} & \textbf{Mittelwert} [T] in ${\celsius}$\\
-		\hline
-		$T_{Lanze,6cm}$ & 26,63 $\pm$0,23\\
-		$T_{pipe}$ & 44,47 $\pm$0,18\\
-		$T_{WT,ein}$ & 58,22 $\pm$0,31\\
-		$T_{WT,aus}$ & 28,74 $\pm$0,20\\
-	
+		\midrule
+		$T_{Lanze,6cm}$ & 26,63(23)\\
+		$T_{pipe}$ & 44,47(18)\\
+		$T_{WT,ein}$ & 58,22(31)\\
+		$T_{WT,aus}$ & 28,74(20)\\
+		\bottomrule
 %		$T_{sek,ein}$ & 26,6349 $\pm$0,2263\\
 %		$T_{sek,aus}$ & 44,4749 $\pm$0,1786\\
 %		$T_{prim,ein}$ & 58,2179 $\pm$0,3096\\
 %		$T_{prim,aus}$ & 28,7390 $\pm$0,1990\\
 		
 	\end{tabular}
-\caption[UA-Wert-Bestimmung Speicher B]{UA-Wert-Bestimmung Speicher B}
 \label{tab:intWT}
 \end{table}
 
@@ -128,7 +126,7 @@ Die Berechnung nach Gleichung \ref{eq:UAext} ergibt einen UA-Wert von
 \begin{equation}
 	\label{eq:UAint}
 %	UA_{WÜT} = \frac{\SI{4032,8}{\watt}}{\SI{6.2019}{\kelvin}} = \SI{650,3}{\watt\per\kelvin}
-		UA_{WÜT} = \frac{\SI{4032,8}{\watt}}{\SI{6,20}{\kelvin}} = \SI{650,3}{\watt\per\kelvin}
+		UA_{\text{WÜT}} = \frac{\SI{4032,8}{\watt}}{\SI{6,20}{\kelvin}} = \SI{650,3}{\watt\per\kelvin}
 \end{equation}
 
 \subsubsection{Volumenstrom Steigrohr}
@@ -136,10 +134,10 @@ Neben der Messung mittels MID kann der Volumenstrom im Steigrohr auch über die 
 
 \begin{equation}
 	\label{eq:Vdot}
-	\dot V_{Rohr}  =\frac{\dot Q_{WÜT}}{\rho_{w} *  * c_{p,w} * (T_{sek,aus}-T_{sek,ein})}  = \SI{0,194}{\cubic\meter\per\hour}
+	\dot{V}_{\text{Rohr}}  =\frac{\dot{Q}_{\text{WÜT}}}{\rho_{\text{w}} *  * c_{p\text{,w}} * (T_{\text{sek,aus}}-T_{\text{sek,ein}})}  = \SI{0,194}{\cubic\meter\per\hour}
 \end{equation}
 
-Der berechnete Wert liegt 65\% über dem ausgegebenen Wert des MID. Grund dafür könnte das stark vereinfachte Modell zur Beschreibung des Wärmeübertragers sein. Die Temperatur der Sekundärseite wurde lediglich anhand der Messlanze geschätzt und komplexere Strömungseffekte im und am Steigrohr wurden vernachlässigt. Weiterhin wurde der Volumenstrom über die Dichteintegrale bestimmt (Gl. \ref{eq:int}).
+Der berechnete Wert liegt \SI{65}{\percent} über dem ausgegebenen Wert des MID. Grund dafür könnte das stark vereinfachte Modell zur Beschreibung des Wärmeübertragers sein. Die Temperatur der Sekundärseite wurde lediglich anhand der Messlanze geschätzt und komplexere Strömungseffekte im und am Steigrohr wurden vernachlässigt. Weiterhin wurde der Volumenstrom über die Dichteintegrale bestimmt (Gl. \ref{eq:int}).
 \begin{multline}
 	\label{eq:int}
 	\Delta p_{drive}=g*\biggl|\int_{h_{1}}^{h_{2}}\rho(T_{WS1})\,dh'-\int_{h_{1}}^{h_{2}}\rho(T_{WS2})\,dh'\biggl|=g*\biggl|(\rho(T_{Lanze,6cm})*h_{Boden}\\+\rho((T_{WÜT,ein}+T_{WÜT,aus})/2)*h_{WÜT}+\rho(T_{pipe})*h_{pipe})-\sum\limits_{i=1}^{18}(\rho(T_{i})*\Delta h_{i})\biggl|
@@ -148,19 +146,19 @@ Folgende Werte wurden neben den Temperaturen aus Tab. \ref{tab:intWT} verwendet:
 
 \begin{table}[H]
 	\centering
-	
-	\begin{tabular}{l|c}
-		
-		
+	\caption{Parameter zu Bestimmung der thermosiphonischen Strömung.}
+	\begin{tabular}{lc}
+		\toprule
 		\textbf{Parameter} & \textbf{Wert}\\
-		\hline
+		\midrule
 		g & \SI{9,81}{\meter\per\square\second}\\
-		$h_{Boden}$ & \SI{0,12}{\meter}   \\
-		$h_{WÜT}$ & \SI{0,23}{\meter}   \\
-		$h_{pipe}$ & \SI{0,73}{\meter}   \\
-		$\Delta h_{i}$ & \SI{0,06}{\meter}   \\
+		$h_{\text{Boden}}$ & \SI{0,12}{\meter}   \\
+		$h_{\text{WÜT}}$ & \SI{0,23}{\meter}   \\
+		$h_{\text{pipe}}$ & \SI{0,73}{\meter}   \\
+		$\Delta h_{\text{i}}$ & \SI{0,06}{\meter}   \\
+		\bottomrule
 	\end{tabular}
-\caption[Parameter zu Bestimmung der thermosiphonischen Strömung.]{Parameter zu Bestimmung der thermosiphonischen Strömung.}
+
 \label{tab:par}
 \end{table}
 Zur Bestimmung der temperaturabhängigen Dichte von Wasser wurde folgende Näherung verwendet und in Gl. \ref{eq:int} implementiert:
@@ -171,15 +169,15 @@ Zur Bestimmung der temperaturabhängigen Dichte von Wasser wurde folgende Näher
 \end{equation}
 Der Antriebsdruck ergibt sich zu \SI{74,35}{\pascal}. Weiterhin gilt:
 \begin{align}
-	\Delta p_{drive}-\zeta*\frac{\rho(T_{pipe})}{2}*v_{pipe}^2=0\\
-	\zeta=1,44+\frac{0,3164}{Re^{0,25}}*\frac{h_{pipe}}{d_{pipe}}\\
-	Re=\frac{\rho(T_{pipe})*v_{pipe}*d_{pipe}}{\eta}
+	\Delta p_{\text{drive}}-\zeta*\frac{\rho(T_{\text{pipe}})}{2}*v_{\text{pipe}}^2=0\\
+	\zeta=1,44+\frac{0,3164}{Re^{0,25}}*\frac{h_{\text{pipe}}}{d_{\text{pipe}}}\\
+	Re=\frac{\rho(T_{\text{pipe}})*v_{\text{pipe}}*d_{\text{pipe}}}{\eta}
 \end{align}
-Einsetzen von Gl. 12 in Gl. 11 in Gl. 10 und Berechnung der Nullstelle ($v_{pipe}$) ergibt bei einem Steigrohrdurchmesser von \SI{16}{mm} einen Volumenstrom von \SI{0,155}{\cubic\meter\per\hour}. Dieser Wert liegt mit einer Abweichung von 32\,\% näher an der Anzeige des MID. Abblidung \ref{fig:temp} zeigt, dass im verwendeten Datensatz keine ordentliche Temperaturschichtung im Speicher vorlag. Dieser Aspekt kann die thermosiphonische Berechnung verfälschen. Während bereits in der Speichermitte erhöhte Temperaturen auftreten, ist eine Temperaturspreizung am oberen Ende des Steigrohrs verglichen mit der Messlanze zu beobachten. 
+Einsetzen von Gl. 12 in Gl. 11 in Gl. 10 und Berechnung der Nullstelle ($v_{\text{pipe}}$) ergibt bei einem Steigrohrdurchmesser von \SI{16}{mm} einen Volumenstrom von \SI{0,155}{\cubic\meter\per\hour}. Dieser Wert liegt mit einer Abweichung von \SI{32}{\percent} näher an der Anzeige des MID. Abblidung \ref{fig:temp} zeigt, dass im verwendeten Datensatz keine ordentliche Temperaturschichtung im Speicher vorlag. Dieser Aspekt kann die thermosiphonische Berechnung verfälschen. Während bereits in der Speichermitte erhöhte Temperaturen auftreten, ist eine Temperaturspreizung am oberen Ende des Steigrohrs verglichen mit der Messlanze zu beobachten. 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.32\textwidth]{../DATA/siphon.eps}
-	\caption[Temperaturschichtung Speicher B]{Temperaturschichtung Speicher B}
+	\caption{Temperaturschichtung Speicher B}
 	\label{fig:temp}
 \end{figure}
 Die thermosiphonische Strömung kommt zum Erliegen, wenn sich die Temperatur (und somit die Dichte) innerhalb und außerhalb des Steigrohres angleicht. In diesem Fall gilt für die antreibende Druckdifferenz $\Delta p_{drive}=0$.  
