@@ -58,6 +58,7 @@ xlim([0 3000])
 ylim([0 11000])
 xlabel('Durchfluss [$\dot V$]$ = \frac{L}{h}$')
 ylabel('Druckverlust [p] = pa') 
+pbaspect([1 1 1])
 legend('Messung','Rechnung','location','best')
 run plotsettings.m
 printPath = '../DATA/dPPlot';
