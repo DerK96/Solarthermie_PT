@@ -10,10 +10,10 @@ DataChrisMainz = importfile('../DATA/Vers_Kollektor_Kennline_Dachlabor_10.09.202
 DrainChrisMainz = importfile('../DATA/Vers Drainback Dachlabor 10.09.2020 11_42_33 1.csv');
 
 SolarAnlage = DataChrisMainz; % this is only that we dont have to replace all varnames
-DrainAnlage = DrainChrisMainz;
+DrainAnlage = DataChrisMainz;
 %% Start/Stop Time
-ScanStart = [871 140];
-ScanStop = [1088 230];
+ScanStart = [871 871];
+ScanStop = [1088 1088];
 EndVal = size(SolarAnlage,1);
 %% plot fun
 figure
@@ -88,17 +88,29 @@ etaXP(:,1) = solve(eqn(:,1)); % find xPos1
 etaXP(:,2) = solve(eqn(:,2)); % find xPos2
 
 % calculate errorbars
-yneg = [0.1068 0.7094 0.1068 0.7094];
-ypos = [0.1068 0.7094 0.1068 0.7094];
-xneg = [0.0241 0.0125 0.0241 0.0125];
-xpos = [0.0241 0.0125 0.0241 0.0125];
+
+% x errorconstants
+meanT_inS = mean(SolarAnlage.T_RL_KollC(ScanStart(1,1):ScanStop(1,1)));
+meanT_inD = mean(SolarAnlage.T_RL_Koll_drainC(ScanStart(1,1):ScanStop(1,1)));
+meanT_outS = mean(SolarAnlage.T_VL_KollC(ScanStart(1,1):ScanStop(1,1)));
+meanT_outD = mean(SolarAnlage.T_VL_Koll_drainC(ScanStart(1,1):ScanStop(1,1)));
+
+% y errorconstants
+meanVpS = mean(SolarAnlage.Vpkt_Vortex(ScanStart(1,1):ScanStop(1,1)));
+meanVpD = mean(SolarAnlage.Vpkt_drain_MIDinlpromin(ScanStart(1,1):ScanStop(1,1)))*60;
+
+yneg = [calcErrorY(meanVpS,meanT_inS,meanT_outS,rhoH2O,cpH2O,0) calcErrorY(meanVpD,meanT_inD,meanT_outD,rhoH2O,cpH2O,1) calcErrorY(meanVpS,meanT_inS,meanT_outS,rhoH2O,cpH2O,0) calcErrorY(meanVpD,meanT_inD,meanT_outD,rhoH2O,cpH2O,1)];
+ypos = [calcErrorY(meanVpS,meanT_inS,meanT_outS,rhoH2O,cpH2O,0) calcErrorY(meanVpD,meanT_inD,meanT_outD,rhoH2O,cpH2O,1) calcErrorY(meanVpS,meanT_inS,meanT_outS,rhoH2O,cpH2O,0) calcErrorY(meanVpD,meanT_inD,meanT_outD,rhoH2O,cpH2O,1)];
+
+xneg = [calcErrorX(meanT_inS,meanT_outS,Ta,G(1,1)) calcErrorX(meanT_inD,meanT_outD,Ta,G(1,1)) calcErrorX(meanT_inS,meanT_outS,Ta,G(1,1)) calcErrorX(meanT_inD,meanT_outD,Ta,G(1,1))];
+xpos = [calcErrorX(meanT_inS,meanT_outS,Ta,G(1,1)) calcErrorX(meanT_inD,meanT_outD,Ta,G(1,1)) calcErrorX(meanT_inS,meanT_outS,Ta,G(1,1)) calcErrorX(meanT_inD,meanT_outD,Ta,G(1,1))];
 
 %% plot fun
 figure
 hold on
 grid on
 fplot(eta(1),'-','color','k','DisplayName','Standard $G = 1007.5 \frac{W}{m^{2}}$')
-fplot(eta(2),'--','color','b','DisplayName','Drainback $G = 867.6 \frac{W}{m^{2}}$')
+% fplot(eta(2),'--','color','b','DisplayName','Drainback $G = 867.6 \frac{W}{m^{2}}$')
 errorbar(etaXP(2,1),etaWahrPlot(:,1),yneg(1),ypos(1),xneg(1),xpos(1),'x','color','r','DisplayName','Standardanlage theo');
 errorbar(etaXP(2,2),etaWahrPlot(:,2),yneg(2),ypos(2),xneg(2),xpos(2),'o','color','g','DisplayName','Drainbackacnlage theo');
 errorbar((meanDT(:,1)/(G(:,1)/1000)),etaGemessenPlot(:,1),yneg(3),ypos(3),xneg(3),xpos(3),'x','color','b','DisplayName','Standardanlage real');
@@ -156,5 +168,3 @@ ylabel('Temperatur [T] = $^{\circ}C$')
 run plotsettings.m
 printPath = '../DATA/TempTimeDrainBack';
 print(printPath,'-depsc');
-
-
