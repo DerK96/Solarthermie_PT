@@ -96,7 +96,7 @@ meanT_outS = mean(SolarAnlage.T_VL_KollC(ScanStart(1,1):ScanStop(1,1)));
 meanT_outD = mean(SolarAnlage.T_VL_Koll_drainC(ScanStart(1,1):ScanStop(1,1)));
 
 % y errorconstants
-meanVpS = mean(SolarAnlage.Vpkt_Vortex(ScanStart(1,1):ScanStop(1,1)));
+meanVpS = mean(SolarAnlage.Vpkt_Vortex(ScanStart(1,1):ScanStop(1,1)))*60;
 meanVpD = mean(SolarAnlage.Vpkt_drain_MIDinlpromin(ScanStart(1,1):ScanStop(1,1)))*60;
 
 yneg = [calcErrorY(meanVpS,meanT_inS,meanT_outS,rhoH2O,cpH2O,0) calcErrorY(meanVpD,meanT_inD,meanT_outD,rhoH2O,cpH2O,1) calcErrorY(meanVpS,meanT_inS,meanT_outS,rhoH2O,cpH2O,0) calcErrorY(meanVpD,meanT_inD,meanT_outD,rhoH2O,cpH2O,1)];
