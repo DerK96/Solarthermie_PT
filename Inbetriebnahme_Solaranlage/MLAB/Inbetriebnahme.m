@@ -109,12 +109,12 @@ xpos = [calcErrorX(meanT_inS,meanT_outS,Ta,G(1,1)) calcErrorX(meanT_inD,meanT_ou
 figure
 hold on
 grid on
-fplot(eta(1),'-','color','k','DisplayName','Standard $G = 1007.5 \frac{W}{m^{2}}$')
+fplot(eta(1),'-','color','k','DisplayName','theoretische Kennlinie $G = 1007.5 \frac{W}{m^{2}}$')
 % fplot(eta(2),'--','color','b','DisplayName','Drainback $G = 867.6 \frac{W}{m^{2}}$')
-errorbar(etaXP(2,1),etaWahrPlot(:,1),yneg(1),ypos(1),xneg(1),xpos(1),'x','color','r','DisplayName','Standardanlage theo');
-errorbar(etaXP(2,2),etaWahrPlot(:,2),yneg(2),ypos(2),xneg(2),xpos(2),'o','color','g','DisplayName','Drainbackacnlage theo');
-errorbar((meanDT(:,1)/(G(:,1)/1000)),etaGemessenPlot(:,1),yneg(3),ypos(3),xneg(3),xpos(3),'x','color','b','DisplayName','Standardanlage real');
-errorbar((meanDT(:,2)/(G(:,2)/1000)),etaGemessenPlot(:,2),yneg(4),ypos(4),xneg(4),xpos(4),'o','color','k','DisplayName','Drainbackacnlage real');
+errorbar(etaXP(2,1),etaWahrPlot(:,1),yneg(1),ypos(1),xneg(1),xpos(1),'x','MarkerSize',10,'color','r','DisplayName','Standardanlage $\eta_{\mathrm{th}}$');
+errorbar(etaXP(2,2),etaWahrPlot(:,2),yneg(2),ypos(2),xneg(2),xpos(2),'x','MarkerSize',10,'color','k','DisplayName','Drainbackacnlage $\eta_{\mathrm{th}}$');
+errorbar((meanDT(:,1)/(G(:,1)/1000)),etaGemessenPlot(:,1),yneg(3),ypos(3),xneg(3),xpos(3),'o','MarkerSize',10,'color','r','DisplayName','Standardanlage $\eta_{\mathrm{real}}$');
+errorbar((meanDT(:,2)/(G(:,2)/1000)),etaGemessenPlot(:,2),yneg(4),ypos(4),xneg(4),xpos(4),'o','MarkerSize',10,'color','k','DisplayName','Drainbackacnlage $\eta_{\mathrm{real}}$');
 xlim([0 150])
 ylim([0 1])
 xlabel('$\frac{\Delta T}{G}$ in $\frac{K m^{2}}{kW}$')
