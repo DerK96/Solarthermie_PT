@@ -36,7 +36,7 @@ $V_{\text{u}}$ unter den angegebenen Bedingung folgenden Wert an:
 
 \subsubsection{Anlagenleistung}
 
-In der folgenden Abbildung sind die Einstrahlungwerte über den gesamten Messzeitraum von ca. \SI{54}{\minute} für die Standardversuchsanlage abgebildet. 
+In der folgenden Abbildung sind die Einstrahlungswerte über den gesamten Messzeitraum von ca. \SI{54}{\minute} für die Standardversuchsanlage abgebildet. 
 Die Einstrahlungswerte liegen über der durch die Norm spezifizierten Randbedingung von mind. \SI{800}{\watt\per\meter\squared} bei denen die Leistungsparameter bestimmt wurden. Für die Auswertung wurden die Daten im Scanbereich 871 bis 1088 verwendet.
 
 \begin{figure}[H]
@@ -107,47 +107,47 @@ Die Fehlerbalken in x und y Richtung wurden nach den Formeln 2.3 und 2.4 des Pra
 
 \textbf{Funktioniert der in Betrieb genommene Kollektor wie erwartet?}
 
-Nach der Inbetriebnahme der Solaranlagen funktionierte diese wie zu erwarten. 
+Nach der Inbetriebnahme funktionieren die Solaranlagen wie erwartet. Die ermittelten Wirkungsgrade schneiden die Kollektorkennlinie innerhalb ihrer Fehlerbalkenquadrate.
 
 \textbf{Wie wäre es zu interpretieren, wenn das aus den Fehlerbalken gebildete Quadrat um den gemessenen Kollektorwirkungsgradpunkt die Kollektorwirkungsgradkennlinie nie schneidet?}
+In diesem Fall würde ein nicht bekannter Fehler in der Messtechnik oder der Anlage selbst vorliegen. (Fehlerhafte Temperaturen, Ablagerungen, Durchfluss,...) Weiterhin könnte die reale Kennlinie auch von den theoretischen Angaben abweichen. 
 
 \textbf{Welche Messstellen braucht ein Solarregler mindestens für eine ordnungsgemäße
 	Funktion? An welchen Positionen werden die Einschalttemperaturen für die Solarkreispumpe
 	sinnvollerweise gemessen?}
-Der Solarregler braucht Temperatursensoren für die Vor- und Rücklauftemperaturen am Kollektor und am Speicher. Die Temperatur sollte am Solarwärmeübertrager gemessen werden. 
+Der Solarregler braucht Temperatursensoren für die Vorlauftemperatur des Kollektors sowie die obere und untere Speichertemperatur am Wärmeübertrager. Letztere dient als Regelgröße. Hiermit lassen sich Temperaturdifferenz-/Zieltemperaturregelungen realisieren. 
 
 \textbf{Welcher Volumenstrom wäre im Kollektorkreis ungefähr sinnvoll?}
+Die Auslegung des Volumenstroms erfolgt meist nach einfachen Faustformeln. Hierbei wird zwischen Low-Flow, High-Flow und Matched-Flow unterschieden. Der Volumenstrom ist stets ein Kompromiss zwischen höherer Kollektoreffizienz  und erhöhtem Energiebedarf der Pumpe. Die benötigte Nachheizenergie (zzgl. Pumpenstrom) sollte minimiert werden.
 
 \textbf{Wovon hängt die benötigte Pumpenleistung abhängig?}
-
-Die benötigte Pumpenleistung hängt von der Länge des Rohrleitungssystems und der zu überwindenden Höhendifferenz vom Speicher zum Dach/der Kollektorfläche ab. 
+Die benötigte Leistung hängt vom Druckverlust der Einbauten ab. Viele Bögen/Engstellen sowie Ablagerungen im System können die benötigte Pumpenleistung erhöhen.
 
 \textbf{Warum wird die Solaranlage gespült?}
-
-Die Solaranlage wird vor der Inbetriebnahme gespült, um die Luft aus dem Rohrleitungssystem und dem Kollektor zu drücken. Die Anlage muss über einen gewissen Zeitraum gespült werden, damit auch Luft, die an Rohrknicken und Engstellen verweilt, aus der Apparatur abfließen kann.
+Die Solaranlage wird vor der Inbetriebnahme gespült, um die Luft aus dem Rohrleitungssystem und dem Kollektor zu drücken. Außerdem sollen Ausfällungen des Wärmeträgerfluids durch Stagnation aus dem System entfernt werden. Die Anlage muss über einen gewissen Zeitraum gespült werden, damit auch Luft, die an Rohrknicken und Engstellen verweilt, aus der Apparatur abfließen kann. 
 
 \textbf{Warum darf keine Luft in der Anlage sein?}
 
-Luft ist ein sehr schlechter Wärmeübertrager und mindert die Anlagenleistung des Solaranlage. In der Luft vorhandener Sauerstoff kann im Rohrsystem zu Korrosion führen. Große Luftmengen im System könne zusätzlich zu versagen der Pumpe führen. 
+Luft ist ein sehr schlechter Wärmeübertrager, mindert die Anlagenleistung des Solaranlage und kann eine Stagnation begünstigen. Große Luftmengen im System können der Pumpe schaden. Im Gegensatz zu Wasser ist Luft kompressibel und kann die Funktion des MAG beeinträchtigen.
 
 \textbf{Wozu ist ein Ausdehnungsgefäß vorzusehen und wonach richtet sich dessen Volumen?}
 
-Veränderung der Umgebungstemperatur können zu Ausdehnung des Wärmetauscherfluids führen. Das Außgleichsgefäß führt mit seiner Membran dazu, dass der Systemdruck Im Stagnationsfall der Anlage fließt sämtliches Kollektorfluid in das Ausdehnungsgefäß, denn ein Verdampfen des Wärmefluids im Kollektor kann zum Auslösen des Überdruckventils und zur Zerstörung der Anlage führen. Im Stagnationsfall sollte daher das gesamte Kollektorvolumen in das Ausgleichsgefäß fließen können.
+Im Stagnationsfall verdampft das Fluid und es kommt zur Ausdehnung, aber auch im normalen Betrieb schwankt das Volumen leicht. Das inkompressible Wasser soll daher aus dem System in das MAG gedrückt werden, um eine hohe Belastung der hydraulischen Komponenten zu vermeiden. 
 
 \subsection{Drainback-System}
 
 \textbf{Vorteile eines Drainback-Systems gegenüber einem druckbehafteteten System:}
 
-Bei einer Drainback-Anlage wird kein externes Wärmeüberträgerfluid verwendet, sondern das Wasser aus dem Solarspeicher direkt durch den Kollektor gepumt wird. Beim Stillstand der Solaranlage läuft das gesamte Solarkreisvolumen in den Speichert zurück, sodass das Rohrsystem  komplett mit Luft gefüllt vorliegt. Es kann demzufolge nicht zu Frost- oder Überhitzungschäden oder Stagnation kommen, was den Einsatz gerade in sehr heißen klimatischen Gebieten ohne Stagnation ermöglicht. Der Instandhaltungsaufwand ist durch die Verwendung einer Drainback-Anlage geringer, da das System weniger thermischen Belastungen ausgesetzt ist und beispielsweise kein Ausdehnungsgefäß, Überdruckventile oder Frostschutzmittel benötigt. Dadurch gestaltet sich eine Drainback-Anlage häufig kostengünstiger, die Installation einfacher und die Lebensdauer in den meisten Fällen erhöht. \\
+Bei einer Drainback-Anlage wird kein externes Wärmeüberträgerfluid verwendet, sondern das Wasser aus dem Solarspeicher direkt durch den Kollektor gepumpt. Beim Stillstand der Solaranlage läuft das gesamte Solarkreisvolumen in den Speicher zurück, sodass das Rohrsystem  komplett mit Luft gefüllt ist. Es kann demzufolge nicht zu Frost- oder Überhitzungsschäden kommen, was den Einsatz gerade in sehr heißen Gebieten ohne Stagnation ermöglicht. Der Instandhaltungsaufwand ist durch die Verwendung einer Drainback-Anlage geringer, da das System weniger thermischen Belastungen ausgesetzt ist und beispielsweise kein Ausdehnungsgefäß, Überdruckventile oder Frostschutzmittel benötigt. Dadurch gestaltet sich eine Drainback-Anlage häufig kostengünstiger, die Installation einfacher und die Lebensdauer in den meisten Fällen erhöht. \\
 
 \textbf{Nachteile einer Drainback-Anlage:}
 
-Damit der Kollektor einer Drainback-Solaranlage im Stillstandsfall leer fließen kann, muss der Kollektor der höchste Punkt der Anlage darstellen, zusätzlich muss zwischen dem Kollektor und der Solarstation ein Gefälle von mindestens \SI{4}{\percent} liegen, damit sich der Kollektor komplett entleeren kann. 
-Der Abstand zwischen der Pumpe und dem höchsten Punkt des Kollektors sollte einen Höhenunterschied von ca. \SI{12}{\meter} nicht überschreiten, da eine Standard Hocheffizienz Umwälzpumpe eine größere Differenz nicht ohne stark erhöhte Kosten leisten kann und viel mehr Energie verbrauchen würde. \\
+Damit der Kollektor einer Drainback-Solaranlage im Stillstandsfall leer fließen kann, muss der Kollektor den höchsten Punkt der Anlage darstellen, zusätzlich muss zwischen dem Kollektor und der Solarstation ein Gefälle von mindestens \SI{4}{\percent} liegen, damit sich der Kollektor komplett entleeren kann. 
+Der Abstand zwischen der Pumpe und dem höchsten Punkt des Kollektors sollte einen Höhenunterschied von ca. \SI{12}{\meter} nicht überschreiten, da die Pumpe während des Befüllvorgangs den Druck der Wassersäule über die Förderhöhe zusätzlich bewältigen muss.
 
 \textbf{Hydraulisches Phänomen beim Befüllen und Entleeren einer Drainback-Anlage:}
 
-Um eine entleerte Drainback-Anlage zu befüllen muss eine bestimmte Pumpenleistung/Pumpendrehzahl verwendet werden. Durch Ausprobieren wurde eine Pumpenleistung von \SI{59}{\percent} ermittelt unter deren Bedingung sich der Solarkreis bis zum höchsten Punkt befüllte. Ist der Solarkreis mit Wasser gefüllt, kann die Pumpendrehzahl so weit zurück gedreht werden, dass bei Betrieb der Anlage nur noch \SI{5}{\percent} der Pumpenleistung benötigt werden. Dieses Phänomen kommt dadurch zustande, dass das in den Speicher herabfließende Wasser über ein statisches Vakuum frisches Wasser in den Solarkreis zieht. Aus diesen Gründen entleert sich bei Abstellen der Pumpe der gesamte Solarkreislauf. 
+Um eine entleerte Drainback-Anlage zu befüllen muss eine bestimmte Pumpenleistung/Pumpendrehzahl verwendet werden. Durch Ausprobieren wurde eine Pumpenleistung von \SI{59}{\percent} ermittelt, unter deren Bedingung sich der Solarkreis bis zum höchsten Punkt befüllte. Ist der Solarkreis mit Wasser gefüllt, kann die Pumpendrehzahl so weit zurück gedreht werden, dass bei Betrieb der Anlage nur noch \SI{5}{\percent} der Pumpenleistung benötigt werden. Nach dem Befüllvorgang arbeiten die beiden Wassersäulen in Vor- und Rücklauf gegeneinander, sodass die Pumpe nur noch den Druckverlust der Komponenten stemmen muss. Die Funktionsweise der Drainback-Anlage erfordert eine Hydrostatische Druckdifferenz, beispielsweise durch einen Überdimensionierten Speicher. 
 
 \subsection{Überprüfen des Wasser-Glykol-Gemischs}
 
@@ -158,8 +158,7 @@ Für den Versuch wurden drei Proben des Wärmeträgerfluid Wasser-Propylenglykol
 	\centering
 	\begin{tabular}{lcc}
 		\toprule
-		& Konzentration  & Gefrierpunkt \\
-		&\si{\percent}& \textcelsius\\
+		& Konzentration in \si{\percent}  & Gefrierpunkt in \textcelsius\\
 		\midrule
 		Probe 1 &       44               &          -24,0           \\
 		Probe 2 &       51            &            -32,5     \\
@@ -170,6 +169,6 @@ Für den Versuch wurden drei Proben des Wärmeträgerfluid Wasser-Propylenglykol
 
 Probe 1 hatte ein klares orange/pink fluoreszierendes Aussehen. Die Glykolkonzentration liegt bei dieser Probe im gängigen Normbereich, es besteht kein Handlungsbedarf das Wärmeübertragefluid auszutauschen. 
 
-Probe 2 zeigte eine etwas trübe bräunliche verschmutzte Färbung. Möglicherweise lag in der Solaranlage ein Stagnationsfall vor und das Wärmeträgerfluid wurde zu stark erhitzt. Die Konzentration und der Gefrierpunkt finden sich aber auch bei dieser Probe noch im Normbereich, das Wärmeträgerfluid sollte aufgrund der Verschmutzung aber ausgetauscht werden und der Solarkreis gründlich gespült werden.  
+Probe 2 zeigte eine etwas trübe bräunliche verschmutzte Färbung. Möglicherweise lag in der Solaranlage ein Stagnationsfall vor und das Wärmeträgerfluid wurde zu stark erhitzt. Das Wasser könnte hierbei verdampft sein, wodurch das Frostschutzmittel aufkonzentriert wurde. Weiterhin ist die Wärmekapazität von Glykol geringer, als die von Wasser. eine unnötig hohe Konzentration beeinträchtigt somit den Wärmetransport. Prinzipiell ist der Betrieb weiterhin möglich, zur Sicherheit sollte der Kreislauf dennoch erneuert werden.
 
-Probe 3 lag tief braun und undurchsichtig vor.  Die Glykol-Konzentration im Wärmeübertragerfluid ist zu niedrig, sodass der Gefrierpunkt des Fluids mit \SI{-13}{\celsius} so gering ist, dass es zum Gefrieren des Fluid und in folge dessen zum Bersten der Apparatur kommen kann. Möglicherweise ist durch Überhitzen und einen/mehrere Stagnationsfälle Wärmeträgerfluid aus dem Solarkreis ausgetreten und es wurde dieser mit Wasser aufgefüllt. Möglicherweise ist das Wärmeträgerfluid durch zu starke Überhitzung zu schaden gekommen. Es sollte bei dieser Anlage unbedingt ausgetauscht werden und die Anlage vor erneuter Benutzung unbedingt gründlich gespült werden, um Verunreinigung und Schädigung weiterer Anlagenkomponenten zu vermeiden. 
+Probe 3 lag tief braun und undurchsichtig vor.  Die Glykol-Konzentration im Wärmeübertragerfluid ist zu niedrig, sodass der Gefrierpunkt des Fluids mit \SI{-13}{\celsius} so gering ist, dass es zum Gefrieren des Fluid und in folge dessen zum Bersten der Apparatur kommen kann. Möglicherweise ist durch Überhitzen und anahltende Stagnationsfälle Wärmeträgerfluid aus dem Solarkreis ausgetreten und es wurde dieser mit Wasser aufgefüllt. Möglicherweise ist das Wärmeträgerfluid durch zu starke Überhitzung zu schaden gekommen. Es sollte bei dieser Anlage unbedingt ausgetauscht werden und die Anlage vor erneuter Benutzung unbedingt gründlich gespült werden, um Verunreinigung und Schädigung weiterer Anlagenkomponenten zu vermeiden. 
