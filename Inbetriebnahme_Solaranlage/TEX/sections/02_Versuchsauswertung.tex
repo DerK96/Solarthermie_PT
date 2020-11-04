@@ -54,17 +54,12 @@ Die momentane Kollektorleistung wurde nach Gleichung 2.4 des Praktikumsskripts b
 	\centering
 	\caption{Ergebnisse der Anlagenleistung und Anlagenbilanz.}
 	\label{tab:BetPoints}
-	\begin{tabular}{ccccc}
+	\begin{tabular}{cccc}
 		\toprule
-		Anlage	&	$\eta_{\text{th, Kollektor}}$	&	$\left[\frac{\Delta T}{G}\right] = \si{\metre\squared\kelvin\per\kilo\watt}$ & $q_{\text{th}} = \si{\watt\per\metre\squared}$ &  $\dot{Q}_{\text{Kollektor}}$ \\
+		Anlage	& $\dot{Q}_{\text{Kollektor}}$ &  $\dot{Q}_{\text{Solar,Speicher}}$  & $\dot{Q}_{\text{Verlust,Zirkulation}}$     \\
 		\midrule
-		Drucksystem & & & & \\
-		Drainback & & & & \\
-		\midrule
-		Anlage	&	$\eta_{\text{real, Kollektor}}$	& $\dot{Q}_{\text{Solar,Speicher}} = \si{\watt} $ & $\dot{Q}_{\text{Verlust,Zirkulation}} = \si{\watt}$ & $\eta_{\text{Anlage}}$ \\
-		\midrule
-		Drucksystem & & & & \\
-		Drainback & & & & \\
+		Drucksystem & \SI{1250}{\watt} & \SI{932}{\watt} &  \SI{318}{\watt}\\
+		Drainback & \SI{1224}{\watt} & \SI{1072}{\watt} &  \SI{152}{\watt}\\
 		\bottomrule
 	\end{tabular}
 \end{table}
